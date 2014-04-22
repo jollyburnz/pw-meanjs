@@ -5,7 +5,19 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 		$scope.authentication = Authentication;
 		$scope.isCollapsed = false;
 
-		$scope.menu = [];
+    $scope.menu = [{
+      title: 'Home',
+      link: '/',
+      uiRoute: '/'
+    },{
+      title: 'Fund',
+      link: 'funds',
+      uiRoute: '/funds'
+    }, {
+      title: 'New Fund',
+      link: 'funds/create',
+      uiRoute: '/funds/create'
+    }];
 
 		$scope.toggleCollapsibleMenu = function() {
 			$scope.isCollapsed = !$scope.isCollapsed;
