@@ -10,6 +10,10 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
       link: '/',
       uiRoute: '/'
     },{
+      title: 'Fund Test Page',
+      link: 'fund',
+      uiRoute: '/fund'
+    },{
       title: 'Funds',
       link: 'funds',
       uiRoute: '/funds'

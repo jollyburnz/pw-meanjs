@@ -5,6 +5,10 @@ angular.module('funds').config(['$stateProvider',
 	function($stateProvider) {
 		// Funds state routing
 		$stateProvider.
+		state('fund', {
+			url: '/fund',
+			templateUrl: 'modules/funds/views/fund.html'
+		}).
 		state('listFunds', {
 			url: '/funds',
 			templateUrl: 'modules/funds/views/list.html'
