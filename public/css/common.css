@@ -8,10 +8,26 @@ a.undecorated-link:hover {
 	display: none !important;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body{
   color: #58585A;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
 
 a.navbar-brand{
   padding: 0 !important;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
 }
