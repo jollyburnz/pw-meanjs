@@ -8,6 +8,10 @@ a.undecorated-link:hover {
 	display: none !important;
 }
 
+body{
+  color: #58585A;
+}
+
 a.navbar-brand{
   padding: 0 !important;
 }
