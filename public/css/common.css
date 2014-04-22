@@ -7,3 +7,7 @@ a.undecorated-link:hover {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
 	display: none !important;
 }
+
+a.navbar-brand{
+  padding: 0 !important;
+}
