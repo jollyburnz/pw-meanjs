@@ -1,0 +1,49 @@
+
+.capsule{
+  width: 250px;
+  text-align: center;
+}
+
+.downside{
+  display: block;
+  position: relative;
+  background: url(../img/downside.png);
+  height: 250px;
+  width: 250px;
+  background-position: 0 0;
+}
+
+.downside:hover{
+  background-position: 0 -250px;
+}
+
+.baseline{
+  display: block;
+  position: relative;
+  background: url(../img/baseline.png);
+  height: 250px;
+  width: 250px;
+  top: 0;
+}
+
+.baseline:hover{
+  background-position: 0 -250px;
+}
+
+.upside{
+  display: block;
+  position: relative;
+  background: url(../img/upside.png);
+  height: 250px;
+  width: 250px;
+  top: 0;
+}
+
+.upside:hover{
+  background-position: 0 -250px;
+}
+
+.info{
+  position: relative;
+  top: 80px;
+}
