@@ -6,20 +6,20 @@
         <!-- <li class="active"><a href="#"><h4>Fund I</h4></a></li>
         <li><a href="#"><h4>Fund IA</h4></a></li>
         <li><a href="#"><h4>Fund II</h4></a></li> -->
-        <li data-ng-repeat="fund in funds"><a href="#"><h4>{{fund.name}}</h4></a></li>
+        <li data-ng-repeat="fund in funds"><a ng-click="test(fund)"><h4>{{fund.name}}</h4></a></li>
       </ul>
     </div>
     <div class='row'>
       <div class='col-xs-3'>
         <br/><br/>
         <h5>Invested Capital</h5>
-        <h4>$XXXXX</h4>
+        <h4>${{investedCapital}}</h4>
         <h5>Mark</h5>
-        <h4>$XXXXX</h4>
+        <h4>${{mark}}</h4>
         <h5>IRR</h5>
-        <h4>XX.XX%</h4>
+        <h4>{{IRR}}%</h4>
         <h5>Multiple</h5>
-        <h4>1.6x</h4>
+        <h4>{{multiple}}x</h4>
       </div>
       <div class='col-xs-9'>
           

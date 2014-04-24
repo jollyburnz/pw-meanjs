@@ -9,5 +9,12 @@ angular.module('funds').controller('FundController', ['$scope', 'Funds',
       console.log(funds);
       $scope.funds = funds;
     });
+
+    $scope.test = function(fund) {
+      $scope.investedCapital = fund.investedCapital;
+      $scope.mark = fund.mark;
+      $scope.IRR = fund.IRR;
+      $scope.multiple = fund.multiple;
+    };
 	}
 ]);
