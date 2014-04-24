@@ -3,9 +3,10 @@
     <div class='row'>
       <br/>
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#"><h4>Fund I</h4></a></li>
+        <!-- <li class="active"><a href="#"><h4>Fund I</h4></a></li>
         <li><a href="#"><h4>Fund IA</h4></a></li>
-        <li><a href="#"><h4>Fund II</h4></a></li>
+        <li><a href="#"><h4>Fund II</h4></a></li> -->
+        <li data-ng-repeat="fund in funds"><a href="#"><h4>{{fund.name}}</h4></a></li>
       </ul>
     </div>
     <div class='row'>
