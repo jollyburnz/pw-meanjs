@@ -15,6 +15,13 @@ angular.module('funds').controller('FundController', ['$scope', 'Funds',
       $scope.mark = fund.mark;
       $scope.IRR = fund.IRR;
       $scope.multiple = fund.multiple;
+
+      $scope.activeState = fund.name
+    };
+
+    $scope.isActive = function(fund){
+      var active = (fund.name === $scope.activeState);
+      return active;
     };
 	}
 ]);
