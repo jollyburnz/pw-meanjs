@@ -16,6 +16,18 @@ var FundSchema = new Schema({
 		required: 'Please fill Fund name',
 		trim: true
 	},
+	investedCapital: {
+		type: Number,
+	},
+	mark: {
+		type: Number,
+	},
+	IRR: {
+		type: Number,
+	},
+	multiple: {
+		type: Number,
+	},
 	created: {
 		type: Date,
 		default: Date.now

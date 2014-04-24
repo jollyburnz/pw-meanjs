@@ -9,7 +9,11 @@ angular.module('funds').controller('FundsController', ['$scope', '$stateParams',
         $scope.create = function() {
         	// Create new Fund object
             var fund = new Funds({
-                name: this.name
+                name: this.name,
+                investedCapital: this.investedCapital,
+                mark: this.mark,
+                IRR: this.IRR,
+                multiple: this.multiple
             });
 
             // Redirect after save
@@ -19,6 +23,10 @@ angular.module('funds').controller('FundsController', ['$scope', '$stateParams',
 
             // Clear form fields
             this.name = '';
+            this.investedCapital = '';
+            this.mark = '';
+            this.IRR = '';
+            this.multiple = '';
         };
 
         // Remove existing Fund
