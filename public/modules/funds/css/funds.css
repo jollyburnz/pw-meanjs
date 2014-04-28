@@ -7,7 +7,7 @@
 .downside{
   display: block;
   position: relative;
-  background: url(../img/downside.png);
+  background: url(../img/downside02.png);
   height: 250px;
   width: 250px;
   background-position: 0 0;
@@ -20,7 +20,7 @@
 .baseline{
   display: block;
   position: relative;
-  background: url(../img/baseline.png);
+  background: url(../img/baseline02.png);
   height: 250px;
   width: 250px;
   top: 0;
@@ -33,7 +33,7 @@
 .upside{
   display: block;
   position: relative;
-  background: url(../img/upside.png);
+  background: url(../img/upside02.png);
   height: 250px;
   width: 250px;
   top: 0;
