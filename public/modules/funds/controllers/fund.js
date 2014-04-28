@@ -8,6 +8,7 @@ angular.module('funds').controller('FundController', ['$scope', 'Funds',
     Funds.query(function(funds) {
       console.log(funds);
       $scope.funds = funds;
+      $scope.first = funds[0];
     });
 
     $scope.test = function(fund) {
