@@ -9,7 +9,22 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
         $scope.create = function() {
         	// Create new Company object
             var company = new Companies({
-                name: this.name
+                name: this.name,
+                initial_investment: this.initial_investment,
+                fund_ownership: this.fund_ownership,
+                ev: this.ev,
+                irr: this.irr,
+                multiple: this.multiple,
+                d_cash: this.d_cash,
+                d_ev: this.d_ev,
+                d_multiple: this.d_multiple,
+                b_cash: this.b_cash,
+                b_ev: this.b_ev,
+                b_multiple: this.b_multiple,
+                u_cash: this.u_cash,
+                u_ev: this.u_ev,
+                u_multiple: this.u_multiple,
+                from_fund: this.from_fund
             });
 
             // Redirect after save

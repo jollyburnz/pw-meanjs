@@ -6,11 +6,121 @@
         <form class="form-horizontal" data-ng-submit="create()">
             <fieldset>
                 <div class="form-group">
+                    <h2>Current Valuation</h2>
                     <label class="control-label" for="name">Name</label>
                     <div class="controls">
                         <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Initial Investment</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="initial_investment" id="initial_investment" class="form-control" placeholder="Initial Investment" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Fund Ownership</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="fund_ownership" id="fund_ownership" class="form-control" placeholder="Fund Ownership" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">EV</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="ev" id="ev" class="form-control" placeholder="EV" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">IRR</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="irr" id="irr" class="form-control" placeholder="IRR" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="name">Multiple</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="multiple" id="multiple" class="form-control" placeholder="Multiple" required>
+                    </div>
+                </div>
+                <br/>
+                <hr/>
+                <br/>
+                <div class='row dbu'>
+                    <h2>Projected Exit</h2>
+                    <div class='col-sm-4'>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Downside Realized Cash</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="d_cash" id="d_cash" class="form-control" placeholder="Cash" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Downside EV</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="d_ev" id="d_ev" class="form-control" placeholder="EV" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Downside Multiple</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="d_multiple" id="d_multiple" class="form-control" placeholder="Multiple" required>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class='col-sm-4'>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Baseline Realized Cash</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="b_cash" id="b_cash" class="form-control" placeholder="Cash" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Baseline EV</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="b_ev" id="b_ev" class="form-control" placeholder="EV" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Baseline Multiple</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="b_multiple" id="b_multiple" class="form-control" placeholder="Multiple" required>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class='col-sm-4'>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Upside Realized Cash</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="u_cash" id="u_cash" class="form-control" placeholder="Cash" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Upside EV</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="u_ev" id="u_ev" class="form-control" placeholder="EV" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Upside Multiple</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="u_multiple" id="u_multiple" class="form-control" placeholder="Multiple" required>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="form-group">
+                    <label class="control-label" for="name">From Fund</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="from_fund" id="from fund" class="form-control" placeholder="From Fund" required>
+                    </div>
+                </div>
+
+
                 <div class="form-group">
                     <input type="submit" class="btn btn-default">
                 </div>

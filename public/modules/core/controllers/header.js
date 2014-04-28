@@ -21,6 +21,14 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
       title: 'New Fund',
       link: 'funds/create',
       uiRoute: '/funds/create'
+    },{
+      title: 'Companies',
+      link: 'companies',
+      uiRoute: '/companies'
+    }, {
+      title: 'New Company',
+      link: 'companies/create',
+      uiRoute: '/companies/create'
     }];
 
 		$scope.toggleCollapsibleMenu = function() {
