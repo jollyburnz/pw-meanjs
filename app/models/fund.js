@@ -28,6 +28,33 @@ var FundSchema = new Schema({
 	multiple: {
 		type: Number,
 	},
+	d_mark: {
+		type: Number,
+	},
+	d_IRR: {
+		type: Number,
+	},
+	d_multiple: {
+		type: Number,
+	},
+	b_mark: {
+		type: Number,
+	},
+	b_IRR: {
+		type: Number,
+	},
+	b_multiple: {
+		type: Number,
+	},
+	u_mark: {
+		type: Number,
+	},
+	u_IRR: {
+		type: Number,
+	},
+	u_multiple: {
+		type: Number,
+	},
 	created: {
 		type: Date,
 		default: Date.now

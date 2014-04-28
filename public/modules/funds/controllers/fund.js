@@ -16,6 +16,18 @@ angular.module('funds').controller('FundController', ['$scope', 'Funds',
       $scope.IRR = fund.IRR;
       $scope.multiple = fund.multiple;
 
+      $scope.d_mark = fund.d_mark;
+      $scope.d_IRR = fund.d_IRR;
+      $scope.d_multiple = fund.d_multiple;
+
+      $scope.b_mark = fund.b_mark;
+      $scope.b_IRR = fund.b_IRR;
+      $scope.b_multiple = fund.b_multiple;
+
+      $scope.u_mark = fund.u_mark;
+      $scope.u_IRR = fund.u_IRR;
+      $scope.u_multiple = fund.u_multiple;
+
       $scope.activeState = fund.name
     };
 

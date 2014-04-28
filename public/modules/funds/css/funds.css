@@ -1,3 +1,10 @@
+/* create.html */
+
+.dbu .controls{
+  margin-right: 10px;
+}
+
+/* fund.html */
 
 .capsule{
   width: 250px;
@@ -43,7 +50,17 @@
   background-position: 0 -250px;
 }
 
-.info{
+.capsule-info{
   position: relative;
-  top: 80px;
+  top: 68px;
+}
+
+.title{
+  font-weight: bold;
+  display: block;
+}
+
+.info{
+  display: block;
+  font-weight: 200;
 }
