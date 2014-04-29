@@ -1,9 +1,14 @@
 'use strict';
 
 // Companies controller
-angular.module('companies').controller('CompaniesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Companies',
-    function($scope, $stateParams, $location, Authentication, Companies) {
+angular.module('companies').controller('CompaniesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Companies', 'Funds',
+    function($scope, $stateParams, $location, Authentication, Companies, Funds) {
         $scope.authentication = Authentication;
+
+        Funds.query(function(funds) {
+          console.log(funds, 'funds');
+          $scope.funds = funds;
+        });
 
         // Create new Company
         $scope.create = function() {

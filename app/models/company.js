@@ -59,7 +59,7 @@ var CompanySchema = new Schema({
 		type: Number,
 	},
 	from_fund: {
-		type: String,
+		type: Schema.ObjectId
 	},
 	created: {
 		type: Date,

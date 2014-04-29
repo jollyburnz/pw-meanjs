@@ -115,9 +115,8 @@
                 <br/>
                 <div class="form-group">
                     <label class="control-label" for="name">From Fund</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="company.from_fund" id="from fund" class="form-control" placeholder="From Fund" required>
-                    </div>
+                    <select class="form-control" data-ng-model="company.from_fund" data-ng-options="fund._id as fund.name for fund in funds">
+                    </select>
                 </div>
 
 

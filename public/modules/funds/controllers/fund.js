@@ -29,7 +29,7 @@ angular.module('funds').controller('FundController', ['$scope', 'Funds',
       $scope.u_IRR = fund.u_IRR;
       $scope.u_multiple = fund.u_multiple;
 
-      $scope.activeState = fund.name
+      $scope.activeState = fund.name;
     };
 
     $scope.isActive = function(fund){
