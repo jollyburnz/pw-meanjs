@@ -6,7 +6,7 @@
         <!-- <li class="active"><a href="#"><h4>Fund I</h4></a></li>
         <li><a href="#"><h4>Fund IA</h4></a></li>
         <li><a href="#"><h4>Fund II</h4></a></li> -->
-        <li data-ng-repeat="fund in funds" ng-init="test(first)" ng-class="{active: isActive(fund)}" ><a ng-click="test(fund)"><h4>{{fund.name}}</h4></a></li>
+        <li data-ng-repeat="fund in funds | orderBy: 'created'" ng-init="test(first)" ng-class="{active: isActive(fund)}" ><a ng-click="test(fund)"><h4>{{fund.name}}</h4></a></li>
       </ul>
     </div>
     <div class='row'>

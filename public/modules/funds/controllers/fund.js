@@ -8,7 +8,7 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
     Funds.query(function(funds) {
       console.log(funds);
       $scope.funds = funds;
-      $scope.first = funds[0];
+      $scope.first = funds[2];
     });
 
     $scope.test = function(fund) {
