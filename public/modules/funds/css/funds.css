@@ -17,11 +17,15 @@
   background: url(../img/downside02.png);
   height: 250px;
   width: 250px;
-  background-position: 0 0;
+  background-position: 0 -250px;
 }
 
 .downside:hover{
-  background-position: 0 -250px;
+  background-position: 0 0px;
+}
+
+.downside-active .downside{
+  background-position: 0 -500px;
 }
 
 .baseline{
@@ -31,10 +35,15 @@
   height: 250px;
   width: 250px;
   top: 0;
+  background-position: 0 -250px;
 }
 
 .baseline:hover{
-  background-position: 0 -250px;
+  background-position: 0 0px;
+}
+
+.baseline-active .baseline{
+  background-position: 0 -500px;
 }
 
 .upside{
@@ -44,10 +53,15 @@
   height: 250px;
   width: 250px;
   top: 0;
+  background-position: 0 -250px;
 }
 
 .upside:hover{
-  background-position: 0 -250px;
+  background-position: 0 0px;
+}
+
+.upside-active .upside{
+  background-position: 0 -500px;
 }
 
 .capsule-info{

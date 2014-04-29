@@ -32,6 +32,8 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
 
       $scope.activeState = fund.name;
 
+      $scope.p = 'baseline'; //default on baseline
+
       Companies.query(function(companies) {
         console.log(companies);
         $scope.companies = companies;
@@ -45,6 +47,16 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
     $scope.isActive = function(fund){
       var active = (fund.name === $scope.activeState);
       return active;
+    };
+
+    $scope.projection = function(projection){
+      console.log(projection);
+      $scope.p = projection;
+    };
+
+    $scope.getProjection = function(){
+      console.log($scope.p, 'projection');
+      return $scope.p;
     };
 	}
 ]);

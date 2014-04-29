@@ -27,46 +27,52 @@
           <div class='col-xs-4'>
             <div class='capsule'>
               <h2 class="text-center">Downside</h2>
-              <span class='downside'>
-                <div class='capsule-info'>
-                  <span class='title'>Mark</span>
-                  <span class='info'>{{d_mark | currency}}</span>
-                  <span class='title'>IRR</h6>
-                  <span class='info'>{{d_IRR}}%</span>
-                  <span class='title'>Multiple</span>
-                  <span class='info'>{{d_multiple}}x</span>
-                </div>
-              </span>
+              <div class='{{p}}-active'>
+                <span class='downside' ng-click="projection('downside')">
+                  <div class='capsule-info'>
+                    <span class='title'>Mark</span>
+                    <span class='info'>{{d_mark | currency}}</span>
+                    <span class='title'>IRR</h6>
+                    <span class='info'>{{d_IRR}}%</span>
+                    <span class='title'>Multiple</span>
+                    <span class='info'>{{d_multiple}}x</span>
+                  </div>
+                </span>
+              </div>
             </div>
           </div>
           <div class='col-xs-4'>
             <div class='capsule'>
               <h2 class="text-center">Baseline</h2>
-              <span class='baseline'>
-                <div class='capsule-info'>
-                  <span class='title'>Mark</span>
-                  <span class='info'>{{b_mark | currency}}</span>
-                  <span class='title'>IRR</h6>
-                  <span class='info'>{{b_IRR}}%</span>
-                  <span class='title'>Multiple</span>
-                  <span class='info'>{{b_multiple}}x</span>
-                </div>
-              </span>
+              <div class='{{p}}-active'>
+                <span class='baseline' ng-click="projection('baseline')">
+                  <div class='capsule-info'>
+                    <span class='title'>Mark</span>
+                    <span class='info'>{{b_mark | currency}}</span>
+                    <span class='title'>IRR</h6>
+                    <span class='info'>{{b_IRR}}%</span>
+                    <span class='title'>Multiple</span>
+                    <span class='info'>{{b_multiple}}x</span>
+                  </div>
+                </span>
+              </div>
             </div>
           </div>
           <div class='col-xs-4'>
             <div class='capsule'>
               <h2 class="text-center">Upside</h2>
-              <span class='upside'>
-                <div class='capsule-info'>
-                  <span class='title'>Mark</span>
-                  <span class='info'>{{u_mark | currency}}</span>
-                  <span class='title'>IRR</h6>
-                  <span class='info'>{{u_IRR}}%</span>
-                  <span class='title'>Multiple</span>
-                  <span class='info'>{{u_multiple}}x</span>
-                </div>
-              </span>
+              <div class="{{p}}-active">
+                <span class='upside' ng-click="projection('upside')">
+                  <div class='capsule-info'>
+                    <span class='title'>Mark</span>
+                    <span class='info'>{{u_mark | currency}}</span>
+                    <span class='title'>IRR</h6>
+                    <span class='info'>{{u_IRR}}%</span>
+                    <span class='title'>Multiple</span>
+                    <span class='info'>{{u_multiple}}x</span>
+                  </div>
+                </span>
+              </div>
             </div>
           </div>
         <div>
@@ -189,10 +195,22 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="c in filtered">
+                <tr ng-show="getProjection() === 'downside'" ng-repeat="c in filtered">
                   <td>{{c.d_cash | currency}}</td>
                   <td>{{c.d_ev | currency}}</td>
                   <td>{{c.d_multiple}}</td>
+                </tr>
+
+                <tr ng-show="getProjection() === 'baseline'" ng-repeat="c in filtered">
+                  <td>{{c.b_cash | currency}}</td>
+                  <td>{{c.b_ev | currency}}</td>
+                  <td>{{c.b_multiple}}</td>
+                </tr>
+
+                <tr ng-show="getProjection() === 'upside'" ng-repeat="c in filtered">
+                  <td>{{c.u_cash | currency}}</td>
+                  <td>{{c.u_ev | currency}}</td>
+                  <td>{{c.u_multiple}}</td>
                 </tr>
                 <!-- <tr>
                   <td>8,910,111</td>
