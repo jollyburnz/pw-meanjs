@@ -13,9 +13,9 @@
       <div class='col-xs-3'>
         <br/><br/>
         <h5>Invested Capital</h5>
-        <h4>${{investedCapital}}</h4>
+        <h4>{{investedCapital | currency}}</h4>
         <h5>Mark</h5>
-        <h4>${{mark}}</h4>
+        <h4>{{mark | currency}}</h4>
         <h5>IRR</h5>
         <h4>{{IRR}}%</h4>
         <h5>Multiple</h5>
@@ -30,7 +30,7 @@
               <span class='downside'>
                 <div class='capsule-info'>
                   <span class='title'>Mark</span>
-                  <span class='info'>${{d_mark}}</span>
+                  <span class='info'>{{d_mark | currency}}</span>
                   <span class='title'>IRR</h6>
                   <span class='info'>{{d_IRR}}%</span>
                   <span class='title'>Multiple</span>
@@ -45,7 +45,7 @@
               <span class='baseline'>
                 <div class='capsule-info'>
                   <span class='title'>Mark</span>
-                  <span class='info'>${{b_mark}}</span>
+                  <span class='info'>{{b_mark | currency}}</span>
                   <span class='title'>IRR</h6>
                   <span class='info'>{{b_IRR}}%</span>
                   <span class='title'>Multiple</span>
@@ -60,7 +60,7 @@
               <span class='upside'>
                 <div class='capsule-info'>
                   <span class='title'>Mark</span>
-                  <span class='info'>${{u_mark}}</span>
+                  <span class='info'>{{u_mark | currency}}</span>
                   <span class='title'>IRR</h6>
                   <span class='info'>{{u_IRR}}%</span>
                   <span class='title'>Multiple</span>
