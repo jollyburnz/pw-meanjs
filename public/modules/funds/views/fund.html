@@ -85,11 +85,20 @@
                   <th>Initial Investment</th>
                   <th>Fund Ownership</th>
                   <th>EV</th>
+                  <th>IRR</th>
                   <th>Multiple</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr ng-repeat="c in filtered">
+                  <td>{{c.name}}</td>
+                  <td>{{c.initial_investment | currency}}</td>
+                  <td>{{c.fund_ownership | currency}}</td>
+                  <td>{{c.ev | currency}}</td>
+                  <td>{{c.irr}}</td>
+                  <td>{{c.multiple}}</td>
+                </tr>
+                <!-- <tr>
                   <td>Bespoke Post</td>
                   <td>1,234,567</td>
                   <td>8,910,111</td>
@@ -165,7 +174,7 @@
                   <td>8,910,111</td>
                   <td>21,314,151</td>
                   <td>6.1</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
@@ -180,7 +189,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr ng-repeat="c in filtered">
+                  <td>{{c.d_cash | currency}}</td>
+                  <td>{{c.d_ev | currency}}</td>
+                  <td>{{c.d_multiple}}</td>
+                </tr>
+                <!-- <tr>
                   <td>8,910,111</td>
                   <td>21,314,151</td>
                   <td>6.1</td>
@@ -234,7 +248,7 @@
                   <td>8,910,111</td>
                   <td>21,314,151</td>
                   <td>6.1</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>

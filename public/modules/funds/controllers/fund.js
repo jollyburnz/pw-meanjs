@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('funds').controller('FundController', ['$scope', 'Funds',
-    function($scope, Funds) {
+angular.module('funds').controller('FundController', ['$scope', '$filter', 'Funds', 'Companies',
+    function($scope, $filter, Funds, Companies) {
 		// Controller Logic 
 		// ...
     // Find a list of Funds
@@ -12,6 +12,7 @@ angular.module('funds').controller('FundController', ['$scope', 'Funds',
     });
 
     $scope.test = function(fund) {
+      console.log(fund._id, 'id');
       $scope.investedCapital = fund.investedCapital;
       $scope.mark = fund.mark;
       $scope.IRR = fund.IRR;
@@ -30,6 +31,15 @@ angular.module('funds').controller('FundController', ['$scope', 'Funds',
       $scope.u_multiple = fund.u_multiple;
 
       $scope.activeState = fund.name;
+
+      Companies.query(function(companies) {
+        console.log(companies);
+        $scope.companies = companies;
+        console.log($scope.companies, 'companies');
+        console.log(fund._id);
+        $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund._id });
+      });
+
     };
 
     $scope.isActive = function(fund){
