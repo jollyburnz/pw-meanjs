@@ -24,7 +24,7 @@
   background-position: 0 0px;
 }
 
-.downside-active .downside{
+.downside.downside-active{
   background-position: 0 -500px;
 }
 
@@ -42,7 +42,7 @@
   background-position: 0 0px;
 }
 
-.baseline-active .baseline{
+.baseline.baseline-active{
   background-position: 0 -500px;
 }
 
@@ -60,7 +60,7 @@
   background-position: 0 0px;
 }
 
-.upside-active .upside{
+.upside.upside-active{
   background-position: 0 -500px;
 }
 
