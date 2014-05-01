@@ -1,6 +1,6 @@
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1>{{article.name}}</h1>
+		<h1>{{article.link}}</h1>
 	</div>
 	<div class="pull-right" data-ng-show="authentication.user._id == article.user._id">
 		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
@@ -11,6 +11,6 @@
 		</a>
 	</div>
 	<small>
-		<em class="text-muted">Posted on {{article.created | date:'mediumDate'}} by {{article.user.displayName}}</em>
+		<em class="text-muted">Posted on {{article.date_added | date:'mediumDate'}} by {{article.user.displayName}}</em>
 	</small>
 </section>
