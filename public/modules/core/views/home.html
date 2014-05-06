@@ -31,13 +31,21 @@
     </section> -->
     <div class='row'>
         <div class='col-md-12'>
-            <img src='/img/brand/hero.png' />
+            <img style='width:100%; padding: 40px 0;' src='/img/brand/hero.png' />
         </div>
     </div>
 
     <div class='row'>
         <div class='col-md-12'>
             <h2>FEATURED COMPANIES</h2>
+            <div class='row'>
+                <div ng-repeat="company in companies" class='col-sm-4'>
+                    <h3>Commerce & Services</h3>
+                    {{company._id}}<br/>
+                    <h3>{{company.name}}</h3>
+                    <br/><br/><br/>
+                </div>
+            </div>
             <div class='row'>
                 <div class='col-sm-4'>
                     <h3>Commerce & Services</h3>
@@ -74,6 +82,13 @@
         <div class='col-md-12'>
             <h2>ARTICLES</H2>
             <div class='row'>
+                <div ng-repeat="article in articles" class='col-sm-4'>
+                    {{article._id}}<br/>
+                    <h3>{{article.name}}</h3>
+                    <img style='height: 150px' src='{{article.image}}' /><br/>
+                    <i>{{article.link}}</i>
+                </div>
+                <br/></br/><br/>
                 <div class='col-sm-4'>
                     <h3>HEADLINE</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
