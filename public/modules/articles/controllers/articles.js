@@ -1,21 +1,28 @@
 'use strict';
 
 // Articles controller
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-    function($scope, $stateParams, $location, Authentication, Articles) {
+angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles', 'Companies',
+    function($scope, $stateParams, $location, Authentication, Articles, Companies) {
         $scope.authentication = Authentication;
 
         // filepicker stuff
         filepicker.setKey('ATWlfXaYGS8ajlqQTTcQ3z');
 
+        Companies.query(function(companies) {
+          console.log(companies, 'companies');
+          $scope.companies = companies;
+        });
+
         // Create new Article
         $scope.create = function() {
         	// Create new Article object
+            console.log(this.url, 'url');
             var article = new Articles({
-                image: this.image,
+                image: this.url,
                 link: this.link,
                 author: this.author,
-                content: this.content
+                content: this.content,
+                for_company: this.for_company
             });
 
             // Redirect after save

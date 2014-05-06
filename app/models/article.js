@@ -31,6 +31,9 @@ var ArticleSchema = new Schema({
 		default: '',
 		trim: true
 	},
+	for_company: {
+		type: Schema.ObjectId
+	},
 	date_added: {
 		type: Date,
 		default: Date.now

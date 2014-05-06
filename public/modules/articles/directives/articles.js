@@ -3,6 +3,7 @@
 //Articles service used to communicate Articles REST endpoints
 angular.module('articles').directive('dropDown', function(){
   return{
+    scope: false,
     link: function(scope, element, attrs){
       console.log(scope, element, attrs, 'woah');
       filepicker.makeDropPane(element[0], {
@@ -21,9 +22,9 @@ angular.module('articles').directive('dropDown', function(){
           onSuccess: function(InkBlobs) {
               $("#exampleDropPane").text("Done, see result below");
               console.log(InkBlobs[0].url);
-              $scope.url = InkBlobs[0].url;
-              console.log(attrs.ngModel);
-              $("#localDropResult").text(JSON.stringify(InkBlobs));
+              scope.url = InkBlobs[0].url;
+              $('#exampleDropPane').html("<img src='" +scope.url+ "' />");
+              //$("#localDropResult").text(JSON.stringify(InkBlobs));
           },
           onError: function(type, message) {
               $("#localDropResult").text('('+type+') '+ message);
