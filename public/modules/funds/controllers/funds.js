@@ -13,7 +13,16 @@ angular.module('funds').controller('FundsController', ['$scope', '$stateParams',
                 investedCapital: this.investedCapital,
                 mark: this.mark,
                 IRR: this.IRR,
-                multiple: this.multiple
+                multiple: this.multiple,
+                d_mark: this.d_mark,
+                d_IRR: this.d_IRR,
+                d_multiple: this.d_multiple,
+                b_mark: this.b_mark,
+                b_IRR: this.b_IRR,
+                b_multiple: this.b_multiple,
+                u_mark: this.u_mark,
+                u_IRR: this.u_IRRR,
+                u_multiple: this.u_multiple
             });
 
             // Redirect after save
@@ -27,6 +36,15 @@ angular.module('funds').controller('FundsController', ['$scope', '$stateParams',
             this.mark = '';
             this.IRR = '';
             this.multiple = '';
+            this.d_mark = '';
+            this.d_IRR = '';
+            this.d_multiple = '';
+            this.b_mark = '';
+            this.b_IRR = '';
+            this.b_multiple = '';
+            this.u_mark = '';
+            this.u_IRR = '';
+            this.u_multiple = '';
         };
 
         // Remove existing Fund

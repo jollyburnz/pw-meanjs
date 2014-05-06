@@ -5,6 +5,9 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     function($scope, $stateParams, $location, Authentication, Articles) {
         $scope.authentication = Authentication;
 
+        // filepicker stuff
+        filepicker.setKey('ATWlfXaYGS8ajlqQTTcQ3z');
+
         // Create new Article
         $scope.create = function() {
         	// Create new Article object
