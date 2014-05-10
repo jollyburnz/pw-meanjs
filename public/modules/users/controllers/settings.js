@@ -1,8 +1,16 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication',
-	function($scope, $http, $location, Users, Authentication) {
+angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Dropbox',
+	function($scope, $http, $location, Users, Authentication, Dropbox) {
 		$scope.user = Authentication.user;
+
+		// Dropbox Authentication
+		window.asdf = Dropbox;
+
+		if (!(asdf.isAuthenticated())){
+			asdf.authenticate();
+			console.log(asdf.isAuthenticated());
+		}
 
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
