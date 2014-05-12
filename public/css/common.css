@@ -1,5 +1,5 @@
 .content {
-	margin-top: 50px;
+	margin-top: 82px;
 }
 a.undecorated-link:hover {
 	text-decoration: none;
@@ -8,9 +8,15 @@ a.undecorated-link:hover {
 	display: none !important;
 }
 
-html {
+html{
   position: relative;
   min-height: 100%;
+}
+
+header{
+  height: 82px;
+  line-height: 82px;
+  background: #156333 !important;
 }
 
 body{
@@ -22,6 +28,46 @@ body{
 
 a.navbar-brand{
   padding: 0 !important;
+  line-height: 82px;
+}
+
+nav ul{
+  float: left;
+}
+
+nav ul li{
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  padding: 0 15px 0 0;
+}
+
+nav ul li a{
+  color: #fff;
+}
+
+nav ul li a:hover{
+  color: #ddd;
+}
+
+nav ul li.active a{
+  color: #ddd;
+  text-decoration: underline;
+}
+
+nav ul.dropdown-menu{
+  padding: 0;
+}
+
+nav ul.dropdown-menu li{
+  display: block;
+  padding: 0;
+}
+
+nav ul.dropdown-menu li a{
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
 }
 
 footer {
