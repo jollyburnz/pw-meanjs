@@ -13,10 +13,15 @@ html{
   min-height: 100%;
 }
 
+h1, h2, h3, h4, h5, h6, p, a{
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
+
 header{
   height: 82px;
   line-height: 82px;
   background: #156333 !important;
+  border-bottom: 1px solid #ccc;
 }
 
 body{
@@ -29,6 +34,7 @@ body{
 a.navbar-brand{
   padding: 0 !important;
   line-height: 82px;
+  margin-left: 20px;
 }
 
 nav ul{
@@ -39,7 +45,7 @@ nav ul li{
   display: inline-block;
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  padding: 0 15px 0 0;
+  padding: 0 18px 0 0;
 }
 
 nav ul li a{
@@ -68,6 +74,16 @@ nav ul.dropdown-menu li a{
   height: 40px;
   line-height: 40px;
   padding: 0 20px;
+}
+
+.investor{
+  background: #fff;
+  padding: 0 10px 0 30px;
+  margin: 0;
+}
+
+.investor a{
+  color: green !important;
 }
 
 footer {

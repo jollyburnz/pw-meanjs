@@ -1,4 +1,4 @@
-<div class="container" data-ng-controller="HeaderController">
+<div data-ng-controller="HeaderController">
 	<div class="navbar-header">
 		<button class="navbar-toggle" type="button" data-ng-click="toggleCollapsibleMenu()">
 			<span class="sr-only">Toggle navigation</span>
@@ -17,7 +17,17 @@
 			</li>
 		</ul>
 
-		<ul data-ng-show="authentication.user">
+		<ul data-ng-hide="authentication.user">
+			<li ui-route="/signup" ng-class="{active: $uiRoute}">
+				<a href="/#!/signup">Signup</a>
+			</li>
+			<li class="divider-vertical"></li>
+			<li ui-route="/signin" ng-class="{active: $uiRoute}">
+				<a href="/#!/signin">Signin</a>
+			</li>
+		</ul>
+
+		<ul class='investor' data-ng-show="authentication.user">
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     {{authentication.user.displayName}} <b class="caret"></b>

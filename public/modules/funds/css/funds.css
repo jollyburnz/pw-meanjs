@@ -6,63 +6,84 @@
 
 /* fund.html */
 
+.nav li.active > a{
+  background: #f5f5f5;
+}
+
 .capsule{
   width: 250px;
   text-align: center;
 }
 
+h2{
+  color: #ccc;
+}
+
 .downside{
   display: block;
   position: relative;
-  background: url(../img/downside02.png);
+  background: url(../img/downside04.png);
   height: 250px;
   width: 250px;
-  background-position: 0 -250px;
+  background-position: 0 0px;
 }
 
 .downside:hover{
-  background-position: 0 0px;
+  background-position: 0 -250px;
 }
 
 .downside.downside-active{
   background-position: 0 -500px;
 }
 
+.downside-d h2, .downside-d .title, .downside-d .info{
+  color: #156333;
+}
+
 .baseline{
   display: block;
   position: relative;
-  background: url(../img/baseline02.png);
+  background: url(../img/baseline04.png);
   height: 250px;
   width: 250px;
   top: 0;
-  background-position: 0 -250px;
+  background-position: 0 0px;
 }
 
 .baseline:hover{
-  background-position: 0 0px;
+  background-position: 0 -250px;
 }
 
 .baseline.baseline-active{
   background-position: 0 -500px;
 }
 
+.baseline-b h2, .baseline-b .title, .baseline-b .info{
+  color: #156333;
+}
+
 .upside{
   display: block;
   position: relative;
-  background: url(../img/upside02.png);
+  background: url(../img/upside04.png);
   height: 250px;
   width: 250px;
   top: 0;
-  background-position: 0 -250px;
+  background-position: 0 0px;
 }
 
 .upside:hover{
-  background-position: 0 0px;
+  background-position: 0 -250px;
 }
 
 .upside.upside-active{
   background-position: 0 -500px;
 }
+
+.upside-u h2, .upside-u .title, .upside-u .info{
+  color: #156333;
+}
+
 
 .capsule-info{
   position: relative;
@@ -72,9 +93,23 @@
 .title{
   font-weight: bold;
   display: block;
+  color: #ccc;
 }
 
 .info{
   display: block;
   font-weight: 200;
+  color: #ccc;
+}
+
+.projected_exit h2, .projected_exit th, .projected_exit td{
+  color: #156333 !important;
+}
+
+.projected_exit th{
+  border-bottom: 1px solid #156333 !important;
+}
+
+.projected_exit td{
+  border-top: 1px solid #156333 !important;
 }
