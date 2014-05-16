@@ -1,0 +1,19 @@
+<section class="row" data-ng-controller="SettingsController">
+  <div class="col-md-12">
+    <h1>Overview</h1>
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#">Overview</a></li>
+      <li><a href="#">Profile</a></li>
+    </ul>
+    <h3>LP Information</h3>
+    {{user.email}}<br/>
+    {{user.username}}<br/>
+    {{user.einss}}<br/>
+    {{user.address1}}<br/>
+    {{user.address2}}<br/>
+    <h3>Banking Information</h3>
+    {{user.bank_account_name}}<br/>
+    {{user.bank_account_routing_number}}<br/>
+    {{user.bank_account_number}}<br/>
+  </div>
+</section>
