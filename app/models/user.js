@@ -74,6 +74,24 @@ var UserSchema = new Schema({
 	created: {
 		type: Date,
 		default: Date.now
+	},
+	einss: {
+		type: String
+	},
+	address1: {
+		type: String
+	},
+	address2: {
+		type: String
+	},
+	bank_account_name: {
+		type: String
+	},
+	bank_account_routing_number: {
+		type: Number
+	},
+	bank_account_number:{
+		type: Number
 	}
 });
 

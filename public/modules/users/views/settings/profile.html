@@ -20,6 +20,31 @@
 					<label for="username">Username</label>
 					<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
 				</div>
+				<div class="form-group">
+					<label for="einss">EIN / SS</label>
+					<input type="text" id="einss" name="einss" class="form-control" data-ng-model="user.einss" placeholder="EIN / SS">
+				</div>
+				<div class="form-group">
+					<label for="Address1">Address1</label>
+					<input type="text" id="address1" name="address1" class="form-control" data-ng-model="user.address1" placeholder="Address1">
+				</div>
+				<div class="form-group">
+					<label for="Address2">Address2</label>
+					<input type="text" id="address2" name="address2" class="form-control" data-ng-model="user.address2" placeholder="Address2">
+				</div>
+				<div class="form-group">
+					<label for="Address2">Bank Account Name</label>
+					<input type="text" id="bank_account_name" name="bank_account_name" class="form-control" data-ng-model="user.bank_account_name" placeholder="Bank Account Name">
+				</div>
+				<div class="form-group">
+					<label for="Address2">Bank Account Routing Number</label>
+					<input type="text" id="bank_routing_number" name="bank_routing_number" class="form-control" data-ng-model="user.bank_routing_number" placeholder="Bank Account Routing Number">
+				</div>
+				<div class="form-group">
+					<label for="Address2">Bank Account Number</label>
+					<input type="text" id="bank_account_number" name="bank_account_number" class="form-control" data-ng-model="user.bank_account_number" placeholder="Bank Account Number">
+				</div>
+
 				<div class="text-center form-group">
 					<button type="submit" class="btn btn-large btn-primary">Save Profile</button>
 				</div>
@@ -36,5 +61,14 @@
 		Dropbox stuff<br/>
 		{{user.email}}<br/>
 		{{user.username}}<br/>
+		{{user.einss}}<br/>
+		{{user.address1}}<br/>
+		{{user.address2}}<br/>
+		{{user.bank_account_name}}<br/>
+		{{user.bank_routing_number}}<br/>
+		{{user.bank_account_number}}<br/>
+		<br/>
+		{{user}}
+
 	</div>
 </section>
