@@ -1,10 +1,16 @@
 <section class="row" data-ng-controller="SettingsController">
   <div class="col-md-12">
-    <h1>Overview</h1>
+    <br/>
     <ul class="nav nav-pills">
       <li class="active"><a href="#">Overview</a></li>
       <li><a href="#">Profile</a></li>
     </ul>
+    <br/>
+        <h1>Overview</h1>
+    <br/>
+  </div>
+  <div class="col-md-3">
+    <div class='upload_photo' style='height: 200px; background: #ccc' ng-click="upload()"></div>
     <h3>LP Information</h3>
     {{user.email}}<br/>
     {{user.username}}<br/>
@@ -15,5 +21,48 @@
     {{user.bank_account_name}}<br/>
     {{user.bank_account_routing_number}}<br/>
     {{user.bank_account_number}}<br/>
+  </div>
+  <div class='col-md-offset-1 col-md-8'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Invested Capital</th>
+          <th>Return</th>
+          <th>Multiple</th> 
+        <tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>FUND I</td>
+          <td>$2,234,234</td>
+          <td>34%</td>
+          <td>1.6X</td>
+        <tr>
+        <tr>
+          <td>FUND IA</td>
+          <td>$2,234,234</td>
+          <td>34%</td>
+          <td>1.6X</td>
+        <tr>
+        <tr>
+          <td>FUND II</td>
+          <td>$2,234,234</td>
+          <td>34%</td>
+          <td>1.6X</td>
+        <tr>
+        <tr>
+          <td><b>TOTAL</b></td>
+          <td>$4,468,468</td>
+          <td>34%</td>
+          <td>1.6X</td>
+        <tr>
+      <tbody>
+    </table>
+    <div class='chart'>
+      <div style='height: 400px; background: #ccc'>
+      <span class='text-center' style='display: block; padding-top: 200px'>CHART</span>
+      </div>
+    </div>
   </div>
 </section>
