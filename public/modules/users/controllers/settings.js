@@ -79,9 +79,13 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		$scope.dropbox = function() {
 			//alert('dropxbox' + asdf.accountInfo());
 			//console.log(asdf.accountInfo(), 'adfsdffasdfasd');
-			asdf.metadata('4 - Investors').then(function(data) {
+			var firstname = Authentication.user.firstName;
+			var lastname = Authentication.user.lastName;
+			console.log(firstname, lastname, 'name');
+			var path = "4 - Investors/"+firstname+" "+lastname;
+			asdf.metadata(path).then(function(data) {
 				console.log(data, 'woah');
-				$scope.acct = data;
+				$scope.accts = data;
       }, function(error) {
       	console.log(error, 'error');
       });
