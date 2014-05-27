@@ -11,6 +11,13 @@
   </div>
   <div class="col-md-3">
     <div class='upload_photo' style='height: 200px; background: #ccc' ng-click="upload()"></div>
+
+    <br/>
+
+    <button type="button" class="btn btn-default btn-lg" ng-click="dropbox()">
+      <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
+    </button>
+    {{acct}}<br/>
     <h3>LP Information</h3>
     {{user.email}}<br/>
     {{user.username}}<br/>

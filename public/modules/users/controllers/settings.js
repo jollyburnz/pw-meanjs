@@ -9,7 +9,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 
 		if (!(asdf.isAuthenticated())){
 			asdf.authenticate();
-			console.log(asdf.isAuthenticated());
+			//console.log(asdf.isAuthenticated());
 		}
 
 		// If user is not signed in then redirect back home
@@ -74,6 +74,17 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		};
 		$scope.upload = function() {
 			alert('upload');
+		};
+
+		$scope.dropbox = function() {
+			//alert('dropxbox' + asdf.accountInfo());
+			//console.log(asdf.accountInfo(), 'adfsdffasdfasd');
+			asdf.metadata('4 - Investors').then(function(data) {
+				console.log(data, 'woah');
+				$scope.acct = data;
+      }, function(error) {
+      	console.log(error, 'error');
+      });
 		};
 	}
 ]);

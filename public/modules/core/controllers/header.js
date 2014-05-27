@@ -7,8 +7,8 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
 
     $scope.menu = [{
       title: 'Home',
-      link: '/',
-      uiRoute: '/'
+      link: 'settings/accounts',
+      uiRoute: '/settings/accounts'
     },{
       title: 'Fund Test Page',
       link: 'fund',
