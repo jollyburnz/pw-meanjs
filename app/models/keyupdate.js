@@ -7,13 +7,13 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 /**
- * Update Schema
+ * Keyupdate Schema
  */
-var UpdateSchema = new Schema({
+var KeyupdateSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Update name',
+		required: 'Please fill Keyupdate name',
 		trim: true
 	},
 	created: {
@@ -26,4 +26,4 @@ var UpdateSchema = new Schema({
 	}
 });
 
-mongoose.model('Update', UpdateSchema);
+mongoose.model('Keyupdate', KeyupdateSchema);
