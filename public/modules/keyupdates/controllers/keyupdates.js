@@ -1,15 +1,21 @@
 'use strict';
 
 // Keyupdates controller
-angular.module('keyupdates').controller('KeyupdatesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Keyupdates',
-    function($scope, $stateParams, $location, Authentication, Keyupdates) {
+angular.module('keyupdates').controller('KeyupdatesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Keyupdates', 'Companies',
+    function($scope, $stateParams, $location, Authentication, Keyupdates, Companies) {
         $scope.authentication = Authentication;
+
+        Companies.query(function(companies) {
+          console.log(companies, 'companies');
+          $scope.companies = companies;
+        });
 
         // Create new Keyupdate
         $scope.create = function() {
         	// Create new Keyupdate object
             var keyupdate = new Keyupdates({
-                name: this.name
+                keyupdate: this.keyupdate,
+                company: this.company
             });
 
             // Redirect after save

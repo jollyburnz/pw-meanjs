@@ -8,8 +8,13 @@
                 <div class="form-group">
                     <label class="control-label" for="name">Name</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="keyupdate.name" id="name" class="form-control" placeholder="Name" required>
+                        <input type="text" data-ng-model="keyupdate.keyupdate" id="name" class="form-control" placeholder="Name" required>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="company">Company</label>
+                    <select class="form-control" data-ng-model="keyupdate.company" data-ng-options="company._id as company.name for company in companies">
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">

@@ -10,16 +10,20 @@ var mongoose = require('mongoose'),
  * Keyupdate Schema
  */
 var KeyupdateSchema = new Schema({
-	name: {
+	keyupdate: {
 		type: String,
 		default: '',
-		required: 'Please fill Keyupdate name',
+		required: 'Please fill Key update name',
 		trim: true
+	},
+	company: {
+		type: Schema.ObjectId
 	},
 	created: {
 		type: Date,
 		default: Date.now
 	},
+	
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
