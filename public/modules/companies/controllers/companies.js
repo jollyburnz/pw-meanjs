@@ -1,8 +1,8 @@
 'use strict';
 
 // Companies controller
-angular.module('companies').controller('CompaniesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Companies', 'Funds',
-    function($scope, $stateParams, $location, Authentication, Companies, Funds) {
+angular.module('companies').controller('CompaniesController', ['$scope', '$stateParams','$filter', '$location', 'Authentication', 'Companies', 'Funds', 'Keyupdates',
+    function($scope, $stateParams, $filter, $location, Authentication, Companies, Funds, Keyupdates) {
         $scope.authentication = Authentication;
 
         Funds.query(function(funds) {
@@ -80,6 +80,13 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                 companyId: $stateParams.companyId
             }, function(company) {
                 $scope.company = company;
+            });
+
+            Keyupdates.query(function(keyupdates) {
+              console.log(keyupdates, 'key updates');
+              //$scope.keyupdates = keyupdates;
+              $scope.keyupdates = $filter('filter')(keyupdates, {company: $stateParams.companyId});
+              console.log($scope.keyupdates);
             });
         };
     }
