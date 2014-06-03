@@ -6,10 +6,10 @@
       <li><a href="#">Profile</a></li>
     </ul>
     <br/>
-        <h1>Overview</h1>
+        <h1>{{user.displayName}}</h1>
     <br/>
   </div>
-  <div class="col-md-3">
+  <div id="LPinfo" class="col-md-3">
     <div class='upload_photo' style='height: 200px; background: #ccc' ng-click="upload()"></div>
 
     <br/>
@@ -17,22 +17,54 @@
     <button type="button" class="btn btn-default btn-lg" ng-click="dropbox()">
       <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
     </button>
-    <h4>Dropbox Path: {{accts.path}}</h4>
-    <div ng-repeat="acct in accts.contents">
+    <h4>Dropbox Path: {{path}}</h4>
+    <h5>files</h5>
+    <div ng-repeat="acct in accts | filter:{'is_dir': 'false'}">
+      <a ng-click="test('{{acct.path}}')">{{acct.path}}</a><br/>
+    </div>
+    <h5>folders</h5>
+    <div ng-repeat="acct in accts | filter:{'is_dir': 'true'}">
       {{acct.path}}<br/>
     </div>
+    <h3>Download Files</h3>
+    <button type="button" class="btn btn-default" ng-click="dropbox()">
+      <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
+    </button>
     <h3>LP Information</h3>
-    {{user.email}}<br/>
-    {{user.username}}<br/>
-    {{user.einss}}<br/>
-    {{user.address1}}<br/>
-    {{user.address2}}<br/>
+    <table>
+      <tr>
+        <td class='title'>Email</td>
+        <td>{{user.email}}</td>
+      </tr>
+      <tr>
+        <td class='title'>EIN/SS</td>
+        <td>{{user.einss}}</td>
+      </tr>
+      <tr>
+        <td class='title'>Address</td>
+        <td>{{user.address1}}<br/>
+            {{user.address2}}
+        </td>
+      </tr>
+    </table>
     <h3>Banking Information</h3>
-    {{user.bank_account_name}}<br/>
-    {{user.bank_account_routing_number}}<br/>
-    {{user.bank_account_number}}<br/>
+    <table>
+      <tr>
+        <td class='title'>Account</td>
+        <td>{{user.bank_account_name}}</td>
+      </tr>
+      <tr>
+        <td class='title'>Routing Number</td>
+        <td>{{user.bank_account_routing_number}}</td>
+      </tr>
+      <tr>
+        <td class='title'>Account Number</td>
+        <td>{{user.bank_account_number}}</td>
+      </tr>
+    </table>
   </div>
   <div class='col-md-offset-1 col-md-8'>
+    <h3>Portfolio Overview</h3>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -69,10 +101,13 @@
         <tr>
       <tbody>
     </table>
+    <h3>Featured Companies</h3>
     <div class='chart'>
+      {{accts}}
       <div style='height: 400px; background: #ccc'>
       <span class='text-center' style='display: block; padding-top: 200px'>CHART</span>
       </div>
     </div>
+    <h3>Articles</h3>
   </div>
 </section>

@@ -85,10 +85,27 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 			var path = "4 - Investors/"+firstname+" "+lastname;
 			asdf.metadata(path).then(function(data) {
 				console.log(data, 'woah');
-				$scope.accts = data;
+				$scope.path = data.path;
+				$scope.accts = data.contents;
       }, function(error) {
       	console.log(error, 'error');
       });
+		};
+
+		$scope.test = function(a) {
+			console.log(a.toString(), 'test');
+			// asdf.readFile('a', {root:'dropbox'}).then(function(data){
+			// 	console.log('yes');
+			// }, function(error){
+			// 	console.log(error, 'error');
+			// });
+			// asdf.readFile(a, function(err, data){
+			// 	if (err) {
+			// 		console.log(err);
+			// 	} else {
+			// 		return true;
+			// 	}
+			// });
 		};
 	}
 ]);

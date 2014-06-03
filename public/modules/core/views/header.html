@@ -12,9 +12,36 @@
 	<nav class='pull-right'>
 
 		<ul data-ng-show="authentication.user">
-			<li data-ng-repeat="item in menu" data-ng-show="authentication.user" ui-route="{{item.uiRoute}}" ng-class="{active: $uiRoute}">
+			<!-- <li data-ng-repeat="item in menu" data-ng-show="authentication.user" ui-route="{{item.uiRoute}}" ng-class="{active: $uiRoute}">
 				<a href="/#!/{{item.link}}">{{item.title}}</a>
+			</li> -->
+			<li>
+				<a href="/#!/">Home </a>
 			</li>
+			<li>
+				<a href="/#!/fund">Funds Overview</a>
+			</li>
+			<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Funds <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#!/funds">List Funds</a></li>
+          <li><a href="#!/funds/create">New Fund</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Companies <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#!/companies">List Companies</a></li>
+          <li><a href="#!/companies/create">New Company</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Articles <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#!/articles">List Articles</a></li>
+          <li><a href="#!/articles/create">New Article</a></li>
+        </ul>
+      </li>
 		</ul>
 
 		<ul data-ng-hide="authentication.user">
