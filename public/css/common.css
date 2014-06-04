@@ -86,6 +86,15 @@ nav ul.dropdown-menu li a{
   color: green !important;
 }
 
+#exampleDropPane{
+    text-align: center;
+    padding: 40px;
+    background-color: #F6F6F6;
+    border: 1px dashed #666;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
 footer {
   position: absolute;
   bottom: 0;

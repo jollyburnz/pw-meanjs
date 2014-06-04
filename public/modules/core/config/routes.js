@@ -13,6 +13,7 @@ angular.module('core', ['dropbox']).config(['$stateProvider', '$urlRouterProvide
 		$stateProvider.
 		state('home', {
 			url: '/',
+			//templateUrl: 'modules/users/views/settings/overview.html'
 			templateUrl: 'modules/core/views/home.html'
 		});
 	}

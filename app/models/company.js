@@ -16,6 +16,9 @@ var CompanySchema = new Schema({
 		required: 'Please fill Company name',
 		trim: true
 	},
+	image:{
+		type: String,
+	},
 	initial_investment: {
 		type: Number,
 	},

@@ -15,6 +15,7 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
         	// Create new Company object
             var company = new Companies({
                 name: this.name,
+                image: this.url,
                 initial_investment: this.initial_investment,
                 fund_ownership: this.fund_ownership,
                 ev: this.ev,
