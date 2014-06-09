@@ -1,27 +1,69 @@
 <section data-ng-controller="CompaniesController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h1>{{company.name}}</h1>
-	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == company.user._id">
-		<a class="btn btn-primary" href="/#!/companies/{{company._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
+<!--   <div class="page-header">
+    <h1>{{company.name}}</h1>
+    <img src="{{company.image}}" />
+  </div>
+  <div class="pull-right" data-ng-show="authentication.user._id == company.user._id">
+    <a class="btn btn-primary" href="/#!/companies/{{company._id}}/edit">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" data-ng-click="remove();">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">Posted on {{company.created | date:'mediumDate'}} by {{company.user.displayName}}</em>
+  </small>
 
-	<small>
-		<em class="text-muted">Posted on {{company.created | date:'mediumDate'}} by {{company.user.displayName}}</em>
-	</small>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h3>Key Updates</h3>
+        <ul>
+          <li ng-repeat="k in keyupdates">{{k.keyupdate}}</li>
+        </ul>
+    </div>
+  </div> -->
+  <br/>
+  <div class='col-md-3'>
+    <div class='row'>
+      <h1>{{company.name}}</h1>
+      <div class="pull-left" data-ng-show="authentication.user._id == company.user._id">
+        <a class="btn btn-primary" href="/#!/companies/{{company._id}}/edit">
+          <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" data-ng-click="remove();">
+          <i class="glyphicon glyphicon-trash"></i>
+        </a>
+      </div>
+    </div>
+    <img src="{{company.image}}" />
+    <!-- <p>{{company}}</p> -->
+  </div>
 
-	<div class='row'>
- 		<div class='col-md-12'>
- 			<h3>Key Updates</h3>
- 			 	<ul>
-		    	<li ng-repeat="k in keyupdates">{{k.keyupdate}}</li>
-    		</ul>
-		</div>
-	</div>
+  <div class='col-md-offset-1 col-md-8'>
+    <h3>Current Valuation</h3>
+    <table class="table">
+      <tr>
+        <th>Initial Investment</th>
+        <th>Fund Ownership</th>
+        <th>EV</th>
+        <th>IRR</th>
+        <th>Multiple</th>
+      </tr>
+      <tr>
+        <td>{{company.initial_investment}}</td>
+        <td>{{company.fund_ownership}}</td>
+        <td>{{company.ev}}</td>
+        <td>{{company.irr}}</td>
+        <td>{{company.multiple}}</td>
+      </tr>
+    </table>
+    <h3>Company Description</h3>
+      {{company.description}}
+    <h3>Key Updates</h3>
+    <ul>
+      <li ng-repeat="k in keyupdates">{{k.keyupdate}}</li>
+    </ul>
+  </div>
 
 </section>

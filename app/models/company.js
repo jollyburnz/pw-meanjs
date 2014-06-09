@@ -17,7 +17,10 @@ var CompanySchema = new Schema({
 		trim: true
 	},
 	image:{
-		type: String,
+		type: String
+	},
+	description:{
+		type: String
 	},
 	initial_investment: {
 		type: Number,
