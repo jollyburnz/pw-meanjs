@@ -23,6 +23,7 @@ angular.module('articles').directive('dropDown', function(){
               $("#exampleDropPane").text("Done, see result below");
               console.log(InkBlobs[0].url);
               scope.url = InkBlobs[0].url;
+              scope.article.image = InkBlobs[0].url; //this scope is for article.image
               $('#exampleDropPane').html("<img src='" +scope.url+ "' />");
               //$("#localDropResult").text(JSON.stringify(InkBlobs));
           },

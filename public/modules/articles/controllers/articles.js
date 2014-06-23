@@ -72,5 +72,14 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 $scope.article = article;
             });
         };
+
+        $scope.updateImage = function(){
+            console.log('update image');
+            filepicker.pick(function(InkBlob){
+                console.log(InkBlob.url);
+                $scope.article.image = InkBlob.url;
+                $('#ArticleImage').html("<img src='" + $scope.article.image+ "' />");
+            });
+        }
     }
 ]);
