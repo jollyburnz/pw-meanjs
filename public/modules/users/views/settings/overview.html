@@ -14,18 +14,22 @@
 
     <br/>
 
+    <!--
     <button type="button" class="btn btn-default btn-lg" ng-click="dropbox()">
       <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
     </button>
+
     <h4>Dropbox Path: {{path}}</h4>
     <h5>files</h5>
     <div ng-repeat="acct in accts | filter:{'is_dir': 'false'}">
       <a ng-click="test('{{acct.path}}')">{{acct.path}}</a><br/>
     </div>
+
     <h5>folders</h5>
     <div ng-repeat="acct in accts | filter:{'is_dir': 'true'}">
       {{acct.path}}<br/>
     </div>
+    -->
     <h3>Download Files</h3>
     <button type="button" class="btn btn-default" ng-click="dropbox()">
       <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox

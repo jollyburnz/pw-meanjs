@@ -77,19 +77,30 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		};
 
 		$scope.dropbox = function() {
-			//alert('dropxbox' + asdf.accountInfo());
-			//console.log(asdf.accountInfo(), 'adfsdffasdfasd');
 			var firstname = Authentication.user.firstName;
 			var lastname = Authentication.user.lastName;
 			console.log(firstname, lastname, 'name');
+
+			// Hit PW API for User's files
+			$http.get('/files/gobook.pdf').success(function(response) {
+				// If successful download resulting file
+				console.log('Got response from Server sending files');
+
+			}).error(function(response) {
+				console.log('Error requesting files from server');
+			});
+
+			/*
+			
 			var path = "4 - Investors/"+firstname+" "+lastname;
 			asdf.metadata(path).then(function(data) {
 				console.log(data, 'woah');
 				$scope.path = data.path;
 				$scope.accts = data.contents;
-      }, function(error) {
-      	console.log(error, 'error');
-      });
+     		}, function(error) {
+      			console.log(error, 'error');
+      		});
+			*/
 		};
 
 		$scope.test = function(a) {

@@ -13,6 +13,14 @@ module.exports = function(app) {
 	app.post('/users/password', users.changePassword);
 	app.del('/users/accounts', users.removeOAuthProvider);
 
+	// Dropbox download
+	app.get('/files/gobook.pdf', users.getFiles);
+
+	// Generic input for finding correct folder
+	// /files/first/:first/last/:last/file/:filename
+	//app.post('')
+
+
 	// Setting up the users api
 	app.post('/auth/signup', users.signup);
 	app.post('/auth/signin', users.signin);

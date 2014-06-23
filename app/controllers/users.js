@@ -195,6 +195,17 @@ exports.me = function(req, res) {
 };
 
 /**
+ * Download Files
+ */ 
+exports.getFiles = function(req, res) {
+	console.log("\nClient requesting files\n");
+	var files = {
+		"annualreport": "woot"
+	}
+	return res.download(process.cwd() + '/public/files/gobook.pdf');
+};
+
+/**
  * OAuth callback
  */
 exports.oauthCallback = function(strategy) {
