@@ -64,6 +64,14 @@
     <ul>
       <li ng-repeat="k in keyupdates">{{k.keyupdate}}</li>
     </ul>
+
+    <h3>Articles</h3>
+    <div class='row' ng-repeat="row in rows">
+        <div class='col-sm-4' ng-repeat="articles in row">
+            <h4><a href='{{articles.link}}' target="_blank">{{articles.content}}</a></h4>
+        </div>
+        <hr/>
+    </div>
   </div>
 
 </section>

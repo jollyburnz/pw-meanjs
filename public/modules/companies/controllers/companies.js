@@ -1,8 +1,8 @@
 'use strict';
 
 // Companies controller
-angular.module('companies').controller('CompaniesController', ['$scope', '$stateParams','$filter', '$location', 'Authentication', 'Companies', 'Funds', 'Keyupdates',
-    function($scope, $stateParams, $filter, $location, Authentication, Companies, Funds, Keyupdates) {
+angular.module('companies').controller('CompaniesController', ['$scope', '$stateParams','$filter', '$location', 'Authentication', 'Companies', 'Funds', 'Keyupdates', 'Articles',
+    function($scope, $stateParams, $filter, $location, Authentication, Companies, Funds, Keyupdates, Articles) {
         $scope.authentication = Authentication;
 
         Funds.query(function(funds) {
@@ -86,10 +86,36 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
 
             Keyupdates.query(function(keyupdates) {
               console.log(keyupdates, 'key updates');
-              //$scope.keyupdates = keyupdates;
               $scope.keyupdates = $filter('filter')(keyupdates, {company: $stateParams.companyId});
               console.log($scope.keyupdates);
             });
+
+            Articles.query(function(articles){
+                //chunking up the articles in a 3 col bootstrap grid
+                var chunk;
+
+                chunk = function(a, s) {
+                  var i, _i, _ref, _results;
+                  if (a.length === 0) {
+                    return [];
+                  } else {
+                    _results = [];
+                    for (i = _i = 0, _ref = a.length - 1; s > 0 ? _i <= _ref : _i >= _ref; i = _i += s) {
+                      _results.push(a.slice(i, +(i + s - 1) + 1 || 9e9));
+                    }
+                    return _results;
+                  }
+                };
+
+                $scope.articles = $filter('filter')(articles, {for_company: $stateParams.companyId});
+
+                $scope.$watch('articles', function(){
+                    $scope.rows = chunk($scope.articles, 3)
+                    console.log($scope.rows, 'rows')
+                });
+            });
+
+
         };
     }
 ]);
