@@ -5,9 +5,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     function($scope, $stateParams, $location, Authentication, Articles, Companies) {
         $scope.authentication = Authentication;
 
-        // filepicker stuff
-        filepicker.setKey('ATWlfXaYGS8ajlqQTTcQ3z');
-
         Companies.query(function(companies) {
           console.log(companies, 'companies');
           $scope.companies = companies;

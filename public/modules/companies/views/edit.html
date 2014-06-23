@@ -14,10 +14,19 @@
                 <div class="form-group">
                     <label class="control-label" for="image">Image</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="company.image" id="image" class="form-control" placeholder="Image">
+                        <div class='whatever' ng-if='company.image'>
+                            <div id="CompanyImage">
+                                <img src='{{company.image}}' ng-click='updateImage()' />
+                            </div>
+                        </div>
+                        <!-- <input type="text" data-ng-model="company.image" id="image" class="form-control" placeholder="Image"><img src='{{company.image}}' /><br/> -->
+                        <div class='whatever2' ng-if="!company.image">
+                            <div id="exampleDropPane" drop-down>Drop Lead Image Here</div>
+                        </div>
                     </div>
                 </div>
                 <div class='form-group'>
+                    <label class="control-label" for="name">Description</label>
                     <textarea class="form-control" rows="6" data-ng-model="company.description">
                     </textarea>
                 </div>

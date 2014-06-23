@@ -17,4 +17,7 @@ angular.element(document).ready(function() {
 
 	//Then init the app
 	angular.bootstrap(document, [ApplicationConfiguration.applicationModuleName]);
+
+  // filepicker stuff
+  filepicker.setKey('ATWlfXaYGS8ajlqQTTcQ3z');
 });

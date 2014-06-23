@@ -63,6 +63,7 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
         // Update existing Company
         $scope.update = function() {
             var company = $scope.company;
+            console.log(company, 'company');
 
             company.$update(function() {
                 $location.path('companies/' + company._id);
@@ -114,8 +115,15 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                     console.log($scope.rows, 'rows')
                 });
             });
-
-
         };
+
+        $scope.updateImage = function(){
+            console.log('update image');
+            filepicker.pick(function(InkBlob){
+                console.log(InkBlob.url);
+                $scope.company.image = InkBlob.url;
+                $('#CompanyImage').html("<img src='" + $scope.company.image+ "' />");
+            });
+        }
     }
 ]);

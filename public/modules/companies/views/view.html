@@ -27,6 +27,8 @@
   <div class='col-md-3'>
     <div class='row'>
       <h1>{{company.name}}</h1>
+      <img class="img-responsive" src="{{company.image}}" />
+      <hr/>
       <div class="pull-left" data-ng-show="authentication.user._id == company.user._id">
         <a class="btn btn-primary" href="/#!/companies/{{company._id}}/edit">
           <i class="glyphicon glyphicon-edit"></i>
@@ -36,7 +38,6 @@
         </a>
       </div>
     </div>
-    <img src="{{company.image}}" />
     <!-- <p>{{company}}</p> -->
   </div>
 
@@ -63,6 +64,13 @@
     <h3>Key Updates</h3>
     <ul>
       <li ng-repeat="k in keyupdates">{{k.keyupdate}}</li>
+    </ul>
+
+    <h3>Disbursement</h3>
+    <ul>
+      <li>Blah blah blah</li>
+      <li>Blah blah blah</li>
+      <li>Blah blah blah</li>
     </ul>
 
     <h3>Articles</h3>
