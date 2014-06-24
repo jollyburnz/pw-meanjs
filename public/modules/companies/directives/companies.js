@@ -42,12 +42,26 @@ angular.module('companies')
 ])
 .directive('myBackgroundImage', function () {
     return function (scope, element, attrs) {
-    		console.log(scope);
-    		setTimeout( function(){
-	        element.css({
-	            'background-image': 'url(' + attrs.myBackgroundImage + ')'
-	        });
-	      }, 1000);
+    		console.log(scope, attrs.myBackgroundImage, 'directive');
+
+    		attrs.$observe('myBackgroundImage', function(value) {
+    			if (value){
+			      element.css({
+		            'background-image': 'url(' + value + ')'
+		        });
+			   	} else {
+			   		console.log('no value');
+			   		element.css({
+		            'background-image': 'url(img/no_image.png)'
+		        });
+			   	}
+		    });
+
+    		// setTimeout( function(){
+	     //    element.css({
+	     //        'background-image': 'url(' + attrs.myBackgroundImage + ')'
+	     //    });
+	     //  }, 1000);
     };
 });
 
