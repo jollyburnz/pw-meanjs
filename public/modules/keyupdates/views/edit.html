@@ -12,6 +12,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="name">Source</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="keyupdate.source" id="name" class="form-control" placeholder="Enter source" required>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="control-label" for="company">Company</label>
                     <select class="form-control" data-ng-model="keyupdate.company" data-ng-options="company._id as company.name for company in companies">
                     </select>

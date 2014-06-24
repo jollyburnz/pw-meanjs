@@ -15,6 +15,7 @@ angular.module('keyupdates').controller('KeyupdatesController', ['$scope', '$sta
         	// Create new Keyupdate object
             var keyupdate = new Keyupdates({
                 keyupdate: this.keyupdate,
+                source: this.source,
                 company: this.company
             });
 
