@@ -24,21 +24,29 @@
     </div>
   </div> -->
   <br/>
+
+  <div class='row'>
+    <div class="pull-right" data-ng-show="authentication.user.username == 'jamesryan'">
+      <a class="btn btn-primary" href="/#!/companies/{{company._id}}/edit">
+        <i class="glyphicon glyphicon-edit"></i>
+      </a>
+      <a class="btn btn-primary" data-ng-click="remove();">
+        <i class="glyphicon glyphicon-trash"></i>
+      </a>
+    </div>
+  </div>
+
   <div class='col-md-3'>
-    <div class='row'>
-      <h1>{{company.name}}</h1>
+    <!-- <div class='row'>
       <img class="img-responsive" src="{{company.image}}" />
       <hr/>
-      <div class="pull-left" data-ng-show="authentication.user._id == company.user._id">
-        <a class="btn btn-primary" href="/#!/companies/{{company._id}}/edit">
-          <i class="glyphicon glyphicon-edit"></i>
-        </a>
-        <a class="btn btn-primary" data-ng-click="remove();">
-          <i class="glyphicon glyphicon-trash"></i>
-        </a>
-      </div>
-    </div>
+    </div> -->
     <!-- <p>{{company}}</p> -->
+    <h1>{{company.name}}</h1>
+    <div class="hexagon" my-background-image="{{company.image}}">
+      <div class="hexTop"></div>
+      <div class="hexBottom"></div>
+    </div>
   </div>
 
   <div class='col-md-offset-1 col-md-8'>

@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('companies').directive('dropDown', [
+angular.module('companies')
+
+.directive('dropDown', [
 	function() {
 		return {
 			scope: false,
@@ -37,5 +39,15 @@ angular.module('companies').directive('dropDown', [
 	    }
 		};
 	}
-]);
+])
+.directive('myBackgroundImage', function () {
+    return function (scope, element, attrs) {
+    		console.log(scope);
+    		setTimeout( function(){
+	        element.css({
+	            'background-image': 'url(' + attrs.myBackgroundImage + ')'
+	        });
+	      }, 1000);
+    };
+});
 
