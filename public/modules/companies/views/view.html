@@ -84,10 +84,12 @@
       <li>Blah blah blah</li>
     </ul>
 
-    <h3>Articles</h3>
+    <h3 imagefill>Articles</h3>
     <div class='row' ng-repeat="row in rows">
         <div class='col-sm-4' ng-repeat="articles in row">
-            <img class="img-responsive" src='{{articles.image}}' /><br/>
+            <div class='article-photo'>
+              <img src='{{articles.image}}' /><br/>
+            </div>
             <h4><a href='{{articles.link}}' target="_blank">{{articles.content}}</a></h4>
         </div>
         <hr/>

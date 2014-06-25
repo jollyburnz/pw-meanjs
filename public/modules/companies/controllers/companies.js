@@ -124,6 +124,11 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                 $scope.company.image = InkBlob.url;
                 $('#CompanyImage').html("<img src='" + $scope.company.image+ "' />");
             });
-        }
+        };
+
+        // $scope.imagefill = function(){
+        //     console.log('imagefill');
+        //     $('.article-photo').imagefill();
+        // };
     }
 ]);

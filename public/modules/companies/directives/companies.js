@@ -56,12 +56,17 @@ angular.module('companies')
 		        });
 			   	}
 		    });
-
-    		// setTimeout( function(){
-	     //    element.css({
-	     //        'background-image': 'url(' + attrs.myBackgroundImage + ')'
-	     //    });
-	     //  }, 1000);
     };
+})
+.directive('imagefill', function(){
+	return {
+		restrict: 'A',
+		link: function($scope, $elem, attrs){
+			$(window).load(function() {
+				$('.article-photo').imagefill();
+				$('.article-photo').fadeIn();
+			});
+		}
+	};
 });
 

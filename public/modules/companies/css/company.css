@@ -1,3 +1,5 @@
+/* hexagon image */
+
 .hexagon {
   position: relative;
   width: 300px; 
@@ -62,4 +64,11 @@
   height: 173.2051px;
   z-index: 2;
   background: inherit;
+}
+
+/* article */
+.article-photo{
+  display: none;
+  height: 150px;
+  width: 100%;
 }
