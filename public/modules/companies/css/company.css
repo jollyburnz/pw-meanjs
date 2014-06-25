@@ -66,6 +66,19 @@
   background: inherit;
 }
 
+/* key updates */
+ul.keyupdates{
+  margin: 0;
+  padding: 0;
+}
+
+ul.keyupdates li{
+  list-style: none;
+  background: #d3e0d9;
+  padding: 10px;
+  margin: 0 0 8px;
+}
+
 /* article */
 .article-photo{
   display: none;
