@@ -58,15 +58,26 @@ angular.module('companies')
 		    });
     };
 })
-.directive('imagefill', function(){
+.directive('imagefill', ['$timeout', function(timer){
 	return {
 		restrict: 'A',
 		link: function($scope, $elem, attrs){
-			$(window).load(function() {
+
+			var hello = function(){
 				$('.article-photo').imagefill();
 				$('.article-photo').fadeIn();
-			});
+			}
+
+			// $(window).load(function() {
+			// 	hello();
+			// });
+			timer(hello, 1000);
+
+			//setTimeout(hello(), 3000);
+			//console.log($elem, 'asdfasdfa');
+			//$elem.imagefill();
+			//$elem.fadeIn();
 		}
 	};
-});
+}]);
 
