@@ -1,15 +1,22 @@
 'use strict';
 
 // Investments controller
-angular.module('investments').controller('InvestmentsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Investments',
-    function($scope, $stateParams, $location, Authentication, Investments) {
+angular.module('investments').controller('InvestmentsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Investments', 'Companies',
+    function($scope, $stateParams, $location, Authentication, Investments, Companies) {
         $scope.authentication = Authentication;
+
+        Companies.query(function(companies) {
+          console.log(companies, 'companies');
+          $scope.companies = companies;
+        });
 
         // Create new Investment
         $scope.create = function() {
         	// Create new Investment object
             var investment = new Investments({
-                name: this.name
+                name: this.name,
+                amount: this.amount,
+                for_company: this.for_company
             });
 
             // Redirect after save

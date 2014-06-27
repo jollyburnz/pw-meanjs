@@ -16,6 +16,12 @@ var InvestmentSchema = new Schema({
 		required: 'Please fill Investment name',
 		trim: true
 	},
+	amount: {
+		type: Number,
+	},
+	for_company: {
+		type: Schema.ObjectId
+	},
 	created: {
 		type: Date,
 		default: Date.now
