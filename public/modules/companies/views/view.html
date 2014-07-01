@@ -79,13 +79,13 @@
     </ul>
 
     <br/>
-    <h3>Disbursement</h3>
+    <h3>Investment Amount</h3>
     <span class='pull-right' style='padding-right: 20px'><b>Wire Date</b></span>
     <br/><br/>
     <ul class='investments'>
       <li ng-repeat="i in invest">{{i.amount | currency:"$"}} <span class='pull-right'>{{i.created | date : short}}</li>
     </ul>
-
+    <br/><br/>
     <h3 imagefill>Articles</h3>
     <div class='row' ng-repeat="row in rows">
         <div class='col-sm-4' ng-repeat="articles in row">

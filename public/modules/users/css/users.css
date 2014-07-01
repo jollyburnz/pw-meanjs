@@ -18,3 +18,30 @@
 #LPinfo .title{
   padding-right: 15px;
 }
+
+.metrics{
+  width: 32%;
+  margin-right: 1%;
+  margin-bottom: 40px;
+  background: #89b298;
+  padding: 10px;
+  float: left;
+  height: 175px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#portfolio-overview tr{
+  border-bottom: 3px solid #f5f5f5;
+  border-bottom: 3px solid #f5f5f5;
+}
+
+#portfolio-overview tr.total td{
+  background: #89b298;
+  color: #fff;
+}
+
+#portfolio-overview td{
+  background: #d3e0d9;
+  padding: 10px;
+}

@@ -5,12 +5,12 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		$scope.user = Authentication.user;
 
 		// Dropbox Authentication
-		window.asdf = Dropbox;
+		//window.asdf = Dropbox;
 
-		if (!(asdf.isAuthenticated())){
-			asdf.authenticate();
+		// if (!(asdf.isAuthenticated())){
+		// 	asdf.authenticate();
 			//console.log(asdf.isAuthenticated());
-		}
+		//}
 
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
