@@ -67,12 +67,12 @@
 }
 
 /* key updates */
-ul.keyupdates{
+ul.keyupdates, ul.investments{
   margin: 0;
   padding: 0;
 }
 
-ul.keyupdates li{
+ul.keyupdates li, ul.investments li{
   list-style: none;
   background: #d3e0d9;
   padding: 10px;
