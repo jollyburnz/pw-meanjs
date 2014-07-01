@@ -103,6 +103,51 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 			*/
 		};
 
+		$scope.toggleFund1 = function(obj) {
+			console.log(obj, $(obj.target), 'obj');
+			if ($scope.custom == false){
+				console.log('false');
+				$(obj.target).removeClass('glyphicon-plus')
+				$(obj.target).addClass('glyphicon-minus')
+			} else {
+				console.log('true');
+				$(obj.target).removeClass('glyphicon-minus')
+				$(obj.target).addClass('glyphicon-plus')
+			}
+
+      $scope.custom = $scope.custom === false ? true: false;
+    };
+
+		$scope.toggleFund1a = function(obj) {
+			console.log(obj, $(obj.target), 'obj');
+			if ($scope.custom == false){
+				console.log('false');
+				$(obj.target).removeClass('glyphicon-plus')
+				$(obj.target).addClass('glyphicon-minus')
+			} else {
+				console.log('true');
+				$(obj.target).removeClass('glyphicon-minus')
+				$(obj.target).addClass('glyphicon-plus')
+			}
+
+      $scope.custom = $scope.custom === false ? true: false;
+    };
+
+		$scope.toggleFund2 = function(obj) {
+			console.log(obj, $(obj.target), 'obj');
+			if ($scope.custom == false){
+				console.log('false');
+				$(obj.target).removeClass('glyphicon-plus')
+				$(obj.target).addClass('glyphicon-minus')
+			} else {
+				console.log('true');
+				$(obj.target).removeClass('glyphicon-minus')
+				$(obj.target).addClass('glyphicon-plus')
+			}
+
+      $scope.custom = $scope.custom === false ? true: false;
+    };
+
 		$scope.test = function(a) {
 			console.log(a.toString(), 'test');
 			// asdf.readFile('a', {root:'dropbox'}).then(function(data){

@@ -23,6 +23,19 @@ h2{
   color: #156333;
 }
 
+.current h5{
+  padding: 0;
+  margin: 7px 0 0;
+}
+
+.currentvalue{
+  font-size: 1.8em;
+  color: #156333;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
+
 .fund-control{
   display: block;
   width: 100%;
@@ -119,7 +132,7 @@ select:hover { background-color: #fff; }
 
 .capsule-info{
   position: relative;
-  top: 68px;
+  top: 84px;
 }
 
 .title{
@@ -132,6 +145,7 @@ select:hover { background-color: #fff; }
   display: block;
   font-weight: 200;
   color: #ccc;
+  padding-bottom: 7px;
 }
 
 .projected_exit h2, .projected_exit th, .projected_exit td{
