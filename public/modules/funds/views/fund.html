@@ -1,12 +1,17 @@
 <section data-ng-controller="FundController">
-    <div class='row'>
+    <!-- <div class='row'>
       <br/>
       <ul class="nav nav-tabs">
-        <!-- <li class="active"><a href="#"><h4>Fund I</h4></a></li>
-        <li><a href="#"><h4>Fund IA</h4></a></li>
-        <li><a href="#"><h4>Fund II</h4></a></li> -->
-        <li data-ng-repeat="fund in funds | orderBy: 'created'" ng-init="test(first)" ng-class="{active: isActive(fund)}" ><a ng-click="test(fund)"><h4>{{fund.name}}</h4></a></li>
+        <li data-ng-repeat="fund in funds | orderBy: 'created'" ng-init="test(first)" ng-class="{active: isActive(fund)}" ><a ng-click="tab(fund)"><h4>{{fund.name}}</h4></a></li>
       </ul>
+      <br/>
+    </div> -->
+    <div class='row'>
+      <br/><br/><br/>
+      <div class='col-xs-4 col-xs-offset-4'>
+        <select class="form-control" data-ng-model="fund_is" data-ng-options="fund as fund.name for fund in funds" ng-change="dropdowntest()"></select>
+      </div>
+      <br/><br/><br/><br/>
     </div>
     <div class='row'>
       <div class='col-xs-3'>
