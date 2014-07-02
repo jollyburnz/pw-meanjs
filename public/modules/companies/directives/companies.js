@@ -67,7 +67,7 @@ angular.module('companies')
 				$('.article-photo').imagefill();
 				$('.article-photo').fadeIn();
 			}
-			timer(hello, 1500);
+			timer(hello, 2000);
 
 		}
 	};
