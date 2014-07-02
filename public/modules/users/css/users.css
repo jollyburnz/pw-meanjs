@@ -31,6 +31,14 @@
   color: #ffffff;
 }
 
+.expand{
+  color: #89b298;
+}
+
+.expand:hover{
+  color: #fff;
+}
+
 tr.sub td{
   background: #e4ebe7 !important;
 }

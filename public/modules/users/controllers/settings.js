@@ -105,7 +105,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 
 		$scope.toggleFund1 = function(obj) {
 			console.log(obj, $(obj.target), 'obj');
-			if ($scope.custom == false){
+			if ($scope.custom1 == false){
 				console.log('false');
 				$(obj.target).removeClass('glyphicon-plus')
 				$(obj.target).addClass('glyphicon-minus')
@@ -115,12 +115,12 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				$(obj.target).addClass('glyphicon-plus')
 			}
 
-      $scope.custom = $scope.custom === false ? true: false;
+      $scope.custom1 = $scope.custom1 === false ? true: false;
     };
 
 		$scope.toggleFund1a = function(obj) {
 			console.log(obj, $(obj.target), 'obj');
-			if ($scope.custom == false){
+			if ($scope.custom1a == false){
 				console.log('false');
 				$(obj.target).removeClass('glyphicon-plus')
 				$(obj.target).addClass('glyphicon-minus')
@@ -130,12 +130,12 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				$(obj.target).addClass('glyphicon-plus')
 			}
 
-      $scope.custom = $scope.custom === false ? true: false;
+      $scope.custom1a = $scope.custom1a === false ? true: false;
     };
 
 		$scope.toggleFund2 = function(obj) {
 			console.log(obj, $(obj.target), 'obj');
-			if ($scope.custom == false){
+			if ($scope.custom2 == false){
 				console.log('false');
 				$(obj.target).removeClass('glyphicon-plus')
 				$(obj.target).addClass('glyphicon-minus')
@@ -145,7 +145,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 				$(obj.target).addClass('glyphicon-plus')
 			}
 
-      $scope.custom = $scope.custom === false ? true: false;
+      $scope.custom2 = $scope.custom2 === false ? true: false;
     };
 
 		$scope.test = function(a) {
