@@ -92,6 +92,15 @@ var UserSchema = new Schema({
 	},
 	bank_account_number:{
 		type: Number
+	},
+	k1:{
+		type: Number
+	},
+	distributions:{
+		type: Number
+	},
+	interest:{
+		type: Number
 	}
 });
 
