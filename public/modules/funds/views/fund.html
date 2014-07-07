@@ -102,7 +102,7 @@
                   <td>{{c.fund_ownership | currency}}</td>
                   <td>{{c.ev | currency}}</td>
                   <td>{{c.irr}}</td>
-                  <td>{{c.multiple}}</td>
+                  <td>{{c.multiple}}x</td>
                 </tr>
                 <!-- <tr>
                   <td>Bespoke Post</td>
@@ -198,19 +198,19 @@
                 <tr ng-show="getProjection() === 'downside'" ng-repeat="c in filtered">
                   <td>{{c.d_cash | currency}}</td>
                   <td>{{c.d_ev | currency}}</td>
-                  <td>{{c.d_multiple}}</td>
+                  <td>{{c.d_multiple}}x</td>
                 </tr>
 
                 <tr ng-show="getProjection() === 'baseline'" ng-repeat="c in filtered">
                   <td>{{c.b_cash | currency}}</td>
                   <td>{{c.b_ev | currency}}</td>
-                  <td>{{c.b_multiple}}</td>
+                  <td>{{c.b_multiple}}x</td>
                 </tr>
 
                 <tr ng-show="getProjection() === 'upside'" ng-repeat="c in filtered">
                   <td>{{c.u_cash | currency}}</td>
                   <td>{{c.u_ev | currency}}</td>
-                  <td>{{c.u_multiple}}</td>
+                  <td>{{c.u_multiple}}x</td>
                 </tr>
                 <!-- <tr>
                   <td>8,910,111</td>

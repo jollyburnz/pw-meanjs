@@ -2,7 +2,8 @@
 	<div class="page-header">
 		<h1>{{article.link}}</h1>
 	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == article.user._id">
+	<!-- data-ng-show="authentication.user._id == article.user._id" -->
+	<div class="pull-right">
 		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>
