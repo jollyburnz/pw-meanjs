@@ -1,15 +1,28 @@
 'use strict';
 
 // Wires controller
-angular.module('wires').controller('WiresController', ['$scope', '$stateParams', '$location', 'Authentication', 'Wires',
-    function($scope, $stateParams, $location, Authentication, Wires) {
+angular.module('wires').controller('WiresController', ['$scope', '$stateParams', '$location', 'Authentication', 'Wires', 'Funds', 'Users',
+    function($scope, $stateParams, $location, Authentication, Wires, Funds, Users) {
         $scope.authentication = Authentication;
+
+        Users.query(function(users) {
+          console.log(users, 'users');
+          $scope.users = users;
+        });
+
+        Funds.query(function(funds){
+            console.log(funds, 'funds');
+            $scope.funds = funds;
+        });
 
         // Create new Wire
         $scope.create = function() {
         	// Create new Wire object
             var wire = new Wires({
-                name: this.name
+                fund: this.fund,
+                lp: this.lp,
+                date: this.date,
+                amount: this.amount
             });
 
             // Redirect after save
@@ -18,7 +31,10 @@ angular.module('wires').controller('WiresController', ['$scope', '$stateParams',
             });
 
             // Clear form fields
-            this.name = '';
+            this.fund = '';
+            this.lp = '';
+            this.date = '';
+            this.amount = '';
         };
 
         // Remove existing Wire

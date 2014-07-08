@@ -10,19 +10,18 @@ var mongoose = require('mongoose'),
  * Wire Schema
  */
 var WireSchema = new Schema({
-	name: {
-		type: String,
-		default: '',
-		required: 'Please fill Wire name',
-		trim: true
+	fund: {
+		type: Schema.ObjectId
 	},
-	created: {
+	lp: {
+		type: Schema.ObjectId
+	},
+	date: {
 		type: Date,
 		default: Date.now
 	},
-	user: {
-		type: Schema.ObjectId,
-		ref: 'User'
+	amount: {
+		type: Number
 	}
 });
 

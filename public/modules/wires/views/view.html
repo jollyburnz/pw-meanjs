@@ -1,8 +1,8 @@
 <section data-ng-controller="WiresController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1>{{wire.name}}</h1>
+		<h1>{{wire.amount}}</h1>
 	</div>
-	<div class="pull-right" data-ng-show="authentication.user._id == wire.user._id">
+	<div class="pull-right">
 		<a class="btn btn-primary" href="/#!/wires/{{wire._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>
@@ -10,7 +10,4 @@
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
 	</div>
-	<small>
-		<em class="text-muted">Posted on {{wire.created | date:'mediumDate'}} by {{wire.user.displayName}}</em>
-	</small>
 </section>
