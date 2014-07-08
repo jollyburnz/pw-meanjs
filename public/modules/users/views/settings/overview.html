@@ -105,13 +105,10 @@
       </thead>
       <tbody>
         <tr>
-          <td>FUND I</td>
+          <td><a ng-click="gotoFund('Fund I')">FUND I</a></td>
           <td>$2,234,234</td>
           <td>34%</td>
           <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1($event)"></span></td>
-<!--     {{wiresFromFund1}}<br/>
-    {{wiresFromFund1a}}<br/>
-    {{wiresFromFund2}}<br/> -->
 
         <tr ng-repeat="wire in wiresFromFund1" class='sub' ng-show="custom1">
             <td>{{wire.date | date : longDate}}</td>
@@ -121,7 +118,7 @@
         </tr>
 
         <tr>
-          <td>FUND IA</td>
+          <td><a ng-click="gotoFund('Fund IA')">FUND Ia</a></td>
           <td>$2,234,234</td>
           <td>34%</td>
           <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1a($event)"></span></td>
@@ -135,7 +132,7 @@
         </tr>
 
         <tr>
-          <td>FUND II</td>
+          <td><a ng-click="gotoFund('Fund II')">FUND II</a></td>
           <td>$2,234,234</td>
           <td>34%</td>
           <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund2($event)"></span></td>
