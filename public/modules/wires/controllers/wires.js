@@ -57,6 +57,7 @@ angular.module('wires').controller('WiresController', ['$scope', '$stateParams',
         // Update existing Wire
         $scope.update = function() {
             var wire = $scope.wire;
+            console.log(wire, 'wire');
 
             wire.$update(function() {
                 $location.path('wires/' + wire._id);

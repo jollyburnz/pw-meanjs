@@ -8,7 +8,7 @@ module.exports = function(app) {
 	app.get('/wires', wires.list);
 	app.post('/wires', users.requiresLogin, wires.create);
 	app.get('/wires/:wireId', wires.read);
-	app.put('/wires/:wireId', users.requiresLogin, wires.hasAuthorization, wires.update);
+	app.put('/wires/:wireId', wires.update);
 	app.del('/wires/:wireId', users.requiresLogin, wires.hasAuthorization, wires.delete);
 
 	// Finish by binding the Wire middleware

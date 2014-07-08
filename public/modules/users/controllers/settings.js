@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', 'Dropbox',
-	function($scope, $http, $location, Users, Authentication, Dropbox) {
+angular.module('users').controller('SettingsController', ['$scope', '$filter', '$http', '$location', 'Users', 'Authentication', 'Dropbox', 'Wires',
+	function($scope, $filter, $http, $location, Users, Authentication, Dropbox, Wires) {
 		$scope.user = Authentication.user;
 
 		// Dropbox Authentication
@@ -147,6 +147,13 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 
       $scope.custom2 = $scope.custom2 === false ? true: false;
     };
+
+    Wires.query(function(wires) {
+      console.log(wires, 'wires', $scope.user._id);
+      $scope.wiresFromFund1 = $filter('filter')(wires, {fund: '5368052de1fa0517b9c9583a', lp: $scope.user._id});
+      $scope.wiresFromFund1a = $filter('filter')(wires, {fund: '536906eb0e5071d7bee81f81', lp: $scope.user._id});
+      $scope.wiresFromFund2 = $filter('filter')(wires, {fund: '536906d40e5071d7bee81f80', lp: $scope.user._id});
+    });
 
 		$scope.test = function(a) {
 			console.log(a.toString(), 'test');
