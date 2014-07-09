@@ -161,9 +161,9 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
     	Funds.query(function(funds){
     		console.log(funds, fund_is);
     		var test = $filter('filter')(funds, {name: fund_is}, true);
-    		console.log(test);
+    		console.log(test[0].name, 'asdfasdfas');
     	});
-    	$location.path('fund');
+    	$location.path("fund");
     }
 
 		$scope.test = function(a) {

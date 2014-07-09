@@ -1,158 +1,166 @@
-<section class="row" data-ng-controller="SettingsController">
-  <div class="col-md-12">
-    <br/>
-    <!-- <ul class="nav nav-pills">
-      <li class="active"><a href="#">Overview</a></li>
-      <li><a href="#">Profile</a></li>
-    </ul> -->
-    <h1>{{user.displayName}}</h1>
-    <br/>
-  </div>
-  <div id="LPinfo" class="col-md-3">
-    <div class="hexagon" my-background-image="{{company.image}}">
-      <div class="hexTop"></div>
-      <div class="hexBottom"></div>
+<div data-ng-controller="SettingsController" >
+  <section class="row" data-ng-hide='user'>
+    Nothing
+  </section>
+  <section class="row" data-ng-show="user">
+  <!--   <div class="col-md-12" data-ng-hide="user">
+      Nothing
+    </div> -->
+    <div class="col-md-12" >
+      <br/>
+      <!-- <ul class="nav nav-pills">
+        <li class="active"><a href="#">Overview</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul> -->
+      <h1>{{user.displayName}}</h1>
+      <br/>
     </div>
+    <div id="LPinfo" class="col-md-3">
+      <div class="hexagon" my-background-image="{{company.image}}">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+      </div>
 
-    <br/>
+      <br/>
 
-    <!--
-    <button type="button" class="btn btn-default btn-lg" ng-click="dropbox()">
-      <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
-    </button>
+      <!--
+      <button type="button" class="btn btn-default btn-lg" ng-click="dropbox()">
+        <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
+      </button>
 
-    <h4>Dropbox Path: {{path}}</h4>
-    <h5>files</h5>
-    <div ng-repeat="acct in accts | filter:{'is_dir': 'false'}">
-      <a ng-click="test('{{acct.path}}')">{{acct.path}}</a><br/>
-    </div>
+      <h4>Dropbox Path: {{path}}</h4>
+      <h5>files</h5>
+      <div ng-repeat="acct in accts | filter:{'is_dir': 'false'}">
+        <a ng-click="test('{{acct.path}}')">{{acct.path}}</a><br/>
+      </div>
 
-    <h5>folders</h5>
-    <div ng-repeat="acct in accts | filter:{'is_dir': 'true'}">
-      {{acct.path}}<br/>
-    </div>
-    -->
-    <br/><br/>
-    <h3>LP Information</h3>
-    <table>
-      <tr>
-        <td class='title'>Email</td>
-        <td>{{user.email}}</td>
-      </tr>
-      <tr>
-        <td class='title'>EIN/SS</td>
-        <td>{{user.einss}}</td>
-      </tr>
-      <tr>
-        <td class='title'>Address</td>
-        <td>{{user.address1}}<br/>
-            {{user.address2}}
-        </td>
-      </tr>
-    </table>
-    <br/><br/>
-    <h3>Banking Information</h3>
-    <table>
-      <tr>
-        <td class='title'>Account</td>
-        <td>{{user.bank_account_name}}</td>
-      </tr>
-      <tr>
-        <td class='title'>Routing Number</td>
-        <td>{{user.bank_account_routing_number}}</td>
-      </tr>
-      <tr>
-        <td class='title'>Account Number</td>
-        <td>{{user.bank_account_number}}</td>
-      </tr>
-    </table>
-    <br/><br/>
-    <h3>Download Files</h3>
-    <button type="button" class="btn btn-default" ng-click="dropbox()">
-      <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
-    </button>
-    <br/><br/><br/><br/>
-  </div>
-  <div class='col-md-offset-1 col-md-8'>
-    <h3 class='green'>Key Metrics</h3>
-    <div class='metrics'>
-      <h3>K1 Values</h3>
-      <h6>(to date)</h6>
-      <h1>${{user.k1 | number:0}}</h1>
-    </div>
-    <div class='metrics'>
-      <h3>Distributions</h3>
-      <h6>(to date)</h6>
-      <h1>${{user.distributions | number:0}}</h1>
-    </div>
-    <div class='metrics'>
-      <h3>Accrued Interest</h3>
-      <h6>(since last quarter)</h6>
-      <h1>${{user.interest | number:0}}</h1>
-    </div>
-    <br/><br/><br/>
-    <h3>Portfolio Overview</h3>
-
-
-    <table id='portfolio-overview' class='table'>
-      <thead>
+      <h5>folders</h5>
+      <div ng-repeat="acct in accts | filter:{'is_dir': 'true'}">
+        {{acct.path}}<br/>
+      </div>
+      -->
+      <br/><br/>
+      <h3>LP Information</h3>
+      <table>
         <tr>
-          <th></th>
-          <th>Invested Capital</th>
-          <th>Return</th>
-          <th>Multiple</th> 
+          <td class='title'>Email</td>
+          <td>{{user.email}}</td>
+        </tr>
         <tr>
-      </thead>
-      <tbody>
+          <td class='title'>EIN/SS</td>
+          <td>{{user.einss}}</td>
+        </tr>
         <tr>
-          <td><a ng-click="gotoFund('Fund I')">FUND I</a></td>
-          <td>$2,234,234</td>
-          <td>34%</td>
-          <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1($event)"></span></td>
+          <td class='title'>Address</td>
+          <td>{{user.address1}}<br/>
+              {{user.address2}}
+          </td>
+        </tr>
+      </table>
+      <br/><br/>
+      <h3>Banking Information</h3>
+      <table>
+        <tr>
+          <td class='title'>Account</td>
+          <td>{{user.bank_account_name}}</td>
+        </tr>
+        <tr>
+          <td class='title'>Routing Number</td>
+          <td>{{user.bank_account_routing_number}}</td>
+        </tr>
+        <tr>
+          <td class='title'>Account Number</td>
+          <td>{{user.bank_account_number}}</td>
+        </tr>
+      </table>
+      <br/><br/>
+      <h3>Download Files</h3>
+      <button type="button" class="btn btn-default" ng-click="dropbox()">
+        <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
+      </button>
+      <br/><br/><br/><br/>
+    </div>
+    <div class='col-md-offset-1 col-md-8'>
+      <h3 class='green'>Key Metrics</h3>
+      <div class='metrics'>
+        <h3>K1 Values</h3>
+        <h6>(to date)</h6>
+        <h1>${{user.k1 | number:0}}</h1>
+      </div>
+      <div class='metrics'>
+        <h3>Distributions</h3>
+        <h6>(to date)</h6>
+        <h1>${{user.distributions | number:0}}</h1>
+      </div>
+      <div class='metrics'>
+        <h3>Accrued Interest</h3>
+        <h6>(since last quarter)</h6>
+        <h1>${{user.interest | number:0}}</h1>
+      </div>
+      <br/><br/><br/>
+      <h3>Portfolio Overview</h3>
 
-        <tr ng-repeat="wire in wiresFromFund1" class='sub' ng-show="custom1">
+
+      <table id='portfolio-overview' class='table'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Invested Capital</th>
+            <th>Return</th>
+            <th>Multiple</th> 
+          <tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a ng-click="gotoFund('Fund I')">FUND I</a></td>
+            <td>$2,234,234</td>
+            <td>34%</td>
+            <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1($event)"></span></td>
+
+          <tr ng-repeat="wire in wiresFromFund1" class='sub' ng-show="custom1">
+              <td>{{wire.date | date : longDate}}</td>
+              <td>{{wire.amount | currency}}</td>
+              <td></td>
+              <td></td>
+          </tr>
+
+          <tr>
+            <td><a ng-click="gotoFund('Fund IA')">FUND Ia</a></td>
+            <td>$2,234,234</td>
+            <td>34%</td>
+            <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1a($event)"></span></td>
+          <tr>
+
+          <tr ng-repeat="wire in wiresFromFund1a" class='sub' ng-show="custom1a">
+              <td>{{wire.date | date : longDate}}</td>
+              <td>{{wire.amount | currency}}</td>
+              <td></td>
+              <td></td>
+          </tr>
+
+          <tr>
+            <td><a ng-click="gotoFund('Fund II')">FUND II</a></td>
+            <td>$2,234,234</td>
+            <td>34%</td>
+            <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund2($event)"></span></td>
+          <tr>
+
+          <tr ng-repeat="wire in wiresFromFund2" class='sub' ng-show="custom2">
             <td>{{wire.date | date : longDate}}</td>
             <td>{{wire.amount | currency}}</td>
             <td></td>
             <td></td>
-        </tr>
+          </tr>
 
-        <tr>
-          <td><a ng-click="gotoFund('Fund IA')">FUND Ia</a></td>
-          <td>$2,234,234</td>
-          <td>34%</td>
-          <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1a($event)"></span></td>
-        <tr>
-
-        <tr ng-repeat="wire in wiresFromFund1a" class='sub' ng-show="custom1a">
-            <td>{{wire.date | date : longDate}}</td>
-            <td>{{wire.amount | currency}}</td>
-            <td></td>
-            <td></td>
-        </tr>
-
-        <tr>
-          <td><a ng-click="gotoFund('Fund II')">FUND II</a></td>
-          <td>$2,234,234</td>
-          <td>34%</td>
-          <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund2($event)"></span></td>
-        <tr>
-
-        <tr ng-repeat="wire in wiresFromFund2" class='sub' ng-show="custom2">
-          <td>{{wire.date | date : longDate}}</td>
-          <td>{{wire.amount | currency}}</td>
-          <td></td>
-          <td></td>
-        </tr>
-
-        <tr class='total'>
-          <td><b>TOTAL</b></td>
-          <td>$4,468,468</td>
-          <td>34%</td>
-          <td>1.6X</td>
-        <tr>
-      <tbody>
-    </table>
-    <br/>
-  </div>
-</section>
+          <tr class='total'>
+            <td><b>TOTAL</b></td>
+            <td>$4,468,468</td>
+            <td>34%</td>
+            <td>1.6X</td>
+          <tr>
+        <tbody>
+      </table>
+      <br/>
+    </div>
+  </section>
+</div>
