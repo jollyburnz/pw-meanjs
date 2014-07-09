@@ -84,7 +84,7 @@
         <div class='row'>
           <div class="col-xs-8">
             <h2 class='green'>Current Valuation</h2>
-            <table class="table">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Company</th>
@@ -96,7 +96,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="c in filtered">
+                <tr ng-repeat="c in filtered | orderBy:'name':reverse">
                   <td><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
                   <td>{{c.initial_investment | currency}}</td>
                   <td>{{c.fund_ownership | currency}}</td>
@@ -186,7 +186,7 @@
           </div>
           <div class='col-xs-4 projected_exit'>
             <h2>Projected Exit</h2>
-            <table class="table">
+            <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Realized Cash</th>
@@ -195,19 +195,19 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-show="getProjection() === 'downside'" ng-repeat="c in filtered">
+                <tr ng-show="getProjection() === 'downside'" ng-repeat="c in filtered | orderBy:'name':reverse">
                   <td>{{c.d_cash | currency}}</td>
                   <td>{{c.d_ev | currency}}</td>
                   <td>{{c.d_multiple}}x</td>
                 </tr>
 
-                <tr ng-show="getProjection() === 'baseline'" ng-repeat="c in filtered">
+                <tr ng-show="getProjection() === 'baseline'" ng-repeat="c in filtered | orderBy:'name':reverse">
                   <td>{{c.b_cash | currency}}</td>
                   <td>{{c.b_ev | currency}}</td>
                   <td>{{c.b_multiple}}x</td>
                 </tr>
 
-                <tr ng-show="getProjection() === 'upside'" ng-repeat="c in filtered">
+                <tr ng-show="getProjection() === 'upside'" ng-repeat="c in filtered | orderBy:'name':reverse">
                   <td>{{c.u_cash | currency}}</td>
                   <td>{{c.u_ev | currency}}</td>
                   <td>{{c.u_multiple}}x</td>
