@@ -205,7 +205,7 @@ select:hover { background-color: #fff; }
  }
 
 .projected_exit h2, .projected_exit th, .projected_exit td{
-  color: #000 !important;
+  color: #444444 !important;
 }
 
 .projected_exit tr{
