@@ -33,8 +33,8 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
         console.log(companies);
         $scope.companies = companies;
         console.log($scope.companies, 'companies');
-        console.log(fund._id);
-        $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund._id });
+        console.log(fund.name);
+        $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund.name }, true);
       });
     };
 
