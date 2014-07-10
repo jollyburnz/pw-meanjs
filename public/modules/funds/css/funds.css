@@ -148,14 +148,71 @@ select:hover { background-color: #fff; }
   padding-bottom: 7px;
 }
 
+.table-title-left{
+  background: #e3e4e5;
+  color: #0f6431;
+  font-size: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 10px;
+  border-top: 1px solid #CDCDCD;
+  border-left: 1px solid #CDCDCD;
+}
+
+.table-title-right{
+  background: #7ca98e;
+  color: #fff;
+  font-size: 30px;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 10px;
+  border-top: 1px solid #CDCDCD;
+  border-right: 1px solid #CDCDCD;
+}
+
+.current_valuation tbody{
+  border-left: 1px solid #CDCDCD;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.current_valuation thead{
+  border-left: 1px solid #CDCDCD;
+}
+
+.projected_exit{
+  margin-left: -30px;
+}
+
+.projected_exit tbody{
+  border-right: 1px solid #CDCDCD;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.projected_exit thead{
+  border-right: 1px solid #CDCDCD;
+}
+
+.projected_exit .table-striped>tbody>tr:nth-child(odd)>td, 
+.projected_exit .table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #d3e0d9;
+ }
+
+.projected_exit .table-striped>tbody>tr:nth-child(even)>td, 
+.projected_exit .table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #eaefec;
+ }
+
 .projected_exit h2, .projected_exit th, .projected_exit td{
-  color: #156333 !important;
+  color: #000 !important;
+}
+
+.projected_exit tr{
+  border-left: 1px solid #CDCDCD;
 }
 
 .projected_exit th{
-  border-bottom: 1px solid #156333 !important;
+  background: #bed3c7;
+  border-bottom: 2px solid #156333 !important;
 }
 
 .projected_exit td{
-  border-top: 1px solid #156333 !important;
+  border-top: 1px solid #CDCDCD !important;
 }
