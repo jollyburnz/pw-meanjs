@@ -20,12 +20,32 @@
     </div> -->
     <!-- <p>{{company}}</p> -->
     <h1>{{company.name}}</h1>
+    <br/>
     <div class="hexagon" my-background-image="{{company.image}}">
       <div class="hexTop"></div>
       <div class="hexBottom"></div>
     </div>
     <br/>
     <h3>Company Information</h3>
+      <table>
+        <tr>
+          <td class='title' style="padding-right: 15px">CEO Name</td>
+          <td>{{company.ceo_name}}</td>
+        </tr>
+        <tr>
+          <td class='title' style="padding-right: 15px">CEO Email</td>
+          <td>{{company.ceo_email}}</td>
+        </tr>
+        <tr><td>&nbsp;<td/><td>&nbsp;</td><tr/>
+        <tr>
+          <td class='title' style="padding-right: 15px">CFO Name</td>
+          <td>{{company.cfo_name}}</td>
+        </tr>
+        <tr>
+          <td class='title' style="padding-right: 15px">CFO Email</td>
+          <td>{{company.cfo_email}}</td>
+        </tr>
+      </table>
   </div>
 
   <div class='col-md-offset-1 col-md-8'>

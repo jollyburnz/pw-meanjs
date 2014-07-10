@@ -66,6 +66,11 @@
   background: inherit;
 }
 
+/* LP Information */
+/*#ceo_name, #ceo_email, #cfo_name, #cf0_email{
+  padding-right: 15px;
+}*/
+
 /* key updates */
 ul.keyupdates, ul.investments{
   margin: 0;

@@ -67,6 +67,18 @@ var CompanySchema = new Schema({
 	from_fund: {
 		type: String
 	},
+	ceo_name: {
+		type: String
+	},
+	ceo_email: {
+		type: String
+	},
+	cfo_name: {
+		type: String
+	},
+	cfo_email: {
+		type: String
+	},
 	created: {
 		type: Date,
 		default: Date.now
