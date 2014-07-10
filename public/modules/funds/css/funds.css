@@ -175,6 +175,8 @@ select:hover { background-color: #fff; }
 
 .current_valuation thead{
   border-left: 1px solid #CDCDCD;
+  font-variant: small-caps;
+  letter-spacing: 1px;
 }
 
 .projected_exit{
@@ -188,6 +190,8 @@ select:hover { background-color: #fff; }
 
 .projected_exit thead{
   border-right: 1px solid #CDCDCD;
+  font-variant: small-caps;
+  letter-spacing: 1px;
 }
 
 .projected_exit .table-striped>tbody>tr:nth-child(odd)>td, 
