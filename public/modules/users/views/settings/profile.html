@@ -21,6 +21,19 @@
 					<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
 				</div>
 				<div class="form-group">
+          <label class="control-label" for="profile">Profile Image</label>
+          <div class="controls">
+              <div class='userwhatever' ng-if='user.profile'>
+                  <div id="UserProfile">
+                      <img src='{{user.profile}}' ng-click='updateProfileImage()' />
+                  </div>
+              </div>
+              <div class='userwhatever2' ng-if="!user.profile">
+                  <div id="exampleDropPane" upload-profile>Drop Lead Image Here</div>
+              </div>
+          </div>
+	      </div>
+				<div class="form-group">
 					<label for="einss">EIN / SS</label>
 					<input type="text" id="einss" name="einss" class="form-control" data-ng-model="user.einss" placeholder="EIN / SS">
 				</div>

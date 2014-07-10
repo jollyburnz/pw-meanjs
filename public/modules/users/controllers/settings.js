@@ -103,6 +103,16 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
 			*/
 		};
 
+		//edit profile
+    $scope.updateProfileImage = function(){
+      console.log('update image');
+      filepicker.pick(function(InkBlob){
+        console.log(InkBlob.url);
+        $scope.user.profile = InkBlob.url;
+        $('#UserProfile').html("<img src='" + $scope.user.profile + "' />");
+      });
+  	};
+
 		$scope.toggleFund1 = function(obj) {
 			console.log(obj, $(obj.target), 'obj');
 			if ($scope.custom1 == false){

@@ -75,6 +75,9 @@ var UserSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+	profile:{
+		type: String
+	},
 	einss: {
 		type: String
 	},
