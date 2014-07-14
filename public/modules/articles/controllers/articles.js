@@ -19,7 +19,8 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 link: this.link,
                 author: this.author,
                 content: this.content,
-                for_company: this.for_company
+                for_company: this.for_company,
+                is_keyupdate: this.is_keyupdate
             });
 
             // Redirect after save

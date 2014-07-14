@@ -72,7 +72,15 @@
     <span class='pull-right' style='padding-right: 20px'><b>Post Date</b></span>
     <br/><br/>
     <ul class='keyupdates'>
-      <li ng-repeat="k in keyupdates">{{k.keyupdate}} <span class='pull-right'>{{k.created | date : short}}</span></li>
+      <!-- <li ng-repeat="k in keyupdates">
+        {{k.keyupdate}} 
+        <span class='pull-right'>{{k.created | date : short}}</span>
+      </li> -->
+
+      <li ng-repeat="a in articles_keyupdates">
+        <a href='{{a.link}}' target="_blank">{{a.content}}</a> 
+        <span class='pull-right'>{{a.date_added | date : short}}</span>
+      </li>
     </ul>
 
     <br/>

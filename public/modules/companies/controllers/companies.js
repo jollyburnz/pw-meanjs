@@ -118,6 +118,7 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                 };
 
                 $scope.articles = $filter('filter')(articles, {for_company: $stateParams.companyId});
+                $scope.articles_keyupdates = $filter('filter')(articles, {for_company: $stateParams.companyId, is_keyupdate: true});
 
                 $scope.$watch('articles', function(){
                     $scope.rows = chunk($scope.articles, 3)

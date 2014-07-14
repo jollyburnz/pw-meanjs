@@ -31,6 +31,10 @@ var ArticleSchema = new Schema({
 		default: '',
 		trim: true
 	},
+	is_keyupdate: {
+		type: Boolean,
+		default: false
+	},
 	for_company: {
 		type: Schema.ObjectId
 	},
