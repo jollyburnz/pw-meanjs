@@ -42,6 +42,7 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
       console.log(funds);
       $scope.funds = funds;
       $scope.fund_is = funds[2];
+      $scope.data_or_news = 'data';
       dope()
     });
 
@@ -96,6 +97,19 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
     $scope.getProjection = function(){
       console.log($scope.p, 'projection');
       return $scope.p;
+    };
+
+    $scope.dataOrNews = function(arg){
+      console.log(arg, 'adfasdf')
+      $scope.data_or_news = arg;
+    };
+
+    $scope.newsdata_active = function(arg){
+      var active = $scope.data_or_news;
+      console.log(active, arg, 'active');
+      if (arg === active){
+        return active;
+      }
     };
 	}
 ]);

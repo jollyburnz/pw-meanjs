@@ -19,6 +19,19 @@ h2{
   color: #ccc;
 }
 
+a.newsdata{
+  height: 60px;
+  line-height: 60px;
+  font-size: 2em;
+  padding: 12px 30px;
+  text-decoration: none;
+  color: #CDCDCD;
+}
+
+a.newsdata.active{
+  color: #156333;
+}
+
 .green{
   color: #156333;
 }

@@ -1,45 +1,15 @@
 <div data-ng-controller="SettingsController" >
   <section class="row" data-ng-hide='user'>
-    <div class="in-the-press-container">
-        <h2>JOIN SCOUT´S MISSION</h2>
-    <div class="form_wrap">
-    <div class="form_in">
-      <h4>Existing investors Login</h4>
-      <form><input type="text" placeholder="Email" /><br />
-      <input type="password" placeholder="Password" /><br />
-      <input type="submit" /></form>
-    </div>
-    <div class="form_in">
-      <h4>invest now or receive further details here</h4>
-      <p><a href="https://www.seedinvest.com/scout.ventures" target="_blank"><img alt="" src="http://54.187.227.20/wp-content/themes/scout/images/seed.png" /></a></p>
-      </div>
-      <div class="form_in fundingLin">
-      <h4>View current opportunities</h4>
-      <p><a href="https://www.seedinvest.com/scout.ventures.fund.ii" target="_blank">Fund II</a></p>
-      </div>
-      </div>
-      <div class="clear"></div>
-      <div class="lower_join">
-      <div class="join_left">
-      <h4 style="text-align: left;">Welcome to Scout</h4>
-      <p>Our mission is to take transformational technology companies to the next phase of their development through innovative VC methods, earning our LPs money year after year. If you´re already familiar with our unique methodology and proven track record, and want to speak directly with a Scout team member about investing, fill out the contact form below.</p>
-      <p>We achieve outsized returns by accessing the best deals and actively helping our portfolio companies reach their full potential.</p>
-    </div>
+    NONE
   </section>
   <section class="row" data-ng-show="user">
   <!--   <div class="col-md-12" data-ng-hide="user">
       Nothing
     </div> -->
-    <div class="col-md-12" >
-      <br/>
-      <!-- <ul class="nav nav-pills">
-        <li class="active"><a href="#">Overview</a></li>
-        <li><a href="#">Profile</a></li>
-      </ul> -->
+    <br/><br/>
+    <div id="LPinfo" class="col-md-3">
       <h1>{{user.displayName}}</h1>
       <br/>
-    </div>
-    <div id="LPinfo" class="col-md-3">
       <div class="hexagon" my-background-profile="{{user.profile}}">
         <div class="hexTop"></div>
         <div class="hexBottom"></div>
@@ -81,7 +51,7 @@
         </tr>
       </table>
       <br/><br/>
-      <h3>Banking Information</h3>
+      <!-- <h3>Banking Information</h3>
       <table>
         <tr>
           <td class='title'>Account</td>
@@ -96,7 +66,7 @@
           <td>{{user.bank_account_number}}</td>
         </tr>
       </table>
-      <br/><br/>
+ -->      <br/><br/>
       <h3>Download Files</h3>
       <button type="button" class="btn btn-default" ng-click="dropbox()">
         <span class="glyphicon glyphicon-inbox"></span>&nbsp; Dropbox
@@ -148,7 +118,7 @@
           </tr>
 
           <tr>
-            <td><a ng-click="gotoFund('Fund IA')">FUND Ia</a></td>
+            <td><a ng-click="gotoFund('Fund IA')">FUND IA</a></td>
             <td>$2,234,234</td>
             <td>34%</td>
             <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1a($event)"></span></td>
