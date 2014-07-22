@@ -37,22 +37,19 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
 
       Articles.query(function(articles){
         console.log(fund.name, articles, 'articles');
-        var filtered_companies = $scope.filtered;
-        console.log(filtered_companies, 'filcomps');
 
         $scope.articles = articles;
 
-        var dopetest = function(article){
-          console.log('dope', article.for_company, filtered_companies);
+        var filter_articles = function(article){
+          var filter = _.pluck($scope.filtered, '_id');
+          for(var i = 0; i < filter.length; i++) {
+            if (filter[i] === article.for_company) {
+              return true;
+            };
+          }
         };
-
-        $scope.filart = $filter('filter')($scope.articles, dopetest);
-        console.log($scope.filart, 'filart');
-
-        //$scope.filart = $filter('filter')($scope.articles, {for_company: {$in:{_id:"5371329fc2307d234a321ab7"}} }, true);
-        //db.articles.find({for_company:{$in:[ObjectId("5371329fc2307d234a321ab7"), ObjectId("5369089c9a890fc2c2c27c69")]}})
-        //$scope.filart = $filter('filter')(articles, {from_fund: fund.name }, true);
-        //$filter('filter')(articles, {for_company: $stateParams.companyId});
+        $scope.filter_article = $filter('filter')($scope.articles, filter_articles);
+        
       });
     };
 
