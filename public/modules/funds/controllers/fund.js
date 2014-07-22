@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('funds').controller('FundController', ['$scope', '$filter', 'Funds', 'Companies',
-    function($scope, $filter, Funds, Companies) {
+angular.module('funds').controller('FundController', ['$scope', '$filter', 'Funds', 'Companies', 'Articles',
+    function($scope, $filter, Funds, Companies, Articles) {
 		// Controller Logic 
 		// ...
     // Find a list of Funds
@@ -30,13 +30,36 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
       $scope.p = 'baseline'; //default on baseline
 
       Companies.query(function(companies) {
-        console.log(companies);
+        console.log($scope.companies, 'companies', fund.name);
         $scope.companies = companies;
-        console.log($scope.companies, 'companies');
-        console.log(fund.name);
         $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund.name }, true);
       });
+
+      Articles.query(function(articles){
+        console.log(fund.name, articles, 'articles');
+        var filtered_companies = $scope.filtered;
+        console.log(filtered_companies, 'filcomps');
+
+        $scope.articles = articles;
+
+        var dopetest = function(article){
+          console.log('dope', article.for_company, filtered_companies);
+        };
+
+        $scope.filart = $filter('filter')($scope.articles, dopetest);
+        console.log($scope.filart, 'filart');
+
+        //$scope.filart = $filter('filter')($scope.articles, {for_company: {$in:{_id:"5371329fc2307d234a321ab7"}} }, true);
+        //db.articles.find({for_company:{$in:[ObjectId("5371329fc2307d234a321ab7"), ObjectId("5369089c9a890fc2c2c27c69")]}})
+        //$scope.filart = $filter('filter')(articles, {from_fund: fund.name }, true);
+        //$filter('filter')(articles, {for_company: $stateParams.companyId});
+      });
     };
+
+    $scope.forCompany = function(asdf){
+      console.log(asdf,'forcompany');
+      return;
+    }
 
     Funds.query(function(funds) {
       console.log(funds);
@@ -106,7 +129,7 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
 
     $scope.newsdata_active = function(arg){
       var active = $scope.data_or_news;
-      console.log(active, arg, 'active');
+      //console.log(active, arg, 'active');
       if (arg === active){
         return active;
       }

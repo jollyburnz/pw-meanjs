@@ -150,4 +150,37 @@
       </div>
     </div>
   </div>
+
+<div data-ng-show="data_or_news === 'news'">
+  <div class='row'>
+    <div class='col-md-12'>
+      <h2 class='green'>Featured Companies</h3><br/>
+      <div ng-repeat="company in filtered" class='col-sm-4'>
+          {{company._id}}<br/>
+          <h3>{{company.name}}</h3>
+          <br/>
+          <a href='#'><i>{{company.link}}</i></a>
+          <br/><br/><br/>
+      </div>
+    </div>
+
+    <div class='col-md-12'>
+
+      <h2 class='green'>Updates</h2><br/>
+    </div>
+
+    <div class='col-md-12'>
+      <h2 class='green'>Articles</h2><br/>
+      <div ng-repeat="article in filart" class='col-sm-4'>
+          {{article._id}}<br/>
+          {{article.for_company}}<br/>
+          <h3>{{article.name}}</h3>
+          <img style='height: 150px' src='{{article.image}}' /><br/>
+          <i>{{article.link}}</i>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </section>
