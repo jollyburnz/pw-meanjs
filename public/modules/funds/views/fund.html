@@ -167,6 +167,12 @@
     <div class='col-md-12'>
 
       <h2 class='green'>Updates</h2><br/>
+      <ul class='keyupdates'>
+      <li ng-repeat="a in filter_keyupdates">
+        <a href='{{a.link}}' target="_blank">{{a.content}}</a> 
+        <span class='pull-right'>{{a.date_added | date : short}}</span>
+      </li>
+    </ul>
     </div>
 
     <div class='col-md-12'>
