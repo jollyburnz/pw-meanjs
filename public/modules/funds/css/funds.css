@@ -233,3 +233,12 @@ select:hover { background-color: #fff; }
 .projected_exit td{
   border-top: 1px solid #CDCDCD !important;
 }
+
+/* Featured companies
+
+/* company */
+.company-photo{
+  display: none;
+  height: 200px;
+  width: 100%;
+}

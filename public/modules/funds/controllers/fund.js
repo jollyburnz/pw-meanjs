@@ -33,6 +33,13 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
         console.log($scope.companies, 'companies', fund.name);
         $scope.companies = companies;
         $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund.name }, true);
+
+        $scope.$watch('filtered', function(){
+          setTimeout(function(){
+            $('.company-photo').imagefill({throttle:1000/60});
+            $('.company-photo').fadeIn();
+          }, 2000)
+        });
       });
 
       Articles.query(function(articles){
@@ -51,6 +58,13 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
         $scope.filter_article = $filter('filter')($scope.articles, filter_articles);
         $scope.filter_keyupdates = $filter('filter')($scope.filter_article, {is_keyupdate: true});
         console.log($scope.filter_keyupdates,'asdf');
+
+        $scope.$watch('filter_article', function(){
+            setTimeout(function(){
+              $('.article-photo').imagefill({throttle:1000/60});
+              $('.article-photo').fadeIn();
+            }, 2000)
+        });
 
 
       });

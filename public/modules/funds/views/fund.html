@@ -153,14 +153,18 @@
 
 <div data-ng-show="data_or_news === 'news'">
   <div class='row'>
-    <div class='col-md-12'>
+    <div class='col-sm-12'>
       <h2 class='green'>Featured Companies</h3><br/>
-      <div ng-repeat="company in filtered" class='col-sm-4'>
-          {{company._id}}<br/>
-          <h3>{{company.name}}</h3>
-          <br/>
-          <a href='#'><i>{{company.link}}</i></a>
-          <br/><br/><br/>
+      <div class='row'>
+        <div ng-repeat="company in filtered" class='col-sm-4'>
+            <div class='company-photo'>
+              <img src='{{company.image}}' />
+            </div>
+            <h3>{{company.name}}</h3>
+            <br/>
+            <a href='#'><i>{{company.link}}</i></a>
+            <br/><br/>
+        </div>
       </div>
     </div>
 
@@ -173,16 +177,21 @@
         <span class='pull-right'>{{a.date_added | date : short}}</span>
       </li>
     </ul>
+    <br/><br/>
     </div>
 
-    <div class='col-md-12'>
+    <div class='col-sm-12'>
       <h2 class='green'>Articles</h2><br/>
-      <div ng-repeat="article in filter_article" class='col-sm-4'>
-          {{article._id}}<br/>
-          {{article.for_company}}<br/>
-          <h3>{{article.name}}</h3>
-          <img style='height: 150px' src='{{article.image}}' /><br/>
-          <i>{{article.link}}</i>
+      <div class='row'>
+        <div ng-repeat="article in filter_article" class='col-sm-4'>
+            {{article._id}}<br/>
+            {{article.for_company}}<br/>
+            <h3>{{article.name}}</h3>
+            <div class='article-photo'>
+              <img style='height: 150px; width: 100%' src='{{article.image}}' /><br/>
+            </div>
+            <i>{{article.link}}</i>
+        </div>
       </div>
     </div>
 
