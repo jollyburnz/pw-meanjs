@@ -184,13 +184,13 @@
       <h2 class='green'>Articles</h2><br/>
       <div class='row'>
         <div ng-repeat="article in filter_article" class='col-sm-4'>
-            {{article._id}}<br/>
-            {{article.for_company}}<br/>
-            <h3>{{article.name}}</h3>
+            
             <div class='article-photo'>
-              <img style='height: 150px; width: 100%' src='{{article.image}}' /><br/>
+              <a target="_blank" href='{{article.link}}'><img style='height: 150px; width: 100%' src='{{article.image}}' /></a>
             </div>
-            <i>{{article.link}}</i>
+            <br/>
+            <a target="_blank" href='{{article.link}}'><h4>{{article.content}}</h4></a>
+            <br/><br/>
         </div>
       </div>
     </div>
