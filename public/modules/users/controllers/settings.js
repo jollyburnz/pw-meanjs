@@ -160,9 +160,9 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
 
     Wires.query(function(wires) {
       console.log(wires, 'wires', $scope.user._id);
-      $scope.wiresFromFund1 = $filter('filter')(wires, {fund: '5368052de1fa0517b9c9583a', lp: $scope.user._id});
-      $scope.wiresFromFund1a = $filter('filter')(wires, {fund: '536906eb0e5071d7bee81f81', lp: $scope.user._id});
-      $scope.wiresFromFund2 = $filter('filter')(wires, {fund: '536906d40e5071d7bee81f80', lp: $scope.user._id});
+      $scope.wiresFromFund1 = $filter('filter')(wires, {fund: 'Fund I', lp: $scope.user._id}, true);
+      $scope.wiresFromFund1a = $filter('filter')(wires, {fund: 'Fund IA', lp: $scope.user._id}, true);
+      $scope.wiresFromFund2 = $filter('filter')(wires, {fund: 'Fund II', lp: $scope.user._id}, true);
     });
 
     $scope.gotoFund = function(fund_is) {

@@ -11,7 +11,7 @@ var mongoose = require('mongoose'),
  */
 var WireSchema = new Schema({
 	fund: {
-		type: Schema.ObjectId
+		type: String
 	},
 	lp: {
 		type: Schema.ObjectId
