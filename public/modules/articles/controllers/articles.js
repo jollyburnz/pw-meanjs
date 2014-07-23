@@ -54,7 +54,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
             var article = $scope.article;
 
             article.$update(function() {
-                $location.path('articles/' + article._id);
+                $location.path('articles');
             });
         };
 

@@ -68,7 +68,7 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
             console.log(company, 'company');
 
             company.$update(function() {
-                $location.path('companies/' + company._id);
+                $location.path('companies');
             });
         };
 

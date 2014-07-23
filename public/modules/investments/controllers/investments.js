@@ -50,7 +50,7 @@ angular.module('investments').controller('InvestmentsController', ['$scope', '$s
             var investment = $scope.investment;
 
             investment.$update(function() {
-                $location.path('investments/' + investment._id);
+                $location.path('investments');
             });
         };
 

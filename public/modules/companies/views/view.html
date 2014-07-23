@@ -1,24 +1,7 @@
 <section data-ng-controller="CompaniesController" data-ng-init="findOne()">
   <br/>
 
-  <div class='row'>
-    <!-- data-ng-show="authentication.user.username == 'jamesryan'" -->
-    <div class="pull-right">
-      <a class="btn btn-primary" href="/#!/companies/{{company._id}}/edit">
-        <i class="glyphicon glyphicon-edit"></i>
-      </a>
-      <a class="btn btn-primary" data-ng-click="remove();">
-        <i class="glyphicon glyphicon-trash"></i>
-      </a>
-    </div>
-  </div>
-
   <div class='col-md-3'>
-    <!-- <div class='row'>
-      <img class="img-responsive" src="{{company.image}}" />
-      <hr/>
-    </div> -->
-    <!-- <p>{{company}}</p> -->
     <h1>{{company.name}}</h1>
     <br/>
     <div class="hexagon" my-background-image="{{company.image}}">
@@ -41,22 +24,27 @@
 
   <div class='col-md-offset-1 col-md-8'>
     <h3>Current Valuation</h3>
-    <table class="table">
-      <tr>
-        <th>Initial Investment</th>
-        <th>Fund Ownership</th>
-        <th>EV</th>
-        <th>IRR</th>
-        <th>Multiple</th>
-      </tr>
-      <tr>
-        <td>{{company.initial_investment}}</td>
-        <td>{{company.fund_ownership}}</td>
-        <td>{{company.ev}}</td>
-        <td>{{company.irr}}</td>
-        <td>{{company.multiple}}</td>
-      </tr>
-    </table>
+    <div class='company-metrics company-metrics1'>
+        <h3>Initial Investment</h3>
+        <h6>(to date)</h6>
+        <h1>${{company.initial_investment | number:0}}</h1>
+    </div>
+    <div class='company-metrics company-metrics2'>
+        <h3>Fund Ownership</h3>
+        <h6>(to date)</h6>
+        <h1>${{company.fund_ownership | number:0}}</h1>
+    </div>
+    <div class='company-metrics company-metrics3'>
+        <h3>IRR</h3>
+        <h6>(to date)</h6>
+        <h1>{{company.irr}}%</h1>
+    </div>
+    <div class='company-metrics company-metrics4'>
+        <h3>Multiple</h3>
+        <h6>(to date)</h6>
+        <h1>{{company.multiple}}</h1>
+    </div>
+
     <h3>Company Description</h3>
       {{company.description}}
     <h3>Key Updates</h3>

@@ -3,7 +3,7 @@
         <h1>Companies</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="company in companies" data-ng-href="#!/companies/{{company._id}}" class="list-group-item">
+        <a data-ng-repeat="company in companies" data-ng-href="#!/companies/{{company._id}}/edit" class="list-group-item">
             <small class="list-group-item-text">{{company.created | date:'medium'}} / {{company.user.displayName}}</small>
             <h4 class="list-group-item-heading">{{company.name}}</h4>
         </a>

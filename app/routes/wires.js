@@ -9,7 +9,7 @@ module.exports = function(app) {
 	app.post('/wires', users.requiresLogin, wires.create);
 	app.get('/wires/:wireId', wires.read);
 	app.put('/wires/:wireId', wires.update);
-	app.del('/wires/:wireId', users.requiresLogin, wires.hasAuthorization, wires.delete);
+	app.del('/wires/:wireId', wires.delete);
 
 	// Finish by binding the Wire middleware
 	app.param('wireId', wires.wireByID);

@@ -3,7 +3,7 @@
         <h1>Investments</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="investment in investments" data-ng-href="#!/investments/{{investment._id}}" class="list-group-item">
+        <a data-ng-repeat="investment in investments" data-ng-href="#!/investments/{{investment._id}}/edit" class="list-group-item">
             <small class="list-group-item-text">{{investment.created | date:'medium'}} / {{investment.user.displayName}}</small>
             <h4 class="list-group-item-heading">{{investment.name}}</h4>
         </a>
