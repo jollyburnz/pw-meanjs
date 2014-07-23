@@ -73,12 +73,6 @@ var CompanySchema = new Schema({
 	ceo_email: {
 		type: String
 	},
-	cfo_name: {
-		type: String
-	},
-	cfo_email: {
-		type: String
-	},
 	created: {
 		type: Date,
 		default: Date.now
