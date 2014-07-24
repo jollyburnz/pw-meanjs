@@ -38,7 +38,7 @@ var ArticleSchema = new Schema({
 	for_company: {
 		type: Schema.ObjectId
 	},
-	date_added: {
+	date_posted: {
 		type: Date,
 		default: Date.now
 	},

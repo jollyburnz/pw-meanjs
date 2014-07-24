@@ -4,7 +4,7 @@
     </div>
     <div class="list-group">
         <a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}/edit" class="list-group-item">
-            <small class="list-group-item-text">{{article.date_added | date:'medium'}} / {{article.user.displayName}}</small>
+            <small class="list-group-item-text">{{article.date_posted | date:'medium'}} / {{article.user.displayName}}</small>
             <h4 class="list-group-item-heading">{{article.link}}</h4>
         </a>
     </div>
