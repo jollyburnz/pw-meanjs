@@ -213,30 +213,54 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
     $scope.total = function(){
     	var total = $scope.totalFromFundI() + $scope.totalFromFundIA() + $scope.totalFromFundII();
     	return total;
-    }
+    };
 
     $scope.totalEV = function(){
     	var total = $scope.evFromFundI() + $scope.evFromFundIA() + $scope.evFromFundII();
     	return total;
-    }
+    };
 
     $scope.evFromFundI = function(){
     	var total;
     	total = $scope.totalFromFundI();
     	return total*$scope.fund_i_multiple;
-    }
+    };
 
     $scope.evFromFundIA = function(){
     	var total;
     	total = $scope.totalFromFundIA();
     	return total*$scope.fund_ia_multiple;
-    }
+    };
 
     $scope.evFromFundII = function(){
     	var total;
     	total = $scope.totalFromFundII();
     	return total*$scope.fund_ii_multiple;
-    }
+    };
+
+    $scope.returnFundI = function(){
+      var ev = $scope.evFromFundI();
+      var total = $scope.totalFromFundI();
+      var ret = (((ev - total) / total)*100).toFixed(2);
+      console.log(ev, total, ret);
+      return ret;
+    };
+
+    $scope.returnFundIA = function(){
+      var ev = $scope.evFromFundIA();
+      var total = $scope.totalFromFundIA();
+      var ret = (((ev - total) / total)*100).toFixed(2);
+      console.log(ev, total, ret);
+      return ret;
+    };
+
+    $scope.returnFundII = function(){
+      var ev = $scope.evFromFundII();
+      var total = $scope.totalFromFundII();
+      var ret = (((ev - total) / total)*100).toFixed(2);
+      console.log(ev, total, ret);
+      return ret;
+    };
 
 		$scope.test = function(a) {
 			console.log('test');
