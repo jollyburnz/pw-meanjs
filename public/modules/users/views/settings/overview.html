@@ -83,6 +83,7 @@
           <tr>
             <th></th>
             <th>Invested Capital</th>
+            <th>EV</th>
             <th>Return</th>
             <th>Multiple</th> 
           <tr>
@@ -90,22 +91,25 @@
         <tbody>
           <tr>
             <td><a ng-click="gotoFund('Fund I')">FUND I</a></td>
-            <td>$2,234,234</td>
+            <td>{{totalFromFundI()| currency}}</td>
+            <td>{{evFromFundI() | currency}}</td>
             <td>34%</td>
-            <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1($event)"></span></td>
+            <td>{{fund_i_multiple}}&nbsp;X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1($event)"></span></td>
 
           <tr ng-repeat="wire in wiresFromFund1" class='sub' ng-show="custom1">
               <td>{{wire.date | date : longDate}}</td>
               <td>{{wire.amount | currency}}</td>
               <td></td>
               <td></td>
+              <td></td>
           </tr>
 
           <tr>
             <td><a ng-click="gotoFund('Fund IA')">FUND IA</a></td>
-            <td>$2,234,234</td>
+            <td>{{totalFromFundIA()| currency}}</td>
+            <td>{{evFromFundIA() | currency}}</td>
             <td>34%</td>
-            <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1a($event)"></span></td>
+            <td>{{fund_ia_multiple}}&nbsp;X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1a($event)"></span></td>
           <tr>
 
           <tr ng-repeat="wire in wiresFromFund1a" class='sub' ng-show="custom1a">
@@ -113,13 +117,15 @@
               <td>{{wire.amount | currency}}</td>
               <td></td>
               <td></td>
+              <td></td>
           </tr>
 
           <tr>
             <td><a ng-click="gotoFund('Fund II')">FUND II</a></td>
-            <td>$2,234,234</td>
+            <td>{{totalFromFundII()| currency}}</td>
+            <td>{{evFromFundII() | currency}}</td>
             <td>34%</td>
-            <td>1.6X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund2($event)"></span></td>
+            <td>{{fund_ii_multiple}}&nbsp;X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund2($event)"></span></td>
           <tr>
 
           <tr ng-repeat="wire in wiresFromFund2" class='sub' ng-show="custom2">
@@ -127,13 +133,15 @@
             <td>{{wire.amount | currency}}</td>
             <td></td>
             <td></td>
+            <td></td>
           </tr>
 
           <tr class='total'>
             <td><b>TOTAL</b></td>
-            <td>$4,468,468</td>
-            <td>34%</td>
-            <td>1.6X</td>
+            <td>{{total() | currency}}</td>
+            <td>{{totalEV() | currency}}</td>
+            <td></td>
+            <td></td>
           <tr>
         <tbody>
       </table>

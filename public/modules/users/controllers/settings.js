@@ -113,6 +113,23 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
       });
   	};
 
+  	Funds.query(function(funds){
+  		var fund_i = $filter('filter')(funds, {name: 'Fund I'}, true);
+  		var fund_ia = $filter('filter')(funds, {name: 'Fund IA'}, true);
+  		var fund_ii = $filter('filter')(funds, {name: 'Fund II'}, true);
+
+  		$scope.fund_i_multiple = fund_i[0].multiple;
+  		$scope.fund_ia_multiple = fund_ia[0].multiple;
+  		$scope.fund_ii_multiple = fund_ii[0].multiple;
+	  });
+
+	  Wires.query(function(wires) {
+      console.log(wires, 'wires', $scope.user._id);
+      $scope.wiresFromFund1 = $filter('filter')(wires, {fund: 'Fund I', lp: $scope.user._id}, true);
+      $scope.wiresFromFund1a = $filter('filter')(wires, {fund: 'Fund IA', lp: $scope.user._id}, true);
+      $scope.wiresFromFund2 = $filter('filter')(wires, {fund: 'Fund II', lp: $scope.user._id}, true);
+    });
+
 		$scope.toggleFund1 = function(obj) {
 			console.log(obj, $(obj.target), 'obj');
 			if ($scope.custom1 == false){
@@ -158,13 +175,6 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
       $scope.custom2 = $scope.custom2 === false ? true: false;
     };
 
-    Wires.query(function(wires) {
-      console.log(wires, 'wires', $scope.user._id);
-      $scope.wiresFromFund1 = $filter('filter')(wires, {fund: 'Fund I', lp: $scope.user._id}, true);
-      $scope.wiresFromFund1a = $filter('filter')(wires, {fund: 'Fund IA', lp: $scope.user._id}, true);
-      $scope.wiresFromFund2 = $filter('filter')(wires, {fund: 'Fund II', lp: $scope.user._id}, true);
-    });
-
     $scope.gotoFund = function(fund_is) {
     	//console.log(fund_is, 'fund_is');
 
@@ -174,6 +184,58 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
     		console.log(test[0].name, 'asdfasdfas');
     	});
     	$location.path("fund");
+    };
+
+    $scope.totalFromFundI = function(){
+    	var totalNumber = 0;
+    	for(var i=0; i<$scope.wiresFromFund1.length; i++){
+    		totalNumber = totalNumber + $scope.wiresFromFund1[i].amount
+    	}
+    	return totalNumber;
+    };
+
+    $scope.totalFromFundIA = function(){
+    	var totalNumber = 0;
+    	for(var i=0; i<$scope.wiresFromFund1a.length; i++){
+    		totalNumber = totalNumber + $scope.wiresFromFund1a[i].amount
+    	}
+    	return totalNumber;
+    };
+
+    $scope.totalFromFundII = function(){
+    	var totalNumber = 0;
+    	for(var i=0; i<$scope.wiresFromFund2.length; i++){
+    		totalNumber = totalNumber + $scope.wiresFromFund2[i].amount
+    	}
+    	return totalNumber;
+    };
+
+    $scope.total = function(){
+    	var total = $scope.totalFromFundI() + $scope.totalFromFundIA() + $scope.totalFromFundII();
+    	return total;
+    }
+
+    $scope.totalEV = function(){
+    	var total = $scope.evFromFundI() + $scope.evFromFundIA() + $scope.evFromFundII();
+    	return total;
+    }
+
+    $scope.evFromFundI = function(){
+    	var total;
+    	total = $scope.totalFromFundI();
+    	return total*$scope.fund_i_multiple;
+    }
+
+    $scope.evFromFundIA = function(){
+    	var total;
+    	total = $scope.totalFromFundIA();
+    	return total*$scope.fund_ia_multiple;
+    }
+
+    $scope.evFromFundII = function(){
+    	var total;
+    	total = $scope.totalFromFundII();
+    	return total*$scope.fund_ii_multiple;
     }
 
 		$scope.test = function(a) {
