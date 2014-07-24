@@ -25,7 +25,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
             // Redirect after save
             article.$save(function(response) {
-                $location.path('articles/' + response._id);
+                $location.path('articles');
             });
 
             // Clear form fields

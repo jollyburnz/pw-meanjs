@@ -27,7 +27,7 @@ angular.module('wires').controller('WiresController', ['$scope', '$stateParams',
 
             // Redirect after save
             wire.$save(function(response) {
-                $location.path('wires/' + response._id);
+                $location.path('wires');
             });
 
             // Clear form fields

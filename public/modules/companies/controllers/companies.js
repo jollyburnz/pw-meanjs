@@ -38,7 +38,7 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
 
             // Redirect after save
             company.$save(function(response) {
-                $location.path('companies/' + response._id);
+                $location.path('companies');
             });
 
             // Clear form fields

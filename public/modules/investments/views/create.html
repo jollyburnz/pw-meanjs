@@ -6,9 +6,9 @@
         <form class="form-horizontal" data-ng-submit="create()">
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="date">Date (MM/DD/YYYY)</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Enter Name" required>
+                        <input type="text" data-ng-model="date" id="date" class="form-control" placeholder="Enter Date" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="company">Company</label>
-                    <select class="form-control" data-ng-model="for_company" data-ng-options="company._id as (company.name + ' - ' + company.from_fund) for company in companies">
+                    <select class="form-control" data-ng-model="for_company" data-ng-options="company as (company.name + ' - ' + company.from_fund) for company in companies">
                     </select>
                 </div>
                 <div class="form-group">

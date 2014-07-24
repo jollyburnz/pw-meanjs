@@ -10,17 +10,15 @@ var mongoose = require('mongoose'),
  * Investment Schema
  */
 var InvestmentSchema = new Schema({
-	name: {
-		type: String,
-		default: '',
-		required: 'Please fill Investment name',
-		trim: true
+	date: {
+		type: Date,
+		default: Date.now
 	},
 	amount: {
 		type: Number,
 	},
 	for_company: {
-		type: Schema.ObjectId
+		type: Object
 	},
 	created: {
 		type: Date,

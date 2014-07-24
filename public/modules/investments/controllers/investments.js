@@ -14,14 +14,14 @@ angular.module('investments').controller('InvestmentsController', ['$scope', '$s
         $scope.create = function() {
         	// Create new Investment object
             var investment = new Investments({
-                name: this.name,
+                date: this.date,
                 amount: this.amount,
                 for_company: this.for_company
             });
 
             // Redirect after save
             investment.$save(function(response) {
-                $location.path('investments/' + response._id);
+                $location.path('investments');
             });
 
             // Clear form fields

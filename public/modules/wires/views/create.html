@@ -11,18 +11,18 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="company">LP</label>
-                    <select class="form-control" data-ng-model="lp" data-ng-options="user._id as user.firstName +' '+ user.lastName for user in users">
+                    <label class="control-label" for="company">LP Name</label>
+                    <select class="form-control" data-ng-model="lp" data-ng-options="user as user.firstName +' '+ user.lastName for user in users">
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="amount">Amount</label>
+                    <label class="control-label" for="amount">Wire Amount</label>
                     <div class="controls">
                         <input type="text" data-ng-model="amount" id="amount" class="form-control" placeholder="Enter Amount" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="date">Date</label>
+                    <label class="control-label" for="date">Date (MM/DD/YYYY)</label>
                     <div class="controls">
                         <input type="text" data-ng-model="date" id="date" class="form-control" placeholder="Enter Date" required>
                     </div>

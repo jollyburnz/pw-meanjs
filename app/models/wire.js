@@ -14,7 +14,7 @@ var WireSchema = new Schema({
 		type: String
 	},
 	lp: {
-		type: Schema.ObjectId
+		type: Object
 	},
 	date: {
 		type: Date,
