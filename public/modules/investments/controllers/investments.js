@@ -69,5 +69,12 @@ angular.module('investments').controller('InvestmentsController', ['$scope', '$s
                 $scope.investment = investment;
             });
         };
+
+        $scope.offsetDate = function(date){
+          var localDate = new Date(date);
+          var localTime = localDate.getTime();
+          var localOffset = localDate.getTimezoneOffset() * 60000;
+          return new Date(localTime + localOffset);
+        };
     }
 ]);
