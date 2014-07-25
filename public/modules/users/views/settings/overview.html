@@ -97,7 +97,7 @@
             <td>{{fund_i_multiple}}&nbsp;X <span class="expand pull-right glyphicon glyphicon-plus" ng-click="toggleFund1($event)"></span></td>
 
           <tr ng-repeat="wire in wiresFromFund1" class='sub' ng-show="custom1">
-              <td>{{wire.date | date : longDate}}</td>
+              <td>{{offsetDate(wire.date) | date : longDate}}</td>
               <td>{{wire.amount | currency}}</td>
               <td></td>
               <td></td>
@@ -113,7 +113,7 @@
           <tr>
 
           <tr ng-repeat="wire in wiresFromFund1a" class='sub' ng-show="custom1a">
-              <td>{{wire.date | date : longDate}}</td>
+              <td>{{offsetDate(wire.date) | date : longDate}}</td>
               <td>{{wire.amount | currency}}</td>
               <td></td>
               <td></td>
@@ -129,7 +129,7 @@
           <tr>
 
           <tr ng-repeat="wire in wiresFromFund2" class='sub' ng-show="custom2">
-            <td>{{wire.date | date : longDate}}</td>
+            <td>{{offsetDate(wire.date) | date : longDate}}</td>
             <td>{{wire.amount | currency}}</td>
             <td></td>
             <td></td>

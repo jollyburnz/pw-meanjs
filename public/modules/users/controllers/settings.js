@@ -273,20 +273,11 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
       };
     };
 
-		$scope.test = function(a) {
-			console.log('test');
-			// asdf.readFile('a', {root:'dropbox'}).then(function(data){
-			// 	console.log('yes');
-			// }, function(error){
-			// 	console.log(error, 'error');
-			// });
-			// asdf.readFile(a, function(err, data){
-			// 	if (err) {
-			// 		console.log(err);
-			// 	} else {
-			// 		return true;
-			// 	}
-			// });
-		};
+    $scope.offsetDate = function(date){
+      var localDate = new Date(date);
+      var localTime = localDate.getTime();
+      var localOffset = localDate.getTimezoneOffset() * 60000;
+      return new Date(localTime + localOffset);
+    };
 	}
 ]);
