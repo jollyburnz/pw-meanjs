@@ -242,16 +242,23 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
       var ev = $scope.evFromFundI();
       var total = $scope.totalFromFundI();
       var ret = (((ev - total) / total)*100).toFixed(2);
-      console.log(ev, total, ret);
-      return ret;
+
+      if(total == 0){
+        return 0;
+      } else {
+        return ret;
+      };
     };
 
     $scope.returnFundIA = function(){
       var ev = $scope.evFromFundIA();
       var total = $scope.totalFromFundIA();
       var ret = (((ev - total) / total)*100).toFixed(2);
-      console.log(ev, total, ret);
-      return ret;
+      if(total = 0){
+        return 0;
+      } else {
+        return ret;
+      };
     };
 
     $scope.returnFundII = function(){
@@ -259,7 +266,11 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
       var total = $scope.totalFromFundII();
       var ret = (((ev - total) / total)*100).toFixed(2);
       console.log(ev, total, ret);
-      return ret;
+      if(total = 0){
+        return 0;
+      } else {
+        return ret;
+      };
     };
 
 		$scope.test = function(a) {

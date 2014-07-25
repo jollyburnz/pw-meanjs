@@ -78,23 +78,23 @@ var UserSchema = new Schema({
 	profile:{
 		type: String
 	},
-	einss: {
-		type: String
-	},
 	address1: {
 		type: String
 	},
 	address2: {
 		type: String
 	},
-	bank_account_name: {
+	pp_name: {
 		type: String
 	},
-	bank_account_routing_number: {
-		type: Number
+	pp_email: {
+		type: String
 	},
-	bank_account_number:{
-		type: Number
+	pp_title: {
+		type: String
+	},
+	pp_phone: {
+		type: String
 	},
 	k1:{
 		type: Number
