@@ -78,7 +78,7 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
     Funds.query(function(funds) {
       console.log(funds);
       $scope.funds = funds;
-      $scope.fund_is = funds[2];
+      $scope.fund_is = funds[0];
       $scope.data_or_news = 'data';
       dope()
     });
