@@ -33,7 +33,8 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                 u_multiple: this.u_multiple,
                 from_fund: this.from_fund,
                 ceo_name: this.ceo_name,
-                ceo_email: this.ceo_email
+                ceo_email: this.ceo_email,
+                is_featured: this.is_featured
             });
 
             // Redirect after save

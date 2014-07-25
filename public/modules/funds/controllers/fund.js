@@ -32,7 +32,7 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
       Companies.query(function(companies) {
         console.log($scope.companies, 'companies', fund.name);
         $scope.companies = companies;
-        $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund.name }, true);
+        $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund.name, is_featured: true}, true);
 
         $scope.$watch('filtered', function(){
           setTimeout(function(){
@@ -116,7 +116,7 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
         $scope.companies = companies;
         console.log($scope.companies, 'companies');
         console.log(fund._id);
-        $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund._id });
+        $scope.filtered = $filter('filter')($scope.companies, {from_fund: fund._id});
       });
 
     };

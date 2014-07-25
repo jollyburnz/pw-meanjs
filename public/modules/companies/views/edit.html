@@ -156,7 +156,12 @@
                     <select class="form-control" data-ng-model="company.from_fund" data-ng-options="fund.name as fund.name for fund in funds">
                     </select>
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label" for="content">Is Featured?</label>
+                    <div class="controls">
+                        <input type="checkbox" data-ng-model="company.is_featured" id="is_featured">
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <input type="submit" class="btn btn-default" value="Update">

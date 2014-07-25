@@ -73,6 +73,10 @@ var CompanySchema = new Schema({
 	ceo_email: {
 		type: String
 	},
+	is_featured: {
+		type: Boolean,
+		default: false
+	},
 	created: {
 		type: Date,
 		default: Date.now
