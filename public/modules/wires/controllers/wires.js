@@ -79,5 +79,11 @@ angular.module('wires').controller('WiresController', ['$scope', '$stateParams',
                 $scope.wire = wire;
             });
         };
+        $scope.offsetDate = function(date){
+          var localDate = new Date(date);
+          var localTime = localDate.getTime();
+          var localOffset = localDate.getTimezoneOffset() * 60000;
+          return new Date(localTime + localOffset);
+        };
     }
 ]);
