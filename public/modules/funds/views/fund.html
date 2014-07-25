@@ -156,7 +156,7 @@
     <div class='col-sm-12'>
       <h2 class='green'>Featured Companies</h3><br/>
       <div class='row'>
-        <div ng-repeat="company in filtered | limitTo : 3" class='col-sm-4'>
+        <div ng-repeat="company in filtered | limitTo : 3 | filter: {is_featured:true}" class='col-sm-4'>
             <div class='company-photo'>
               <img src='{{company.image}}' />
             </div>
