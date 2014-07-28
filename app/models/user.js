@@ -104,6 +104,10 @@ var UserSchema = new Schema({
 	},
 	interest:{
 		type: Number
+	},
+	is_admin: {
+		type: Boolean,
+		default: false
 	}
 });
 
