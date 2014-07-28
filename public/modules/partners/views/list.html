@@ -1,0 +1,13 @@
+<section data-ng-controller="PartnersController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Partners</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="partner in users" data-ng-href="#!/partners/{{partner._id}}/edit" class="list-group-item">
+            <h4 class="list-group-item-heading">{{partner.displayName}}</h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!partners || partners.length">
+    	No Partners yet, why don't you <a href="/#!/partners/create">create one</a>?
+    </div>
+</section>
