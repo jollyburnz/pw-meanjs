@@ -6,7 +6,15 @@
 var mongoose = require('mongoose'),
 	passport = require('passport'),
 	User = mongoose.model('User'),
-	_ = require('lodash');
+	_ = require('lodash'),
+	Dropbox = require('dropbox');
+
+var client = new Dropbox.Client({
+    key: "dx74gcurbdaqzbr",
+    secret: "ru62pw6ydr3zvzq"
+});
+
+client.authDriver(new Dropbox.AuthDriver.NodeServer(8191));
 
 /**
  * Get the error message from error object

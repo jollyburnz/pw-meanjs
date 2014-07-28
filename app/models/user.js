@@ -105,6 +105,9 @@ var UserSchema = new Schema({
 	interest:{
 		type: Number
 	}
+	rootFolder:{
+		type: String
+	}
 });
 
 /**
