@@ -81,8 +81,8 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
 			// Hit PW API for User's files
 			$http.post('/files/', Authentication.user).success(function(response) {
 				// If successful download resulting file
-				console.log('Got response from Server sending files');
-
+				console.log('Got response from Server sending files', response);
+				//document.execCommand('SaveAs',true,response.url);
 			}).error(function(response) {
 				console.log('Error requesting files from server');
 			});

@@ -216,13 +216,16 @@ exports.list = function(req, res) {
 exports.getFiles = function(req, res) {
 	console.log("\nClient requesting files\n");
 
-
-
-	fs.readdir("../Dropbox/" + req.user.root_folder, function(err, data){
+	fs.readdir("../Dropbox/" + req.user.root_folder, function(err, directory){
 		if(err){
 			console.log("Error", err);
 		} else {
-			console.log("Data", data);
+			console.log("Directory", directory);
+			var file;
+			for(file in directory){
+				var stat = fs.statSync("../Dropbox/" + req.user.root_folder + '/' + directory[file]);
+				console.log("Stat", stat);
+			}
 			res.send({msg:"Success"})
 		}
 	});
