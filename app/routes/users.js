@@ -16,12 +16,7 @@ module.exports = function(app) {
 	app.del('/users/accounts', users.removeOAuthProvider);
 
 	// Dropbox download
-	app.get('/files/gobook.pdf', users.getFiles);
-
-	// Generic input for finding correct folder
-	// /files/first/:first/last/:last/file/:filename
-	//app.post('')
-
+	app.post('/files/', users.getFiles);
 
 	// Setting up the users api
 	app.post('/auth/signup', users.signup);

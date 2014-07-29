@@ -6,7 +6,8 @@
 var mongoose = require('mongoose'),
 	passport = require('passport'),
 	User = mongoose.model('User'),
-	_ = require('lodash');
+	_ = require('lodash'),
+	fs = require('fs');
 
 /**
  * Get the error message from error object
@@ -214,10 +215,17 @@ exports.list = function(req, res) {
  */ 
 exports.getFiles = function(req, res) {
 	console.log("\nClient requesting files\n");
-	var files = {
-		"annualreport": "woot"
-	}
-	return res.download(process.cwd() + '/public/files/gobook.pdf');
+
+
+
+	fs.readdir("../Dropbox/" + req.user.root_folder, function(err, data){
+		if(err){
+			console.log("Error", err);
+		} else {
+			console.log("Data", data);
+			res.send({msg:"Success"})
+		}
+	});
 };
 
 /**

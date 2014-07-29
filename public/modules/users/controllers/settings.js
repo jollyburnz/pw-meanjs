@@ -77,12 +77,9 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
 		};
 
 		$scope.dropbox = function() {
-			var firstname = Authentication.user.firstName;
-			var lastname = Authentication.user.lastName;
-			console.log(firstname, lastname, 'name');
 
 			// Hit PW API for User's files
-			$http.get('/files/gobook.pdf').success(function(response) {
+			$http.post('/files/', Authentication.user).success(function(response) {
 				// If successful download resulting file
 				console.log('Got response from Server sending files');
 

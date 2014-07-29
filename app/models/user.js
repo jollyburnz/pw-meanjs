@@ -108,6 +108,9 @@ var UserSchema = new Schema({
 	is_admin: {
 		type: Boolean,
 		default: false
+	},
+	root_folder: {
+		type: String
 	}
 });
 
