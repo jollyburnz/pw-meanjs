@@ -118,33 +118,49 @@
                             <input type="text" id="accrued_interest" name="accrued_interest" class="form-control" data-ng-model="user.interest" placeholder="Accrued Interest">
                         </div> -->
 
-                            <div class="form-group">
-                                <label for="pp_name">Name</label>
-                                <input type="text" id="pp_name" name="pp_name" class="form-control" data-ng-model="user.pp_name" placeholder="Name">
-                            </div>
-                            <div class="form-group">
-                                <label for="pp_title">Title</label>
-                                <input type="text" id="pp_title" name="pp_title" class="form-control" data-ng-model="user.pp_title" placeholder="Title">
-                            </div>
-                            <div class="form-group">
-                                <label for="pp_email">Email</label>
-                                <input type="text" id="pp_email" name="pp_email" class="form-control" data-ng-model="user.pp_email" placeholder="Email Address">
-                            </div>
-                            <div class="form-group">
-                                <label for="pp_phone">Phone</label>
-                                <input type="text" id="pp_phone" name="pp_phone" class="form-control" data-ng-model="user.pp_phone" placeholder="Phone">
-                            </div>
-                            <br/>
-                            <div class="pull-right form-group">
-                                <button type="submit" class="btn btn-large btn-primary">Save Profile</button>
-                            </div>
+                        <div class="form-group">
+                            <label for="pp_name">Name</label>
+                            <input type="text" id="pp_name" name="pp_name" class="form-control" data-ng-model="user.pp_name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="pp_title">Title</label>
+                            <input type="text" id="pp_title" name="pp_title" class="form-control" data-ng-model="user.pp_title" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="pp_email">Email</label>
+                            <input type="text" id="pp_email" name="pp_email" class="form-control" data-ng-model="user.pp_email" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="pp_phone">Phone</label>
+                            <input type="text" id="pp_phone" name="pp_phone" class="form-control" data-ng-model="user.pp_phone" placeholder="Phone">
+                        </div>
+                        <br/>
+                    </div>
 
-                            <div data-ng-show="success" class="text-success">
-                                <strong>Profile Saved Successfully</strong>
-                            </div>
-                            <div data-ng-show="error" class="text-danger">
-                                <strong>{{error}}</strong>
-                            </div>
+                    <div class='col-sm-11'>
+                        <div class="form-group">
+                            <label for="Address2">K1 Values</label>
+                            <input type="text" id="k1_values" name="k1_values" class="form-control" data-ng-model="user.k1" placeholder="K1 Values">
+                        </div>
+                        <div class="form-group">
+                            <label for="Address2">Distributions</label>
+                            <input type="text" id="distributions" name="distributions" class="form-control" data-ng-model="user.distributions" placeholder="Distributions">
+                        </div>
+                        <div class="form-group">
+                            <label for="Address2">Accrued Interest</label>
+                            <input type="text" id="accrued_interest" name="accrued_interest" class="form-control" data-ng-model="user.interest" placeholder="Accrued Interest">
+                        </div>
+                    </div>
+                    <div class='col-sm-11'>
+                        <div class="pull-right form-group">
+                            <button type="submit" class="btn btn-large btn-primary">Save Profile</button>
+                        </div>
+
+                        <div data-ng-show="success" class="text-success">
+                            <strong>Profile Saved Successfully</strong>
+                        </div>
+                        <div data-ng-show="error" class="text-danger">
+                            <strong>{{error}}</strong>
                         </div>
                     </div>
 

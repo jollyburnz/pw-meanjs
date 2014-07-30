@@ -40,10 +40,15 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
 
         // Update existing Partner
         $scope.update = function() {
-            var partner = $scope.user;
+            var user = $scope.user;
+            var user_revised = _.omit(user, 'password', 'salt', '$delete', '$get', '$query', '$remove', '$save', '$update');
+            var user_updated = new Users(user_revised);
 
-            partner.$update(function() {
-                $location.path('partners');
+            user_updated.$update(function(response) {
+                $scope.success = true;
+                $location.path('partners')
+            }, function(response) {
+                $scope.error = response.data.message;
             });
         };
 
