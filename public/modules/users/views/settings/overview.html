@@ -34,19 +34,56 @@
       </div>
       -->
       <h3>LP Information</h3>
+      <br/>
       <table>
+
+        <tr>
+          <td class='title'>Name</td>
+          <td>{{user.firstName}} {{user.lastName}}</td>
+        </tr>
+        <tr>
+          <td class='title'>Legal Entity</td>
+          <td>{{user.entity}}</td>
+        </tr>
+        <tr>
+          <td class='title'>Phone #</td>
+          <td>{{user.phone}}</td>
+        </tr>
         <tr>
           <td class='title'>Email</td>
           <td>{{user.email}}</td>
         </tr>
         <tr>
           <td class='title'>EIN/SS</td>
-          <td>{{user.einss}}</td>
+          <td>{{user.ein}}</td>
         </tr>
         <tr>
-          <td class='title'>Address&nbsp;&nbsp;&nbsp;</td>
-          <td>{{user.address1}}<br/>
-              {{user.address2}}
+          <td class='title'>Address</td>
+          <td>{{user.address1}} {{user.address2}}<br/>
+              {{user.city}}, {{user.state}} {{user.zip}}
+          </td>
+        </tr>
+      </table>
+      <br/><br/>
+      <h3>Preferred Point of Contact</h3>
+      <br/>
+      <table>
+        <tr>
+          <td class='title'>Name</td>
+          <td>{{user.pp_name}}</td>
+        </tr>
+        <tr>
+          <td class='title'>Title</td>
+          <td>{{user.pp_title}}</td>
+        </tr>
+        <tr>
+          <td class='title'>Email</td>
+          <td>{{user.pp_email}}
+          </td>
+        </tr>
+        <tr>
+          <td class='title'>Phone</td>
+          <td>{{user.pp_phone}}
           </td>
         </tr>
       </table>
