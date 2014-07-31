@@ -57,3 +57,20 @@ tr.sub td{
   background: #d3e0d9;
   padding: 10px;
 }
+
+a.changepassword{
+  background: #156333;
+  display: block;
+  color: #fff;
+  margin-top: 20px;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a.changepassword:hover{
+  background: #fff;
+  color: #156333;
+}

@@ -75,6 +75,15 @@ var UserSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+	phone:{
+		type: String
+	},
+	entity:{
+		type: String
+	},
+	ein:{
+		type: String
+	},
 	profile:{
 		type: String
 	},
@@ -82,6 +91,15 @@ var UserSchema = new Schema({
 		type: String
 	},
 	address2: {
+		type: String
+	},
+	city: {
+		type: String
+	},
+	state: {
+		type: String
+	},
+	zip: {
 		type: String
 	},
 	pp_name: {

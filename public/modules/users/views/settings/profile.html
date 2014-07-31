@@ -26,13 +26,25 @@
         <td>{{user.firstName}} {{user.lastName}}</td>
       </tr>
       <tr>
+        <td class='title'>Legal Entity</td>
+        <td>{{user.entity}}</td>
+      </tr>
+      <tr>
+        <td class='title'>Phone #</td>
+        <td>{{user.phone}}</td>
+      </tr>
+      <tr>
         <td class='title'>Email</td>
         <td>{{user.email}}</td>
       </tr>
       <tr>
+        <td class='title'>EIN/SS</td>
+        <td>{{user.ein}}</td>
+      </tr>
+      <tr>
         <td class='title'>Address</td>
-        <td>{{user.address1}}<br/>
-            {{user.address2}}
+        <td>{{user.address1}} {{user.address2}}<br/>
+            {{user.city}}, {{user.state}} {{user.zip}}
         </td>
       </tr>
     </table>
@@ -69,75 +81,168 @@
 				<fieldset>
 					<h3>Personal Information</h3>	
 					<br/>
-					<div class='col-sm-5'>
+          <div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-5'>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
+                </div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-5'>
+                <a class='changepassword' href="/#!/settings/password">Change Password</a>
+              </div>
+            </div>
+          </div>
 
-						<div class="form-group">
-							<label for="firstName">First Name</label>
-							<input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
-						</div>
-						<div class="form-group">
-							<label for="lastName">Last Name</label>
-							<input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
-						</div>
+					<div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-5'>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
+                </div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-5'>
+                <div class="form-group">
+                  <label for="firstName">Preferred First Name</label>
+                  <input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
+                </div>
+    					</div>
+            </div>
 					</div>
 
-					<div class='col-sm-offset-1 col-sm-5'>
-						<div class="form-group">
-							<label for="email">Email</label>
-							<input type="text" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<label for="username">Username</label>
-							<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
-						</div>
-						<br/>
+          <div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-5'>
+    						<div class="form-group">
+    							<label for="entity">Legal Entity</label>
+    							<input type="text" id="entity" name="entity" class="form-control" data-ng-model="user.entity" placeholder="Email">
+    						</div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-5'>
+    						<div class="form-group">
+    							<label for="ein">EIN/SS</label>
+    							<input type="text" id="ein" name="ein" class="form-control" data-ng-model="user.ein" placeholder="EIN/SS">
+    						</div>
+              </div>
+            </div>
 					</div>
 
-					<div class='col-sm-11'>
-						<div class="form-group">
-							<label for="Address1">Address1</label>
-							<input type="text" id="address1" name="address1" class="form-control" data-ng-model="user.address1" placeholder="Address1">
-						</div>
-						<div class="form-group">
-							<label for="Address2">Address2</label>
-							<input type="text" id="address2" name="address2" class="form-control" data-ng-model="user.address2" placeholder="Address2">
-						</div>
-						<br/><br/>
-					</div>
+          <div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-5'>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="text" id="phone" name="phone" class="form-control" data-ng-model="user.phone" placeholder="Phone Number">
+                </div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-5'>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-5'>
+                <div class="form-group">
+                  <label for="Address1">Address1</label>
+                  <input type="text" id="address1" name="address1" class="form-control" data-ng-model="user.address1" placeholder="Address1">
+                </div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-5'>
+                <div class="form-group">
+                  <label for="Address2">Address2</label>
+                  <input type="text" id="address2" name="address2" class="form-control" data-ng-model="user.address2" placeholder="Address2">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-5'>
+                <div class="form-group">
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city" class="form-control" data-ng-model="user.city">
+                </div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-1'>
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" class="form-control" data-ng-model="user.state">
+                </div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-3'>
+                <div class="form-group">
+                  <label for="zip">Zip</label>
+                  <input type="text" id="zip" name="zip" class="form-control" data-ng-model="user.zip">
+                </div>
+              </div>
+            </div>
+            <br/><br/>
+          </div>
+
 					
 					<h3>Preferred Point of Contact Information</h3>
 					<br/>
-					<div class='col-sm-11'>
 
-							<div class="form-group">
-								<label for="pp_name">Name</label>
-								<input type="text" id="pp_name" name="pp_name" class="form-control" data-ng-model="user.pp_name" placeholder="Name">
-							</div>
-							<div class="form-group">
-								<label for="pp_title">Title</label>
-								<input type="text" id="pp_title" name="pp_title" class="form-control" data-ng-model="user.pp_title" placeholder="Title">
-							</div>
-							<div class="form-group">
-								<label for="pp_email">Email</label>
-								<input type="text" id="pp_email" name="pp_email" class="form-control" data-ng-model="user.pp_email" placeholder="Email Address">
-							</div>
-							<div class="form-group">
-								<label for="pp_phone">Phone</label>
-								<input type="text" id="pp_phone" name="pp_phone" class="form-control" data-ng-model="user.pp_phone" placeholder="Phone">
-							</div>
-							<br/>
-							<div class="pull-right form-group">
-								<button type="submit" class="btn btn-large btn-primary">Save Profile</button>
-							</div>
+           <div class='col-sm-12'>
+            <div class='row'>
+              <div class='col-sm-11'>
+                <div class="form-group">
+                  <label for="pp_name">Name</label>
+                  <input type="text" id="pp_name" name="pp_name" class="form-control" data-ng-model="user.pp_name" placeholder="Name">
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-sm-11'>
+                <div class="form-group">
+                  <label for="pp_title">Title / Role</label>
+                  <input type="text" id="pp_title" name="pp_title" class="form-control" data-ng-model="user.pp_title" placeholder="Title">
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-sm-5'>
+                <div class="form-group">
+                  <label for="pp_email">Email</label>
+                  <input type="text" id="pp_email" name="pp_email" class="form-control" data-ng-model="user.pp_email" placeholder="Email Address">
+                </div>
+              </div>
+              <div class='col-sm-offset-1 col-sm-5'>
+                <div class="form-group">
+                  <label for="pp_phone">Phone</label>
+                  <input type="text" id="pp_phone" name="pp_phone" class="form-control" data-ng-model="user.pp_phone" placeholder="Phone">
+                </div>
+              </div>
+            </div>
+          </div>
 
-							<div data-ng-show="success" class="text-success">
-								<strong>Profile Saved Successfully</strong>
-							</div>
-							<div data-ng-show="error" class="text-danger">
-								<strong>{{error}}</strong>
-							</div>
-						</div>
-					</div>
+          <div class='col-sm-12'>
+            <br/>
+            <div class='row'>
+              <div class='col-sm-11'>
+
+                <div class="pull-right form-group">
+                  <button type="submit" class="btn btn-large btn-primary">Save Profile</button>
+                </div>
+
+                <div data-ng-show="success" class="text-success">
+                  <strong>Profile Saved Successfully</strong>
+                </div>
+                <div data-ng-show="error" class="text-danger">
+                  <strong>{{error}}</strong>
+                </div>
+
+            </div>
+          </div>
+        </div>
 
 				</fieldset>
 			</form>
