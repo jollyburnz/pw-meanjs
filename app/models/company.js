@@ -73,6 +73,15 @@ var CompanySchema = new Schema({
 	ceo_email: {
 		type: String
 	},
+	address1: {
+		type: String
+	},
+	address2: {
+		type: String
+	},
+	url: {
+		type: String
+	},
 	is_featured: {
 		type: Boolean,
 		default: false

@@ -8,8 +8,8 @@ module.exports = function(app) {
 	app.get('/companies', companies.list);
 	app.post('/companies', users.requiresLogin, companies.create);
 	app.get('/companies/:companyId', companies.read);
-	app.put('/companies/:companyId', users.requiresLogin, companies.hasAuthorization, companies.update);
-	app.del('/companies/:companyId', users.requiresLogin, companies.hasAuthorization, companies.delete);
+	app.put('/companies/:companyId', companies.update);
+	app.del('/companies/:companyId', companies.delete);
 
 	// Finish by binding the Company middleware
 	app.param('companyId', companies.companyByID);
