@@ -8,8 +8,8 @@ module.exports = function(app) {
 	app.get('/funds', funds.list);
 	app.post('/funds', users.requiresLogin, funds.create);
 	app.get('/funds/:fundId', funds.read);
-	app.put('/funds/:fundId', users.requiresLogin, funds.hasAuthorization, funds.update);
-	app.del('/funds/:fundId', users.requiresLogin, funds.hasAuthorization, funds.delete);
+	app.put('/funds/:fundId', funds.update);
+	app.del('/funds/:fundId', funds.delete);
 
 	// Finish by binding the Fund middleware
 	app.param('fundId', funds.fundByID);

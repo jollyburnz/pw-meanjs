@@ -8,8 +8,8 @@ module.exports = function(app) {
 	app.get('/keyupdates', keyupdates.list);
 	app.post('/keyupdates', users.requiresLogin, keyupdates.create);
 	app.get('/keyupdates/:keyupdateId', keyupdates.read);
-	app.put('/keyupdates/:keyupdateId', users.requiresLogin, keyupdates.hasAuthorization, keyupdates.update);
-	app.del('/keyupdates/:keyupdateId', users.requiresLogin, keyupdates.hasAuthorization, keyupdates.delete);
+	app.put('/keyupdates/:keyupdateId', keyupdates.update);
+	app.del('/keyupdates/:keyupdateId', keyupdates.delete);
 
 	// Finish by binding the Keyupdate middleware
 	app.param('keyupdateId', keyupdates.keyupdateByID);

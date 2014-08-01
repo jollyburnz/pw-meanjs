@@ -8,8 +8,8 @@ module.exports = function(app) {
 	app.get('/investments', investments.list);
 	app.post('/investments', users.requiresLogin, investments.create);
 	app.get('/investments/:investmentId', investments.read);
-	app.put('/investments/:investmentId', users.requiresLogin, investments.hasAuthorization, investments.update);
-	app.del('/investments/:investmentId', users.requiresLogin, investments.hasAuthorization, investments.delete);
+	app.put('/investments/:investmentId', investments.update);
+	app.del('/investments/:investmentId', investments.delete);
 
 	// Finish by binding the Investment middleware
 	app.param('investmentId', investments.investmentByID);

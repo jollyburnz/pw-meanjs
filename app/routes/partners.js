@@ -8,8 +8,8 @@ module.exports = function(app) {
 	app.get('/partners', partners.list);
 	app.post('/partners', users.requiresLogin, partners.create);
 	app.get('/partners/:partnerId', partners.read);
-	app.put('/partners/:partnerId', users.requiresLogin, partners.hasAuthorization, partners.update);
-	app.del('/partners/:partnerId', users.requiresLogin, partners.hasAuthorization, partners.delete);
+	app.put('/partners/:partnerId', partners.update);
+	app.del('/partners/:partnerId', partners.delete);
 
 	// Finish by binding the Partner middleware
 	app.param('partnerId', partners.partnerByID);

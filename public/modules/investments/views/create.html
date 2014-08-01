@@ -18,6 +18,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="type">Type</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="type" id="type" class="form-control" placeholder="Enter Type of Investment" required>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="control-label" for="company">Company</label>
                     <select class="form-control" data-ng-model="for_company" data-ng-options="company as (company.name + ' - ' + company.from_fund) for company in companies">
                     </select>

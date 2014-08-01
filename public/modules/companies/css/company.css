@@ -117,3 +117,7 @@ ul.keyupdates li, ul.investments li{
 .company-metrics4{
   width: 18%;
 }
+
+th{
+  padding-bottom: 10px;
+}

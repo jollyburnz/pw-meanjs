@@ -16,6 +16,7 @@ angular.module('investments').controller('InvestmentsController', ['$scope', '$s
             var investment = new Investments({
                 date: this.date,
                 amount: this.amount,
+                type: this.type,
                 for_company: this.for_company
             });
 

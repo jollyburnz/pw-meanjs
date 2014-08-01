@@ -20,6 +20,9 @@ var InvestmentSchema = new Schema({
 	for_company: {
 		type: Object
 	},
+	type:{
+		type: String
+	},
 	created: {
 		type: Date,
 		default: Date.now
