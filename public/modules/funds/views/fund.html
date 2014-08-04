@@ -37,7 +37,7 @@
         </p>
       </div>
       <div class='col-xs-9'>
-        <h2 class='text-center green'>Projected Liquidation Values</h2>
+        <h2 class='text-center green'>Projected Liquidity Values</h2>
         <div class='row'>
           <div class='col-xs-4'>
             <div class='capsule {{p}}-d'>
@@ -114,7 +114,7 @@
           </div>
 
           <div class="col-xs-4 current_valuation">
-            <div class='table-title-left'>Valuation Data</div>
+            <div class='table-title-left'>Current Valuation</div>
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -175,6 +175,10 @@
 
   <div data-ng-show="data_or_news === 'news'">
     <div class='row'>
+      <div class='col-sm-3'>
+        <select class="fund-control" data-ng-model="fund_is" data-ng-options="fund as ('&nbsp;'+ fund.name | uppercase) for fund in funds" ng-change="dropdowntest()"></select><b style='position: absolute; right: 40px; top: 30px;' class="caret"></b>
+        <br/>
+      </div>
       <div class='col-sm-12'>
         <h2 class='green'>Featured Companies</h3><br/>
         <div class='row'>
