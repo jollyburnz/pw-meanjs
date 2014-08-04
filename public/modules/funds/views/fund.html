@@ -30,6 +30,11 @@
         <span class='currentvalue'>{{IRR}}%</span>
         <h5>Multiple</h5>
         <span class='currentvalue'>{{multiple}}&nbsp;x</span>
+        <br/><br/>
+        <p>
+          Last updated<br/>
+          <span style="color: #219C50;">{{updated | date:'longDate'}}</span>
+        </p>
       </div>
       <div class='col-xs-9'>
         <h2 class='text-center green'>Projected Liquidation Values</h2>
@@ -87,14 +92,33 @@
       <div class='col-xs-12'>
         <br/><br/>
         <div class='row'>
-          <div class="col-xs-8 current_valuation">
-            <div class='table-title-left'>Current Valuation</div>
+
+          <div class='col-xs-4 basic_info'>
+            <div class='table-title-left'>Basic Information</div>
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Company</th>
+                  <th>Logo</th>
+                  <th>Company Name</th>
                   <th>Initial Investment</th>
-                  <th>Fund Ownership</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="c in filtered | orderBy:'name':reverse">
+                  <td style='width: 15%'><a href="#!/companies/{{c._id}}"><img class='img-responsive' style='height: 17px;' src='{{c.image}}'/></a></td>
+                  <td style='width: 40%'><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
+                  <td style='width: 45%'>{{c.initial_investment | currency}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-xs-4 current_valuation">
+            <div class='table-title-left'>Valuation Data</div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Ownership</th>
                   <th>EV</th>
                   <th>IRR</th>
                   <th>Multiple</th>
@@ -102,8 +126,6 @@
               </thead>
               <tbody>
                 <tr ng-repeat="c in filtered | orderBy:'name':reverse">
-                  <td><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
-                  <td>{{c.initial_investment | currency}}</td>
                   <td>{{c.fund_ownership | currency}}</td>
                   <td>{{c.ev | currency}}</td>
                   <td>{{c.irr}}</td>
@@ -112,6 +134,7 @@
               </tbody>
             </table>
           </div>
+
           <div class='col-xs-4 projected_exit'>
             <div class='table-title-right'>Projected Exit</div>
             <table class="table table-striped">
@@ -143,56 +166,58 @@
               </tbody>
             </table>
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
 
-<div data-ng-show="data_or_news === 'news'">
-  <div class='row'>
-    <div class='col-sm-12'>
-      <h2 class='green'>Featured Companies</h3><br/>
-      <div class='row'>
-        <div ng-repeat="company in filtered_news | limitTo : 3" class='col-sm-4'>
-            <div class='company-photo'>
-              <img src='{{company.image}}' />
-            </div>
-            <h3>{{company.name}}</h3>
-            <br/>
-            <a href='#'><i>{{company.link}}</i></a>
-            <br/><br/>
+  <div data-ng-show="data_or_news === 'news'">
+    <div class='row'>
+      <div class='col-sm-12'>
+        <h2 class='green'>Featured Companies</h3><br/>
+        <div class='row'>
+          <div ng-repeat="company in filtered_news | limitTo : 3" class='col-sm-4'>
+              <div class='company-photo'>
+                <img src='{{company.image}}' />
+              </div>
+              <h3>{{company.name}}</h3>
+              <br/>
+              <a href='#'><i>{{company.link}}</i></a>
+              <br/><br/>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class='col-md-12'>
+      <div class='col-md-12'>
 
-      <h2 class='green'>Updates</h2><br/>
-      <ul class='keyupdates'>
-      <li ng-repeat="a in filter_keyupdates">
-        <a href='{{a.link}}' target="_blank">{{a.content}}</a> 
-        <span class='pull-right'>{{a.date_added | date : short}}</span>
-      </li>
-    </ul>
-    <br/><br/>
-    </div>
+        <h2 class='green'>Updates</h2><br/>
+        <ul class='keyupdates'>
+        <li ng-repeat="a in filter_keyupdates">
+          <a href='{{a.link}}' target="_blank">{{a.content}}</a> 
+          <span class='pull-right'>{{a.date_added | date : short}}</span>
+        </li>
+      </ul>
+      <br/><br/>
+      </div>
 
-    <div class='col-sm-12'>
-      <h2 class='green'>Articles</h2><br/>
-      <div class='row'>
-        <div ng-repeat="article in filter_article" class='col-sm-4'>
-            
-            <div class='article-photo'>
-              <a href='http://{{article.link}}' target="_blank"><img style='height: 150px; width: 100%' src='{{article.image}}' /></a>
-            </div>
-            <br/>
-            <a href='http://{{article.link}}' target="_blank"><h4>{{article.content}}</h4></a>
-            <br/><br/>
+      <div class='col-sm-12'>
+        <h2 class='green'>Articles</h2><br/>
+        <div class='row'>
+          <div ng-repeat="article in filter_article" class='col-sm-4'>
+              
+              <div class='article-photo'>
+                <a href='http://{{article.link}}' target="_blank"><img style='height: 150px; width: 100%' src='{{article.image}}' /></a>
+              </div>
+              <br/>
+              <a href='http://{{article.link}}' target="_blank"><h4>{{article.content}}</h4></a>
+              <br/><br/>
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
-</div>
 
 </section>

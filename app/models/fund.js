@@ -55,7 +55,7 @@ var FundSchema = new Schema({
 	u_multiple: {
 		type: Number,
 	},
-	created: {
+	updated: {
 		type: Date,
 		default: Date.now
 	},

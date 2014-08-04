@@ -22,7 +22,8 @@ angular.module('funds').controller('FundsController', ['$scope', '$stateParams',
                 b_multiple: this.b_multiple,
                 u_mark: this.u_mark,
                 u_IRR: this.u_IRRR,
-                u_multiple: this.u_multiple
+                u_multiple: this.u_multiple,
+                updated: new Date()
             });
 
             // Redirect after save
@@ -66,7 +67,10 @@ angular.module('funds').controller('FundsController', ['$scope', '$stateParams',
 
         // Update existing Fund
         $scope.update = function() {
+            $scope.fund.updated = new Date()
             var fund = $scope.fund;
+
+            console.log(fund, $scope.fund.updated, 'updated');
 
             fund.$update(function() {
                 $location.path('funds/' + fund._id);

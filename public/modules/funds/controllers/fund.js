@@ -8,6 +8,9 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
 
     var dope = function(){
       var fund = $scope.fund_is;
+
+      $scope.updated = fund.updated;
+
       $scope.investedCapital = fund.investedCapital;
       $scope.mark = fund.mark;
       $scope.IRR = fund.IRR;

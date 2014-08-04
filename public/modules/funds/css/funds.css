@@ -164,23 +164,29 @@ select:hover { background-color: #fff; }
 }
 
 .table-title-left{
-  background: #e3e4e5;
-  color: #0f6431;
-  font-size: 30px;
+  background: #555;
+  color: #fff;
+  font-size: 22px;
   font-family: 'Roboto Condensed', sans-serif;
   padding: 10px;
   border-top: 1px solid #CDCDCD;
   border-left: 1px solid #CDCDCD;
+  letter-spacing: 0.6px;
 }
 
 .table-title-right{
   background: #7ca98e;
   color: #fff;
-  font-size: 30px;
+  font-size: 22px;
   font-family: 'Roboto Condensed', sans-serif;
   padding: 10px;
   border-top: 1px solid #CDCDCD;
   border-right: 1px solid #CDCDCD;
+  letter-spacing: 0.6px;
+}
+
+.current_valuation{
+  margin-left: -30px;
 }
 
 .current_valuation tbody{
@@ -189,6 +195,19 @@ select:hover { background-color: #fff; }
 }
 
 .current_valuation thead{
+  background: #e3e4e5;
+  border-left: 1px solid #CDCDCD;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+.basic_info tbody{
+  border-left: 1px solid #CDCDCD;
+  border-bottom: 1px solid #CDCDCD;
+}
+
+.basic_info thead{
+  background: #e3e4e5;
   border-left: 1px solid #CDCDCD;
   font-variant: small-caps;
   letter-spacing: 1px;
@@ -229,7 +248,7 @@ select:hover { background-color: #fff; }
 
 .projected_exit th{
   background: #bed3c7;
-  border-bottom: 2px solid #156333 !important;
+  border-bottom: 2px solid #8DAF9A !important;
 }
 
 .projected_exit td{
