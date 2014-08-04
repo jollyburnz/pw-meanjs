@@ -106,8 +106,8 @@
               <tbody>
                 <tr ng-repeat="c in filtered | orderBy:'name':reverse">
                   <td style='width: 15%'><a href="#!/companies/{{c._id}}"><img class='img-responsive' style='height: 17px;' src='{{c.image}}'/></a></td>
-                  <td style='width: 40%'><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
-                  <td style='width: 45%'>{{c.initial_investment | currency}}</td>
+                  <td style='width: 45%'><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
+                  <td style='width: 40%'>{{c.initial_investment | currency}}</td>
                 </tr>
               </tbody>
             </table>
