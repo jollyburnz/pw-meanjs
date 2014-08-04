@@ -86,6 +86,10 @@ var CompanySchema = new Schema({
 		type: Boolean,
 		default: false
 	},
+	is_va: {
+		type: Boolean,
+		default: false
+	},
 	created: {
 		type: Date,
 		default: Date.now

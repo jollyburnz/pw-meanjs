@@ -37,7 +37,8 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                 address1: this.address1,
                 address2: this.address2,
                 url: this.url,
-                is_featured: this.is_featured
+                is_featured: this.is_featured,
+                is_va: this.is_va
             });
 
             // Redirect after save
