@@ -184,11 +184,9 @@
         <div class='row'>
           <div ng-repeat="company in filtered_news | limitTo : 3" class='col-sm-4'>
               <div class='company-photo'>
-                <img src='{{company.image}}' />
+                <a href="#!/companies/{{company._id}}"><img src='{{company.image}}' /></a>
               </div>
-              <h3>{{company.name}}</h3>
-              <br/>
-              <a href='#'><i>{{company.link}}</i></a>
+              <h3><a href="#!/companies/{{company._id}}">{{company.name}}</a></h3>
               <br/><br/>
           </div>
         </div>
