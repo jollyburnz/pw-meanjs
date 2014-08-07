@@ -1,17 +1,13 @@
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h1>{{article.link}}</h1>
-	</div>
-	<!-- data-ng-show="authentication.user._id == article.user._id" -->
-	<div class="pull-right">
-		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<small>
-		<em class="text-muted">Posted on {{article.date_posted | date:'shortDate'}} by {{article.author}}</em>
-	</small>
+  <br/>
+
+  <div class='col-md-3'>
+    <h1 class='green'>{{article.link}}</h1>
+    {{article.author}}
+  </div>
+
+  <div class='col-md-offset-1 col-md-8'>
+    {{article.content}}
+  </div>
+
 </section>

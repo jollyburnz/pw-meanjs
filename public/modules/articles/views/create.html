@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">For Company</label>
-                    <select class="form-control" data-ng-model="for_company" data-ng-options="company._id as (company.name + ' - ' + company.from_fund) for company in companies">
+                    <select class="form-control" data-ng-model="for_company" data-ng-options="company as (company.name + ' - ' + company.from_fund) for company in companies">
                     </select>
                 </div>
                 <div class="form-group">

@@ -36,7 +36,7 @@ var ArticleSchema = new Schema({
 		default: false
 	},
 	for_company: {
-		type: Schema.ObjectId
+		type: Object
 	},
 	date_posted: {
 		type: Date,

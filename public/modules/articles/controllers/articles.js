@@ -20,6 +20,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 author: this.author,
                 content: this.content,
                 for_company: this.for_company,
+                for_company_name: this.for_company.name,
                 date_posted: this.date_posted,
                 is_keyupdate: this.is_keyupdate
             });
