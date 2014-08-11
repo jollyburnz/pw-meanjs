@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <label class="control-label" for="lp">LP Name</label>
                     <select class="form-control" data-ng-model="wire.lp" data-ng-options="user as user.firstName +' '+ user.lastName for user in users">
-                        
+                        <option value="">-- {{wire.lp.firstName}} {{wire.lp.lastName}} --</option>
                     </select>
                 </div>
                 <div class="form-group">
