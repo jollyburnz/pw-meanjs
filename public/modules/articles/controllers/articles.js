@@ -1,8 +1,8 @@
 'use strict';
 
 // Articles controller
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles', 'Companies',
-    function($scope, $stateParams, $location, Authentication, Articles, Companies) {
+angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', '$filter', 'Authentication', 'Articles', 'Companies',
+    function($scope, $stateParams, $location, $filter, Authentication, Articles, Companies) {
         $scope.authentication = Authentication;
 
         Companies.query(function(companies) {
@@ -74,6 +74,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 articleId: $stateParams.articleId
             }, function(article) {
                 $scope.article = article;
+            });
+
+            Articles.query(function(articles){
+                var excludethis = ($stateParams.articleId).toString();
+                $scope.related = $filter('filter')(articles, {for_company:{name: $scope.article.for_company.name}, _id: '!'+excludethis});
             });
         };
 

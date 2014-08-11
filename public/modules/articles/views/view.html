@@ -10,6 +10,15 @@
         <div class="hexBottom"></div>
       </div>
     <!-- <img src='{{article.for_company.image}}' /> -->
+    <br/>
+    <h4 class='green'>Other Articles About {{article.for_company.name}}</h4>
+
+    <br/>
+    <div ng-repeat='r in related'>
+      <img class='img-responsive' src='{{r.image}}' />
+     <!--  {{r.link}} - {{r.headline}} -->
+     <a href='#!/articles/{{r._id}}'>{{r.headline}}</a>
+    </div>
   </div>
 
   <div class='col-md-offset-1 col-md-8'>
@@ -32,7 +41,7 @@
       </div>
 
     </div>
-    <br/>
+    <br/><br/>
     <p>{{article.content}}</p>
 
 
