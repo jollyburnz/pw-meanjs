@@ -68,7 +68,7 @@
       </li> -->
 
       <li ng-repeat="a in articles_keyupdates">
-        <a href='#!/articles/{{a._id}}'>{{a.content}}</a> 
+        <a href='#!/articles/{{a._id}}'>{{a.headline}}</a> 
         <span class='pull-right'>{{a.date_posted | date : short}}</span>
       </li>
     </ul>
@@ -80,7 +80,7 @@
             <div class='article-photo'>
               <a href="#!/articles/{{articles._id}}"><img src='{{articles.image}}' /></a><br/>
             </div>
-            <h4><a href="#!/articles/{{articles._id}}">{{articles.content}}</a></h4>
+            <h4><a href="#!/articles/{{articles._id}}">{{articles.headline}}</a></h4>
         </div>
         <hr/>
     </div>

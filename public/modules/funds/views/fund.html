@@ -197,7 +197,7 @@
         <h2 class='green'>Updates</h2><br/>
         <ul class='keyupdates'>
         <li ng-repeat="a in filter_keyupdates">
-          <a href='#!/articles/{{a._id}}'>{{a.content}}</a> 
+          <a href='#!/articles/{{a._id}}'>{{a.headline}}</a> 
           <span class='pull-right'>{{a.date_added | date : short}}</span>
         </li>
       </ul>
@@ -213,7 +213,7 @@
                 <a href="#!/articles/{{article._id}}"><img style='height: 150px; width: 100%' src='{{article.image}}' /></a>
               </div>
               <br/>
-              <a href="#!/articles/{{article._id}}"><h4>{{article.content}}</h4></a>
+              <a href="#!/articles/{{article._id}}"><h4>{{article.headline}}</h4></a>
               <br/><br/>
           </div>
         </div>
