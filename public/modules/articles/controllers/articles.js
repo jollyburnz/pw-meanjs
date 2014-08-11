@@ -18,6 +18,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 image: this.url,
                 link: this.link,
                 author: this.author,
+                headline: this.headline,
                 content: this.content,
                 for_company: this.for_company,
                 for_company_name: this.for_company.name,

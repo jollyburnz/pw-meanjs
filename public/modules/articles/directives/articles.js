@@ -36,4 +36,22 @@ angular.module('articles').directive('dropDown', function(){
       });
     }
   };
+})
+.directive('myBackgroundProfile', function () {
+    return function (scope, element, attrs) {
+            console.log(scope, attrs.myBackgroundProfile, 'directive');
+
+            attrs.$observe('myBackgroundProfile', function(value) {
+                if (value){
+                  element.css({
+                    'background-image': 'url(' + value + ')'
+                });
+                } else {
+                    console.log('no value');
+                    element.css({
+                    'background-image': 'url(img/no_image.png)'
+                });
+                }
+            });
+    };
 });

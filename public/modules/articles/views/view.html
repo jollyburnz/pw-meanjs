@@ -1,13 +1,21 @@
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
   <br/>
-
+  {{article}}<br/><br/>
+  {{article.for_company}}
   <div class='col-md-3'>
-    <h1 class='green'>{{article.link}}</h1>
-    {{article.author}}
+    <h1 class='green'>{{article.for_company.name}}</h1>
+    <br/>
+    <div class="hexagon" my-background-profile="{{article.for_company.image}}">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+      </div>
+    <!-- <img src='{{article.for_company.image}}' /> -->
   </div>
 
   <div class='col-md-offset-1 col-md-8'>
+  	{{article.author}}<br/>
     {{article.content}}
+
   </div>
 
 </section>
