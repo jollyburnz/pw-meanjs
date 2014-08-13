@@ -76,7 +76,11 @@ var UserSchema = new Schema({
 		default: Date.now
 	},
 	phone:{
-		type: String
+		type: String,
+		trim: true,
+		default: '',
+		validate: [validateLocalStrategyProperty, 'Please fill in your phone number'],
+		match: [/^([0-9\(\)\/\+ \-]*)$/, 'Please enter a valid phone number']
 	},
 	entity:{
 		type: String
@@ -97,31 +101,42 @@ var UserSchema = new Schema({
 		type: String
 	},
 	state: {
-		type: String
+		type: String,
+		match: [/^(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|PA|RI|S[CD]|T[NX]|UT|V[AT]|W[AIVY])*$/, 'Please enter a valid state code']
 	},
 	zip: {
-		type: String
+		type: String,
+		match: [/^([0-9]{5}(?:-[0-9]{4})?)*$/, 'Please enter a valid zip code']
 	},
 	pp_name: {
 		type: String
 	},
 	pp_email: {
-		type: String
+		type: String,
+		trim: true,
+		default: '',
+		match: [/.+\@.+\..+/, 'Please fill a valid email address']
 	},
 	pp_title: {
 		type: String
 	},
 	pp_phone: {
-		type: String
+		type: String,
+		trim: true,
+		default: '',
+		match: [/^([0-9\(\)\/\+ \-]*)$/, 'Please enter a valid phone number']
 	},
 	k1:{
-		type: Number
+		type: String,
+		match: [/^[0-9]*$/, 'Please enter only digits']
 	},
 	distributions:{
-		type: Number
+		type: String,
+		match: [/^[0-9]*$/, 'Please enter only digits']
 	},
 	interest:{
-		type: Number
+		type: String,
+		match: [/^[0-9]*$/, 'Please enter only digits']
 	},
 	is_admin: {
 		type: Boolean,
