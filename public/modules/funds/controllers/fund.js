@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('funds').controller('FundController', ['$scope', '$filter', 'Funds', 'Companies', 'Articles',
-    function($scope, $filter, Funds, Companies, Articles) {
+angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$filter', 'Funds', 'Companies', 'Articles',
+    function($scope, $rootScope, $filter, Funds, Companies, Articles) {
 		// Controller Logic 
 		// ...
     // Find a list of Funds
@@ -82,9 +82,23 @@ angular.module('funds').controller('FundController', ['$scope', '$filter', 'Fund
 
     Funds.query(function(funds) {
       console.log(funds);
-      $scope.funds = funds;
-      $scope.fund_is = funds[0];
       $scope.data_or_news = 'data';
+      $scope.funds = funds;
+
+      if (typeof $rootScope.fund_is == "undefined") {
+        $scope.fund_is = funds[0];
+      } else {
+        if ($rootScope.fund_is == 'Fund I'){
+          $scope.fund_is = funds[0];
+        } 
+        else if ($rootScope.fund_is == 'Fund IA'){
+          $scope.fund_is = funds[1];
+        } 
+        else {
+          $scope.fund_is = funds[2];
+        }
+      }
+      
       dope()
     });
 

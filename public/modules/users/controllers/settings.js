@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$filter', '$http', '$location', 'Users', 'Authentication', 'Dropbox', 'Wires', 'Funds',
-	function($scope, $filter, $http, $location, Users, Authentication, Dropbox, Wires, Funds) {
+angular.module('users').controller('SettingsController', ['$scope', '$rootScope', '$filter', '$http', '$location', 'Users', 'Authentication', 'Dropbox', 'Wires', 'Funds',
+	function($scope, $rootScope, $filter, $http, $location, Users, Authentication, Dropbox, Wires, Funds) {
 		$scope.user = Authentication.user;
 
 		// Dropbox Authentication
@@ -175,12 +175,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$filter', '
 
     $scope.gotoFund = function(fund_is) {
     	//console.log(fund_is, 'fund_is');
-
-    	Funds.query(function(funds){
-    		console.log(funds, fund_is);
-    		var test = $filter('filter')(funds, {name: fund_is}, true);
-    		console.log(test[0].name, 'asdfasdfas');
-    	});
+      $rootScope.fund_is = fund_is
     	$location.path("fund");
     };
 
