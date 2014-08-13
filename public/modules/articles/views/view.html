@@ -17,7 +17,8 @@
     <div ng-repeat='r in related'>
       <img class='img-responsive' src='{{r.image}}' />
      <!--  {{r.link}} - {{r.headline}} -->
-     <a href='#!/articles/{{r._id}}'>{{r.headline}}</a>
+     <h5><a href='#!/articles/{{r._id}}'>{{r.headline}}</a></h5>
+     <br/>
     </div>
   </div>
 
@@ -42,8 +43,8 @@
 
     </div>
     <br/><br/>
-    <p>{{article.content}}</p>
 
+    <div ng-bind-html="article.content | markdown"></div>
 
   </div>
 

@@ -16,6 +16,7 @@
     "angular-ui-router": "~0.2.10",
     "ngDropbox": "git@github.com:christiansmith/ngDropbox.git",
     "imagefill": "git@github.com:johnpolacek/imagefill.js.git",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "showdown": "~0.3.1"
   }
 }
