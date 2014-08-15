@@ -3,8 +3,13 @@
         <h1>New Investment</h1>
     </div>
     <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()">
+        <form name='investments' class="form-horizontal" data-ng-submit="create()">
             <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="company">For Company</label>
+                    <select class="form-control" data-ng-model="for_company" data-ng-options="company as (company.name + ' - ' + company.from_fund) for company in companies">
+                    </select>
+                </div>
                 <div class="form-group">
                     <label class="control-label" for="date">Date (MM/DD/YYYY)</label>
                     <div class="controls">
@@ -14,7 +19,7 @@
                 <div class="form-group">
                     <label class="control-label" for="amount">Amount</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="amount" id="amount" class="form-control" placeholder="Enter Amount" required>
+                        <input type="text" data-ng-model="amount" id="amount" class="form-control" placeholder="Enter Amount" ng-pattern="/^\d+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -24,12 +29,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="company">Company</label>
-                    <select class="form-control" data-ng-model="for_company" data-ng-options="company as (company.name + ' - ' + company.from_fund) for company in companies">
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default">
+                    <input type="submit" ng-disabled='investments.$invalid' class="btn btn-default">
                 </div>
             </fieldset>
         </form>
