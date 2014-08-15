@@ -3,7 +3,7 @@
         <h1>New Company</h1>
     </div>
     <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()">
+        <form name='companies' class="form-horizontal" data-ng-submit="create()">
             <fieldset>
                 <div class="form-group">
                     <label class="control-label" for="name">Name</label>
@@ -26,19 +26,19 @@
                 <div class="form-group">
                     <label class="control-label" for="address1">Address 1</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="address1" id="address1" class="form-control" placeholder="Enter Address 1" required>
+                        <input type="text" data-ng-model="address1" id="address1" class="form-control" placeholder="Enter Address 1">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="address2">Address 2</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="address2" id="address2" class="form-control" placeholder="Enter Address 2" required>
+                        <input type="text" data-ng-model="address2" id="address2" class="form-control" placeholder="Enter Address 2">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="url">URL</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="url" id="url" class="form-control" placeholder="Enter URL" required>
+                        <input type="text" data-ng-model="url" id="url" class="form-control" placeholder="Enter URL">
                     </div>
                 </div>
                 <br/>
@@ -47,13 +47,13 @@
                     <h2>Company Personnel</h2>
                     <label class="control-label" for="ceo_name">CEO Name</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="ceo_name" id="ceo_name" class="form-control" placeholder="Enter CEO Name" required>
+                        <input type="text" data-ng-model="ceo_name" id="ceo_name" class="form-control" placeholder="Enter CEO Name">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="ceo_email">CEO Email</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="ceo_email" id="ceo_email" class="form-control" placeholder="Enter CEO Email" required>
+                        <input type="text" data-ng-model="ceo_email" id="ceo_email" class="form-control" placeholder="Enter CEO Email">
                     </div>
                 </div>
                 <br/>
@@ -62,31 +62,31 @@
                     <h2>Current Valuation</h2>
                     <label class="control-label" for="name">Initial Investment</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="initial_investment" id="initial_investment" class="form-control" placeholder="Initial Investment" required>
+                        <input type="text" data-ng-model="initial_investment" id="initial_investment" class="form-control" placeholder="Initial Investment" ng-pattern="/^\d+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">Fund Ownership</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="fund_ownership" id="fund_ownership" class="form-control" placeholder="Fund Ownership" required>
+                        <input type="text" data-ng-model="fund_ownership" id="fund_ownership" class="form-control" placeholder="Fund Ownership" ng-pattern="/^\d+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">EV</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="ev" id="ev" class="form-control" placeholder="EV" required>
+                        <input type="text" data-ng-model="ev" id="ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">IRR</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="irr" id="irr" class="form-control" placeholder="IRR" required>
+                        <input type="text" data-ng-model="irr" id="irr" class="form-control" placeholder="IRR" ng-pattern="/^\d+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">Multiple</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="multiple" id="multiple" class="form-control" placeholder="Multiple" required>
+                        <input type="text" data-ng-model="multiple" id="multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
                     </div>
                 </div>
                 <br/>
@@ -97,19 +97,19 @@
                         <div class="form-group">
                             <label class="control-label" for="name">Downside Realized Cash</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="d_cash" id="d_cash" class="form-control" placeholder="Cash" required>
+                                <input type="text" data-ng-model="d_cash" id="d_cash" class="form-control" placeholder="Cash" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Downside EV</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="d_ev" id="d_ev" class="form-control" placeholder="EV" required>
+                                <input type="text" data-ng-model="d_ev" id="d_ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Downside Multiple</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="d_multiple" id="d_multiple" class="form-control" placeholder="Multiple" required>
+                                <input type="text" data-ng-model="d_multiple" id="d_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
 
@@ -118,19 +118,19 @@
                         <div class="form-group">
                             <label class="control-label" for="name">Baseline Realized Cash</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="b_cash" id="b_cash" class="form-control" placeholder="Cash" required>
+                                <input type="text" data-ng-model="b_cash" id="b_cash" class="form-control" placeholder="Cash" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Baseline EV</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="b_ev" id="b_ev" class="form-control" placeholder="EV" required>
+                                <input type="text" data-ng-model="b_ev" id="b_ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Baseline Multiple</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="b_multiple" id="b_multiple" class="form-control" placeholder="Multiple" required>
+                                <input type="text" data-ng-model="b_multiple" id="b_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
 
@@ -139,19 +139,19 @@
                         <div class="form-group">
                             <label class="control-label" for="name">Upside Realized Cash</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="u_cash" id="u_cash" class="form-control" placeholder="Cash" required>
+                                <input type="text" data-ng-model="u_cash" id="u_cash" class="form-control" placeholder="Cash" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Upside EV</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="u_ev" id="u_ev" class="form-control" placeholder="EV" required>
+                                <input type="text" data-ng-model="u_ev" id="u_ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Upside Multiple</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="u_multiple" id="u_multiple" class="form-control" placeholder="Multiple" required>
+                                <input type="text" data-ng-model="u_multiple" id="u_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
                             </div>
                         </div>
 
@@ -178,7 +178,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default">
+                    <input type="submit" ng-disabled='companies.$invalid' class="btn btn-default">
                 </div>
             </fieldset>
         </form>
