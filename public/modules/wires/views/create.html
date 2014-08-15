@@ -3,7 +3,7 @@
         <h1>New Wire</h1>
     </div>
     <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()">
+        <form name='wires' class="form-horizontal" data-ng-submit="create()">
             <fieldset>
                 <div class="form-group">
                     <label class="control-label" for="company">Fund</label>
@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label class="control-label" for="amount">Wire Amount</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="amount" id="amount" class="form-control" placeholder="Enter Amount" required>
+                        <input type="text" data-ng-model="amount" ng-pattern="/^\d+$/" id="amount" class="form-control" placeholder="Enter Amount" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default">
+                    <input type="submit" ng-disabled="wires.$invalid" class="btn btn-default">
                 </div>
             </fieldset>
         </form>

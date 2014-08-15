@@ -26,7 +26,7 @@ angular.module('wires').controller('WiresController', ['$scope', '$stateParams',
             });
 
             // Redirect after save
-            wire.$save(function(response) {
+            wire.$save(function() {
                 $location.path('wires');
             });
 
