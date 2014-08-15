@@ -3,7 +3,7 @@
         <h1>Funds</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="fund in funds" data-ng-href="#!/funds/{{fund._id}}" class="list-group-item">
+        <a data-ng-repeat="fund in funds" data-ng-href="#!/funds/{{fund._id}}/edit" class="list-group-item">
             <small class="list-group-item-text">{{fund.updated | date:'medium'}} / {{fund.user.displayName}}</small>
             <h4 class="list-group-item-heading">{{fund.name}}</h4>
         </a>
