@@ -79,7 +79,6 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true,
 		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your phone number'],
 		match: [/^([0-9\(\)\/\+ \-]*)$/, 'Please enter a valid phone number']
 	},
 	entity:{
