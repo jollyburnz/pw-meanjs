@@ -73,31 +73,31 @@
                     <h2>Current Valuation</h2>
                     <label class="control-label" for="name">Initial Investment</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="company.initial_investment" id="initial_investment" class="form-control" placeholder="Initial Investment" ng-pattern="/^\d+$/" required>
+                        <input type="text" data-ng-model="company.initial_investment" id="initial_investment" class="form-control" placeholder="Initial Investment" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">Fund Ownership</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="company.fund_ownership" id="fund_ownership" class="form-control" placeholder="Fund Ownership" ng-pattern="/^\d+$/" required>
+                        <input type="text" data-ng-model="company.fund_ownership" id="fund_ownership" class="form-control" placeholder="Fund Ownership" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">EV</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="company.ev" id="ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
+                        <input type="text" data-ng-model="company.ev" id="ev" class="form-control" placeholder="EV" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">IRR</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="company.irr" id="irr" class="form-control" placeholder="IRR" ng-pattern="/^\d+$/" required>
+                        <input type="text" data-ng-model="company.irr" id="irr" class="form-control" placeholder="IRR" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="name">Multiple</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="company.multiple" id="multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
+                        <input type="text" data-ng-model="company.multiple" id="multiple" class="form-control" placeholder="Multiple" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                     </div>
                 </div>
                 <br/>
@@ -109,19 +109,19 @@
                         <div class="form-group">
                             <label class="control-label" for="name">Downside Realized Cash</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.d_cash" id="d_cash" class="form-control" placeholder="Cash" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.d_cash" id="d_cash" class="form-control" placeholder="Cash" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Downside EV</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.d_ev" id="d_ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.d_ev" id="d_ev" class="form-control" placeholder="EV" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Downside Multiple</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.d_multiple" id="d_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.d_multiple" id="d_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
 
@@ -130,19 +130,19 @@
                         <div class="form-group">
                             <label class="control-label" for="name">Baseline Realized Cash</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.b_cash" id="b_cash" class="form-control" placeholder="Cash" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.b_cash" id="b_cash" class="form-control" placeholder="Cash" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Baseline EV</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.b_ev" id="b_ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.b_ev" id="b_ev" class="form-control" placeholder="EV" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Baseline Multiple</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.b_multiple" id="b_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.b_multiple" id="b_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
 
@@ -151,19 +151,19 @@
                         <div class="form-group">
                             <label class="control-label" for="name">Upside Realized Cash</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.u_cash" id="u_cash" class="form-control" placeholder="Cash" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.u_cash" id="u_cash" class="form-control" placeholder="Cash" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Upside EV</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.u_ev" id="u_ev" class="form-control" placeholder="EV" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.u_ev" id="u_ev" class="form-control" placeholder="EV" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="name">Upside Multiple</label>
                             <div class="controls">
-                                <input type="text" data-ng-model="company.u_multiple" id="u_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^\d+$/" required>
+                                <input type="text" data-ng-model="company.u_multiple" id="u_multiple" class="form-control" placeholder="Multiple" ng-pattern="/^[-+]?[0-9]*\.?[0-9]+$/" required>
                             </div>
                         </div>
 
