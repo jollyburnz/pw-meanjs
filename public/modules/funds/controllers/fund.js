@@ -45,35 +45,34 @@ angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$
             $('.company-photo').fadeIn();
           }, 2000)
         });
-      });
 
-      Articles.query(function(articles){
-        console.log(fund.name, articles, 'articles');
+        Articles.query(function(articles){
+          console.log(fund.name, articles, 'articles');
+          $scope.articles = articles;
 
-        $scope.articles = articles;
+          var filter_articles = function(article){
+            var filter = _.pluck($scope.filtered, '_id');
+            for(var i = 0; i < filter.length; i++) {
+              if (filter[i] === article.for_company._id) {
+                return true;
+              };
+            }
+          };
 
-        var filter_articles = function(article){
-          var filter = _.pluck($scope.filtered, '_id');
-          for(var i = 0; i < filter.length; i++) {
-            if (filter[i] === article.for_company._id) {
-              return true;
-            };
-          }
-        };
+          $scope.filter_article = $filter('filter')($scope.articles, filter_articles);
+          $scope.filter_keyupdates = $filter('filter')($scope.filter_article, {is_keyupdate: true});
+          console.log($scope.filter_keyupdates,'asdf');
 
-        $scope.filter_article = $filter('filter')($scope.articles, filter_articles);
-        $scope.filter_keyupdates = $filter('filter')($scope.filter_article, {is_keyupdate: true});
-        console.log($scope.filter_keyupdates,'asdf');
-
-        $scope.$watch('filter_article', function(){
-            setTimeout(function(){
-              $('.article-photo').imagefill({throttle:1000/60});
-              $('.article-photo').fadeIn();
-            }, 2000)
+          $scope.$watch('filter_article', function(){
+              setTimeout(function(){
+                $('.article-photo').imagefill({throttle:1000/60});
+                $('.article-photo').fadeIn();
+              }, 2000)
+          });
         });
 
-
       });
+
     };
 
     $scope.forCompany = function(asdf){
