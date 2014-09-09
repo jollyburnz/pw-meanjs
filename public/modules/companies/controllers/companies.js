@@ -90,6 +90,37 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                 companyId: $stateParams.companyId
             }, function(company) {
                 $scope.company = company;
+                //articles query
+                Articles.query(function(articles){
+                    //chunking up the articles in a 3 col bootstrap grid
+                    var chunk;
+
+                    chunk = function(a, s) {
+                      var i, _i, _ref, _results;
+                      if (a.length === 0) {
+                        return [];
+                      } else {
+                        _results = [];
+                        for (i = _i = 0, _ref = a.length - 1; s > 0 ? _i <= _ref : _i >= _ref; i = _i += s) {
+                          _results.push(a.slice(i, +(i + s - 1) + 1 || 9e9));
+                        }
+                        return _results;
+                      }
+                    };
+                    console.log($stateParams, $scope.company.name, company.name, 'state');
+                    //based on company name
+                    $scope.articles = $filter('filter')(articles, {for_company:{name: company.name}});
+                    $scope.articles_keyupdates = $filter('filter')(articles, {for_company:{name: company.name}, is_keyupdate: true});
+                    //based on company id
+                    //$scope.articles = $filter('filter')(articles, {for_company: $stateParams.companyId});
+                    //$scope.articles_keyupdates = $filter('filter')(articles, {for_company: $stateParams.companyId, is_keyupdate: true});
+
+                    $scope.$watch('articles', function(){
+                        $scope.rows = chunk($scope.articles, 3)
+                        console.log($scope.rows, 'rows')
+                    });
+                });
+
             });
 
             Keyupdates.query(function(keyupdates) {
@@ -103,31 +134,6 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
               console.log($scope.invest, 'yoyo');
             });
 
-            Articles.query(function(articles){
-                //chunking up the articles in a 3 col bootstrap grid
-                var chunk;
-
-                chunk = function(a, s) {
-                  var i, _i, _ref, _results;
-                  if (a.length === 0) {
-                    return [];
-                  } else {
-                    _results = [];
-                    for (i = _i = 0, _ref = a.length - 1; s > 0 ? _i <= _ref : _i >= _ref; i = _i += s) {
-                      _results.push(a.slice(i, +(i + s - 1) + 1 || 9e9));
-                    }
-                    return _results;
-                  }
-                };
-
-                $scope.articles = $filter('filter')(articles, {for_company: $stateParams.companyId});
-                $scope.articles_keyupdates = $filter('filter')(articles, {for_company: $stateParams.companyId, is_keyupdate: true});
-
-                $scope.$watch('articles', function(){
-                    $scope.rows = chunk($scope.articles, 3)
-                    console.log($scope.rows, 'rows')
-                });
-            });
         };
 
         $scope.updateImage = function(){
