@@ -74,11 +74,12 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 articleId: $stateParams.articleId
             }, function(article) {
                 $scope.article = article;
-            });
-
-            Articles.query(function(articles){
-                var excludethis = ($stateParams.articleId).toString();
-                $scope.related = $filter('filter')(articles, {for_company:{name: $scope.article.for_company.name}, _id: '!'+excludethis});
+                
+                Articles.query(function(articles){
+                    $scope.articles = articles
+                    var excludethis = ($stateParams.articleId).toString();
+                    $scope.related = $filter('filter')($scope.articles, {for_company:{name: $scope.article.for_company.name}, _id: '!'+excludethis});
+                });
             });
         };
 

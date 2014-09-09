@@ -60,6 +60,7 @@ angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$
             };
           }
         };
+
         $scope.filter_article = $filter('filter')($scope.articles, filter_articles);
         $scope.filter_keyupdates = $filter('filter')($scope.filter_article, {is_keyupdate: true});
         console.log($scope.filter_keyupdates,'asdf');

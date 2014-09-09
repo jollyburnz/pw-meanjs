@@ -5,10 +5,12 @@
   <div class='col-md-3'>
     <h2 class='green'>{{article.for_company.name}}</h2>
     <br/>
-    <div class="hexagon" my-background-profile="{{article.for_company.image}}">
+      <a href='#!/companies/{{article.for_company._id}}'>
+      <div class="hexagon" my-background-profile="{{article.for_company.image}}">
         <div class="hexTop"></div>
         <div class="hexBottom"></div>
       </div>
+      </a>
     <!-- <img src='{{article.for_company.image}}' /> -->
     <br/>
     <h4 class='green'>Other Articles About {{article.for_company.name}}</h4>
@@ -25,7 +27,7 @@
   <div class='col-md-offset-1 col-md-8'>
     <div class='row'>
       <div class='col-md-8'>
-        <h2 class='green'>ARTICLE HEADLINE: {{article.headline}}</h2>
+        <h2 class='green'>{{article.headline | uppercase}}</h2>
       </div>
 
       <div class='col-md-4'>
