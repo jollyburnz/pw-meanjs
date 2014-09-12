@@ -128,7 +128,7 @@
                 <tr ng-repeat="c in filtered | orderBy:'name':reverse">
                   <td>{{c.fund_ownership | currency}}</td>
                   <td>{{c.ev | currency}}</td>
-                  <td>{{c.irr}}</td>
+                  <td style='text-align: right;'>{{c.irr}}%</td>
                   <td>{{c.multiple}}&nbsp;x</td>
                 </tr>
               </tbody>
