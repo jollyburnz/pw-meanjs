@@ -51,9 +51,9 @@ angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$
           $scope.articles = articles;
 
           var filter_articles = function(article){
-            var filter = _.pluck($scope.filtered, '_id');
+            var filter = _.pluck($scope.filtered, 'name');
             for(var i = 0; i < filter.length; i++) {
-              if (filter[i] === article.for_company._id) {
+              if (filter[i] === article.for_company.name) {
                 return true;
               };
             }
