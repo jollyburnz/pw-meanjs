@@ -15,6 +15,10 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
 
+    if($rootScope.disclosure){
+      $scope.disclosureRead = true;
+    }
+
 		// Check if there are additional accounts 
 		$scope.hasConnectedAdditionalSocialAccounts = function(provider) {
 			for (var i in $scope.user.additionalProvidersData) {
@@ -100,6 +104,13 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
       		});
 			*/
 		};
+
+    $scope.accept = function(){
+      console.log('accept');
+      $rootScope.disclosure = 'yes';
+      $scope.disclosureRead = true;
+      console.log($scope.disclosureRead);
+    }
 
 		//edit profile
     $scope.updateProfileImage = function(){

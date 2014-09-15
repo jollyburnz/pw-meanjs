@@ -4,6 +4,17 @@
 	}
 }
 
+.disclosure{
+  position: absolute;
+  background: #ffffff;
+  color: #156333;
+  min-height: 1040px;
+  z-index: 999;
+  padding: 200px 150px;
+  font-size: 24px;
+  opacity: 0.95;
+}
+
 .remove-account-container {
 	display: inline-block;
 	position: relative;
