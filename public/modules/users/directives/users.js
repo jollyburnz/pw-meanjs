@@ -26,7 +26,7 @@ angular.module('users')
                 console.log(InkBlobs[0].url);
                 //scope.url = InkBlobs[0].url;
                 scope.user.profile = InkBlobs[0].url; //this scope is for edit company.image
-                $('#exampleDropPane').html("<img src='" +scope.user.profile+ "' />");
+                $('#exampleDropPane').html("<img class='img-responsive' src='" +scope.user.profile+ "' />");
                 //$("#localDropResult").text(JSON.stringify(InkBlobs));
             },
             onError: function(type, message) {

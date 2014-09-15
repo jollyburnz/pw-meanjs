@@ -66,5 +66,15 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
                 $scope.user = $filter('filter')(users, {_id: $stateParams.partnerId}, true)[0];
             });
         };
+
+        //edit profile
+        $scope.updateProfileImage = function(){
+          console.log('update image');
+          filepicker.pick(function(InkBlob){
+            console.log(InkBlob.url);
+            $scope.user.profile = InkBlob.url;
+            $('#UserProfile').html("<img class='img-responsive' src='" + $scope.user.profile + "' />");
+          });
+        };
     }
 ]);
