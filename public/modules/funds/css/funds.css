@@ -76,6 +76,19 @@ a.newsdata.active{
 select:focus { outline: none; }
 select:hover { background-color: #fff; }
 
+.fund2overlay{
+  position: absolute;
+  height: 100%;
+  width: 95%;
+  z-index: 1;
+  background: #f5f5f5;
+  opacity: 0.93;
+}
+
+.fund2overlay h1{
+  padding: 70px 140px;
+}
+
 
 .downside{
   display: block;
@@ -185,6 +198,11 @@ select:hover { background-color: #fff; }
   letter-spacing: 0.6px;
 }
 
+.fund2disable .table-title-right{
+  background: #BCC4BF;
+  color: #D5D5D5;
+}
+
 .current_valuation{
   margin-left: -30px;
 }
@@ -255,6 +273,16 @@ select:hover { background-color: #fff; }
   border-top: 1px solid #CDCDCD !important;
 }
 
+/* projected exits disabled for fund2 */
+
+.fund2disable.projected_exit h2, .fund2disable.projected_exit th, .fund2disable.projected_exit td{
+  color: #D5D5D5 !important;
+}
+
+.fund2disable.projected_exit th{
+  background: #E8E8E8;
+  border-bottom: 2px solid #DDD !important;
+}
 /* Featured companies
 
 /* company */

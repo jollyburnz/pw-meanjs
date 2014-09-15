@@ -37,6 +37,9 @@
         </p>
       </div>
       <div class='col-xs-9'>
+        <div class='fund2overlay' data-ng-show="fund_is.name === 'Fund II'">
+          <h1>These investments are not yet mature enough to accurately forecast the liquidity values and the fund is actively making new investments.</h1>
+        </div>
         <h2 class='text-center green'>Projected Liquidity Values</h2>
         <div class='row'>
           <div class='col-xs-4'>
@@ -135,7 +138,7 @@
             </table>
           </div>
 
-          <div class='col-xs-4 projected_exit'>
+          <div class='col-xs-4 projected_exit' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
             <div class='table-title-right'>Projected Exit</div>
             <table class="table table-striped">
               <thead>
