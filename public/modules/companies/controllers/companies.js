@@ -33,7 +33,6 @@ angular.module('companies').controller('CompaniesController', ['$scope', '$state
                 u_multiple: this.u_multiple,
                 from_fund: this.from_fund,
                 ceo_name: this.ceo_name,
-                ceo_email: this.ceo_email,
                 address1: this.address1,
                 address2: this.address2,
                 url: this.url,

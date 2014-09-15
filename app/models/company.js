@@ -70,9 +70,6 @@ var CompanySchema = new Schema({
 	ceo_name: {
 		type: String
 	},
-	ceo_email: {
-		type: String
-	},
 	address1: {
 		type: String
 	},
