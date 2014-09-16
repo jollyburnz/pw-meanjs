@@ -41,7 +41,7 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
         // Update existing Partner
         $scope.update = function() {
             var user = $scope.user;
-            var user_revised = _.omit(user, 'password', 'salt', '$delete', '$get', '$query', '$remove', '$save', '$update');
+            var user_revised = _.omit(user, '_id' 'password', 'salt', '$delete', '$get', '$query', '$remove', '$save', '$update');
             var user_updated = new Users(user_revised);
             console.log(user, user_revised, user_updated, 'USER!');
 
