@@ -98,28 +98,51 @@ exports.update = function(req, res) {
 	var message = null;
 
 	if (user) {
-		// Merge existing user
-		user = _.extend(user, req.body);
-		user.updated = Date.now();
-		user.displayName = user.firstName + ' ' + user.lastName;
+		if (user.displayName === req.body.displayName){
 
-		user.save(function(err) {
-			if (err) {
-				console.log(err, 'err1');
-				return res.send(400, {
-					message: getErrorMessage(err)
-				});
-			} else {
-				console.log('err2');
-				req.login(user, function(err) {
-					if (err) {
-						res.send(400, err);
-					} else {
-						res.jsonp(user);
-					}
-				});
-			}
-		});
+			// Merge existing user
+			user = _.extend(user, req.body);
+			user.updated = Date.now();
+			user.displayName = user.firstName + ' ' + user.lastName;
+
+			user.save(function(err) {
+				if (err) {
+					console.log(err, 'err1');
+					return res.send(400, {
+						message: getErrorMessage(err)
+					});
+				} else {
+					console.log('err2');
+					req.login(user, function(err) {
+						if (err) {
+							res.send(400, err);
+						} else {
+							res.jsonp(user);
+						}
+					});
+				}
+			});
+
+		} else {
+			console.log('LP editing!!', req.body._id);
+			User.findById(req.body._id, function(err, user){
+				if(err){
+					console.log(err, 'err');
+				} else {
+					var lp = user;
+					lp = _.extend(lp, req.body);
+					lp.save(function(err) {
+						if (err) {
+							return res.send(400, {
+								message: getErrorMessage(err)
+							});
+						} else {
+							res.jsonp(lp);
+						}
+					});
+				}
+			});
+		}
 	} else {
 		res.send(400, {
 			message: 'User is not signed in'

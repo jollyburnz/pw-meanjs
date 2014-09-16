@@ -41,27 +41,15 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
         // Update existing Partner
         $scope.update = function() {
             var user = $scope.user;
-            var user_revised = _.omit(user, '_id', 'password', 'username', 'salt', '$delete', '$get', '$query', '$remove', '$save', '$update');
-            // var user_updated = new Users(user_revised);
-            // console.log(user, user_revised, user_updated, 'USER!');
+            var user_revised = _.omit(user, 'password', 'username', 'salt', '$delete', '$get', '$query', '$remove', '$save', '$update');
+            var id = user._id;
 
-            var $id = user._id;
-
-            Users.update({ _id:$id }, user_revised, function(response){
+            Users.update({ _id:id }, user_revised, function(response){
                 $scope.success = true;
                 $location.path('partners');
             }, function(response){
                 $scope.error = response.data.message;
             });
-
-            // user_updated.$update(function(response) {
-            //     console.log(response, 'response');
-            //     $scope.success = true;
-            //     $location.path('partners')
-            // }, function(response) {
-            //     console.log(response, 'response2');
-            //     $scope.error = response.data.message;
-            // });
         };
 
         // Find a list of Partners
