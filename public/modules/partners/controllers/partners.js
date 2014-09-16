@@ -46,9 +46,11 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
             console.log(user, user_revised, user_updated, 'USER!');
 
             user_updated.$update(function(response) {
+                console.log(response, 'response');
                 $scope.success = true;
                 $location.path('partners')
             }, function(response) {
+                console.log(response, 'response2');
                 $scope.error = response.data.message;
             });
         };
