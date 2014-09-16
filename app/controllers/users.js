@@ -105,10 +105,12 @@ exports.update = function(req, res) {
 
 		user.save(function(err) {
 			if (err) {
+				console.log(err, 'err1');
 				return res.send(400, {
 					message: getErrorMessage(err)
 				});
 			} else {
+				console.log('err2');
 				req.login(user, function(err) {
 					if (err) {
 						res.send(400, err);
