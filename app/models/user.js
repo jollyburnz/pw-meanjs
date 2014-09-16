@@ -78,8 +78,8 @@ var UserSchema = new Schema({
 	phone:{
 		type: String,
 		trim: true,
-		default: '',
-		match: [/^([0-9\(\)\/\+ \-]*)$/, 'Please enter a valid phone number']
+		/*default: '',
+		match: [/^([0-9\(\)\/\+ \-]*)$/, 'Please enter a valid phone number']*/
 	},
 	entity:{
 		type: String
@@ -113,8 +113,8 @@ var UserSchema = new Schema({
 	pp_email: {
 		type: String,
 		trim: true,
-		default: '',
-		match: [/.+\@.+\..+/, 'Please fill a valid email address']
+		/*default: '',
+		match: [/.+\@.+\..+/, 'Please fill a valid email address']*/
 	},
 	pp_title: {
 		type: String
@@ -122,8 +122,8 @@ var UserSchema = new Schema({
 	pp_phone: {
 		type: String,
 		trim: true,
-		default: '',
-		match: [/^([0-9\(\)\/\+ \-]*)$/, 'Please enter a valid phone number']
+		/*default: '',
+		match: [/^([0-9\(\)\/\+ \-]*)$/, 'Please enter a valid phone number']*/
 	},
 	k1:{
 		type: String,
