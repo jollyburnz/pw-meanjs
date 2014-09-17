@@ -42,6 +42,10 @@
   color: #ffffff;
 }
 
+.metrics h3{
+  font-size: 21px;
+}
+
 .expand{
   color: #89b298;
 }
