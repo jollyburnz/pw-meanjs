@@ -7,7 +7,7 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
 
         $scope.user = Authentication.user;
         if (!$scope.user) $location.path('/');
-        
+
         // Create new Partner
         $scope.create = function() {
         	// Create new Partner object
@@ -44,7 +44,7 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
         // Update existing Partner
         $scope.update = function() {
             var user = $scope.user;
-            var user_revised = _.omit(user, 'password', 'username', 'salt', '$delete', '$get', '$query', '$remove', '$save', '$update');
+            var user_revised = _.omit(user, 'password', 'salt', '$delete', '$get', '$query', '$remove', '$save', '$update');
             var id = user._id;
 
             Users.update({ _id:id }, user_revised, function(response){
