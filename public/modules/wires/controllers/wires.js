@@ -5,6 +5,9 @@ angular.module('wires').controller('WiresController', ['$scope', '$stateParams',
     function($scope, $stateParams, $location, Authentication, Wires, Funds, Users) {
         $scope.authentication = Authentication;
 
+        $scope.user = Authentication.user;
+        if (!$scope.user) $location.path('/');
+
         Users.query(function(users) {
           console.log(users, 'users');
           $scope.users = users;

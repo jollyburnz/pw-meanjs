@@ -1,10 +1,13 @@
 'use strict';
 
-angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$filter', 'Funds', 'Companies', 'Articles',
-    function($scope, $rootScope, $filter, Funds, Companies, Articles) {
+angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$filter', '$location', 'Authentication', 'Funds', 'Companies', 'Articles',
+    function($scope, $rootScope, $filter, $location, Authentication, Funds, Companies, Articles) {
 		// Controller Logic 
 		// ...
     // Find a list of Funds
+
+    $scope.user = Authentication.user;
+    if (!$scope.user) $location.path('/');
 
     var dope = function(){
       var fund = $scope.fund_is;

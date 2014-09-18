@@ -5,6 +5,9 @@ angular.module('funds').controller('FundsController', ['$scope', '$stateParams',
     function($scope, $stateParams, $location, Authentication, Funds) {
         $scope.authentication = Authentication;
 
+        $scope.user = Authentication.user;
+        if (!$scope.user) $location.path('/');
+
         // Create new Fund
         $scope.create = function() {
         	// Create new Fund object

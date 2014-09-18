@@ -5,6 +5,9 @@ angular.module('keyupdates').controller('KeyupdatesController', ['$scope', '$sta
     function($scope, $stateParams, $location, Authentication, Keyupdates, Companies) {
         $scope.authentication = Authentication;
 
+        $scope.user = Authentication.user;
+        if (!$scope.user) $location.path('/');
+
         Companies.query(function(companies) {
           console.log(companies, 'companies');
           $scope.companies = companies;

@@ -5,6 +5,9 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     function($scope, $stateParams, $location, $filter, Authentication, Articles, Companies) {
         $scope.authentication = Authentication;
 
+        $scope.user = Authentication.user;
+        if (!$scope.user) $location.path('/');
+
         Companies.query(function(companies) {
           console.log(companies, 'companies');
           $scope.companies = companies;

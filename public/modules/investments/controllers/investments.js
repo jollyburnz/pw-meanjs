@@ -5,6 +5,9 @@ angular.module('investments').controller('InvestmentsController', ['$scope', '$s
     function($scope, $stateParams, $location, Authentication, Investments, Companies) {
         $scope.authentication = Authentication;
 
+        $scope.user = Authentication.user;
+        if (!$scope.user) $location.path('/');
+
         Companies.query(function(companies) {
           console.log(companies, 'companies');
           $scope.companies = companies;

@@ -5,6 +5,9 @@ angular.module('partners').controller('PartnersController', ['$scope', '$filter'
     function($scope, $filter, $stateParams, $location, Authentication, Partners, Users) {
         $scope.authentication = Authentication;
 
+        $scope.user = Authentication.user;
+        if (!$scope.user) $location.path('/');
+        
         // Create new Partner
         $scope.create = function() {
         	// Create new Partner object
