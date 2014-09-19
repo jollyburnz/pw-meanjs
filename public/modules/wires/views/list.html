@@ -3,7 +3,7 @@
         <h1>Wires</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="wire in wires" data-ng-href="#!/wires/{{wire._id}}/edit" class="list-group-item">
+        <a data-ng-repeat="wire in wires | orderBy:'lp.displayName':reverse" data-ng-href="#!/wires/{{wire._id}}/edit" class="list-group-item">
             <b>{{wire.fund}}</b> - {{offsetDate(wire.date) | date: shortDate}}&nbsp;&nbsp;&nbsp;{{wire.lp.firstName}} {{wire.lp.lastName}} {{wire.amount | currency}}
         </a>
     </div>
