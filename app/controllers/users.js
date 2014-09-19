@@ -131,6 +131,8 @@ exports.update = function(req, res) {
 				} else {
 					var lp = user;
 					lp = _.extend(lp, req.body);
+					lp.updated = Date.now();
+					lp.displayName = lp.firstName + ' ' + lp.lastName;
 					lp.save(function(err) {
 						if (err) {
 							return res.send(400, {
