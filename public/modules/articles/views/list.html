@@ -5,7 +5,7 @@
     <div class="list-group">
         <a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}/edit" class="list-group-item">
             <small class="list-group-item-text">{{article.date_posted | date:'short'}} / {{article.author}}</small>
-            <h4 class="list-group-item-heading">{{article.headline}}</h4>
+            <h4 class="list-group-item-heading"><b>{{article.for_company.name}}</b> - {{article.headline}}</h4>
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!articles || articles.length">
