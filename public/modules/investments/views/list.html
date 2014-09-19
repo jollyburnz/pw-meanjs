@@ -4,7 +4,7 @@
     </div>
     <div class="list-group">
         <a data-ng-repeat="investment in investments" data-ng-href="#!/investments/{{investment._id}}/edit" class="list-group-item">
-            {{offsetDate(investment.date) | date: 'fullDate'}}&nbsp;&nbsp;&nbsp;{{investment.for_company.name}} &nbsp;{{investment.amount | currency}}
+            <b>{{investment.for_company.from_fund}}</b> - {{offsetDate(investment.date) | date: 'fullDate'}}&nbsp;&nbsp;&nbsp;{{investment.for_company.name}} &nbsp;{{investment.amount | currency}}
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!investments || investments.length">

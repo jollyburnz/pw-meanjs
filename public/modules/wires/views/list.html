@@ -4,7 +4,7 @@
     </div>
     <div class="list-group">
         <a data-ng-repeat="wire in wires" data-ng-href="#!/wires/{{wire._id}}/edit" class="list-group-item">
-            {{offsetDate(wire.date) | date: shortDate}}&nbsp;&nbsp;&nbsp;{{wire.lp.firstName}} {{wire.lp.lastName}} {{wire.amount | currency}}
+            <b>{{wire.fund}}</b> - {{offsetDate(wire.date) | date: shortDate}}&nbsp;&nbsp;&nbsp;{{wire.lp.firstName}} {{wire.lp.lastName}} {{wire.amount | currency}}
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!wires || wires.length">
