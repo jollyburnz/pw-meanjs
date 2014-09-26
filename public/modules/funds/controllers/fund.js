@@ -51,6 +51,21 @@ angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$
 
         Articles.query(function(articles){
           console.log(fund.name, articles, 'articles');
+          var chunk;
+
+          chunk = function(a, s) {
+            var i, _i, _ref, _results;
+            if (a.length === 0) {
+              return [];
+            } else {
+              _results = [];
+              for (i = _i = 0, _ref = a.length - 1; s > 0 ? _i <= _ref : _i >= _ref; i = _i += s) {
+                _results.push(a.slice(i, +(i + s - 1) + 1 || 9e9));
+              }
+              return _results;
+            }
+          };
+
           $scope.articles = articles;
 
           var filter_articles = function(article){
@@ -67,6 +82,8 @@ angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$
           console.log($scope.filter_keyupdates,'asdf');
 
           $scope.$watch('filter_article', function(){
+              $scope.rows = chunk($scope.filter_article, 3);
+              console.log($scope.rows, 'filtered artilcesasdfasdf');
               setTimeout(function(){
                 $('.article-photo').imagefill({throttle:1000/60});
                 $('.article-photo').fadeIn();
