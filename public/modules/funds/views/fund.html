@@ -218,12 +218,15 @@
 
     <div class='col-md-12'>
 
-      <h2 class='green'>Updates</h2><br/>
+      <h2 class='green'>Key Updates</h2><br/>
       <ul class='keyupdates'>
-      <li ng-repeat="a in filter_keyupdates">
+
+      <li ng-repeat="a in filter_keyupdates | orderBy: 'date_posted': true | limitTo: limit">
         <a href='#!/articles/{{a._id}}'>{{a.headline}}</a> 
-        <span class='pull-right'>{{a.date_added | date : short}}</span>
+        <span class='pull-right'>{{a.date_posted | date : short}}</span>
       </li>
+      <a ng-click='more()' ng-show='showmore'>More</a>
+      <a ng-click='less()' ng-show='showless'>Less</a>
     </ul>
     <br/><br/>
     </div>

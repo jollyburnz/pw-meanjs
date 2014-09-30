@@ -210,5 +210,20 @@ angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$
         return active;
       }
     };
+
+    $scope.limit = 6;
+    $scope.showmore = true;
+
+    $scope.more = function(){
+      $scope.limit = $scope.filter_keyupdates.length;
+      $scope.showmore = false;
+      $scope.showless = true;
+    }
+
+    $scope.less = function(){
+      $scope.limit = 6;
+      $scope.showmore = true;
+      $scope.showless = false;
+    }
 	}
 ]);
