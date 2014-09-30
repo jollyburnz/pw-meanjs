@@ -62,6 +62,8 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">LP<b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="#!/partners">List LP</a></li>
+          <li><a href="/#!/signup">New LP</a></li>
+
         </ul>
       </li>
 		</ul>
@@ -69,10 +71,6 @@
 
 
 		<ul data-ng-hide="authentication.user">
-			<li ui-route="/signup" ng-class="{active: $uiRoute}">
-				<a href="/#!/signup">Signup</a>
-			</li>
-			<li class="divider-vertical"></li>
 			<li ui-route="/signin" ng-class="{active: $uiRoute}">
 				<a href="/#!/signin">Signin</a>
 			</li>

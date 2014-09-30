@@ -186,11 +186,11 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
 
     $scope.gotoFund = function(fund_is) {
     	//console.log(fund_is, 'fund_is');
-      $rootScope.fund_is = fund_is
+      $rootScope.fund_is = fund_is;
     	$location.path("fund");
     };
 
-    $scope.totalFromFundI = function(){
+    $rootScope.totalFromFundI = function(){
     	var totalNumber = 0;
     	for(var i=0; i<$scope.wiresFromFund1.length; i++){
     		totalNumber = totalNumber + $scope.wiresFromFund1[i].amount
@@ -198,7 +198,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
     	return totalNumber;
     };
 
-    $scope.totalFromFundIA = function(){
+    $rootScope.totalFromFundIA = function(){
     	var totalNumber = 0;
     	for(var i=0; i<$scope.wiresFromFund1a.length; i++){
     		totalNumber = totalNumber + $scope.wiresFromFund1a[i].amount
@@ -206,7 +206,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
     	return totalNumber;
     };
 
-    $scope.totalFromFundII = function(){
+    $rootScope.totalFromFundII = function(){
     	var totalNumber = 0;
     	for(var i=0; i<$scope.wiresFromFund2.length; i++){
     		totalNumber = totalNumber + $scope.wiresFromFund2[i].amount
@@ -224,25 +224,25 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
     	return total;
     };
 
-    $scope.evFromFundI = function(){
+    $rootScope.evFromFundI = function(){
     	var total;
     	total = $scope.totalFromFundI();
     	return total*$scope.fund_i_multiple;
     };
 
-    $scope.evFromFundIA = function(){
+    $rootScope.evFromFundIA = function(){
     	var total;
     	total = $scope.totalFromFundIA();
     	return total*$scope.fund_ia_multiple;
     };
 
-    $scope.evFromFundII = function(){
+    $rootScope.evFromFundII = function(){
     	var total;
     	total = $scope.totalFromFundII();
     	return total*$scope.fund_ii_multiple;
     };
 
-    $scope.returnFundI = function(){
+    $rootScope.returnFundI = function(){
       var ev = $scope.evFromFundI();
       var total = $scope.totalFromFundI();
       var ret = (((ev - total) / total)*100).toFixed(2);
@@ -254,7 +254,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
       };
     };
 
-    $scope.returnFundIA = function(){
+    $rootScope.returnFundIA = function(){
       var ev = $scope.evFromFundIA();
       var total = $scope.totalFromFundIA();
       var ret = (((ev - total) / total)*100).toFixed(2);
@@ -265,7 +265,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
       };
     };
 
-    $scope.returnFundII = function(){
+    $rootScope.returnFundII = function(){
       var ev = $scope.evFromFundII();
       var total = $scope.totalFromFundII();
       var ret = (((ev - total) / total)*100).toFixed(2);

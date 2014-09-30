@@ -32,6 +32,29 @@ angular.module('funds').controller('FundController', ['$scope', '$rootScope', '$
       $scope.u_multiple = fund.u_multiple;
 
       $scope.activeState = fund.name;
+      console.log(fund.name, 'fund.name');
+      if (fund.name === 'Fund I'){
+        $scope.total = $rootScope.totalFromFundI();
+        $scope.totalev = $rootScope.evFromFundI();
+        $scope.forcasted_u = $rootScope.totalFromFundI() * $scope.u_multiple;
+        $scope.forcasted_b = $rootScope.totalFromFundI() * $scope.b_multiple;
+        $scope.forcasted_d = $rootScope.totalFromFundI() * $scope.d_multiple;
+      } else if (fund.name === 'Fund IA'){
+        $scope.total = $rootScope.totalFromFundIA();
+        $scope.totalev = $rootScope.evFromFundIA();
+        $scope.forcasted = $rootScope.returnFundIA();
+        $scope.forcasted_u = $rootScope.totalFromFundIA() * $scope.u_multiple;
+        $scope.forcasted_b = $rootScope.totalFromFundIA() * $scope.b_multiple;
+        $scope.forcasted_d = $rootScope.totalFromFundIA() * $scope.d_multiple;
+      } else if (fund.name === 'Fund II'){
+        $scope.total = $rootScope.totalFromFundII();
+        $scope.totalev = $rootScope.evFromFundII();
+        $scope.forcasted = $rootScope.returnFundII();
+        $scope.forcasted_u = $rootScope.totalFromFundII() * $scope.u_multiple;
+        $scope.forcasted_b = $rootScope.totalFromFundII() * $scope.b_multiple;
+        $scope.forcasted_d = $rootScope.totalFromFundII() * $scope.d_multiple;
+      }
+
 
       $scope.p = 'baseline'; //default on baseline
 

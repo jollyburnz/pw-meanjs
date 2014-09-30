@@ -90,138 +90,159 @@
         <div>
       </div>
     </div>
+  </div>
 
-    </div class='row'>
-      <div class='col-xs-12'>
-        <br/><br/>
-        <div class='row'>
-
-          <div class='col-xs-4 basic_info'>
-            <div class='table-title-left'>Basic Information</div>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Logo</th>
-                  <th>Company Name</th>
-                  <th>Initial Investment</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="c in filtered | orderBy:'name':reverse">
-                  <td style='width: 15%'><a href="#!/companies/{{c._id}}"><img class='img-responsive' style='height: 17px;' src='{{c.image}}'/></a></td>
-                  <td style='width: 45%'><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
-                  <td style='width: 40%'>{{c.initial_investment | currency}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="col-xs-4 current_valuation">
-            <div class='table-title-left'>Current Valuation</div>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Ownership</th>
-                  <th>EV</th>
-                  <th>IRR</th>
-                  <th>Multiple</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="c in filtered | orderBy:'name':reverse">
-                  <td>{{c.fund_ownership | currency}}</td>
-                  <td>{{c.ev | currency}}</td>
-                  <td style='text-align: right;'><span ng-if="c.irr == 0">N/A</span><span ng-if="c.irr !== 0">{{c.irr }}%</span></td>
-                  <td>{{c.multiple}}&nbsp;x</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class='col-xs-4 projected_exit' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
-            <div class='table-title-right'>Projected Exit</div>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Realized Cash</th>
-                  <th>EV</th>
-                  <th>Multiple</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-show="getProjection() === 'downside'" ng-repeat="c in filtered | orderBy:'name':reverse">
-                  <td>{{c.d_cash | currency}}</td>
-                  <td>{{c.d_ev | currency}}</td>
-                  <td>{{c.d_multiple}}&nbsp;x</td>
-                </tr>
-
-                <tr ng-show="getProjection() === 'baseline'" ng-repeat="c in filtered | orderBy:'name':reverse">
-                  <td>{{c.b_cash | currency}}</td>
-                  <td>{{c.b_ev | currency}}</td>
-                  <td>{{c.b_multiple}}&nbsp;x</td>
-                </tr>
-
-                <tr ng-show="getProjection() === 'upside'" ng-repeat="c in filtered | orderBy:'name':reverse">
-                  <td>{{c.u_cash | currency}}</td>
-                  <td>{{c.u_ev | currency}}</td>
-                  <td>{{c.u_multiple}}&nbsp;x</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-        </div>
-
-      </div>
+  <div class='row'>
+    <div class='col-md-12'>
+      <br/><br/><br/>
+      <table id='portfolio-overview' class='table'>
+        <thead>
+          <tr>
+            <th>Your Invested Capital</th>
+            <th>Your Book Value</th>
+            <th>Your Forcasted Return</th>
+          <tr>
+        </thead>
+        <tbody>
+          <td>${{total | number: 0}}</td>
+          <td>${{totalev | number: 0}}</td>
+          <td>
+            <span ng-if="p === 'upside'">${{forcasted_u| number: 0}}</span>
+            <span ng-if="p === 'baseline'">${{forcasted_b| number: 0}}</span>
+            <span ng-if="p === 'downside'">${{forcasted_d| number: 0}}</span>
+          </td>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div data-ng-show="data_or_news === 'news'">
-    <div class='row'>
-      <div class='col-sm-3'>
-        <select class="fund-control" data-ng-model="fund_is" data-ng-options="fund as ('&nbsp;'+ fund.name | uppercase) for fund in funds" ng-change="dropdowntest()"></select><b style='position: absolute; right: 40px; top: 30px;' class="caret"></b>
-        <br/>
-      </div>
-      <div class='col-sm-12'>
-        <h2 class='green'>Featured Companies</h3><br/>
-        <div class='row'>
-          <div ng-repeat="company in filtered_news | limitTo : 3" class='col-sm-4'>
-              <div class='company-photo'>
-                <a href="#!/companies/{{company._id}}"><img src='{{company.image}}' /></a>
-              </div>
-              <h3><a href="#!/companies/{{company._id}}">{{company.name}}</a></h3>
-              <br/><br/>
-          </div>
+  <div class='row'>
+      <br/><br/><br/>
+        <div class='col-xs-4 basic_info'>
+          <div class='table-title-left'>Basic Information</div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Company Name</th>
+                <th>Initial Investment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="c in filtered | orderBy:'name':reverse">
+                <td style='width: 15%'><a href="#!/companies/{{c._id}}"><img class='img-responsive' style='height: 17px;' src='{{c.image}}'/></a></td>
+                <td style='width: 45%'><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
+                <td style='width: 40%'>${{c.initial_investment | number:0}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
 
-      <div class='col-md-12'>
-
-        <h2 class='green'>Updates</h2><br/>
-        <ul class='keyupdates'>
-        <li ng-repeat="a in filter_keyupdates">
-          <a href='#!/articles/{{a._id}}'>{{a.headline}}</a> 
-          <span class='pull-right'>{{a.date_added | date : short}}</span>
-        </li>
-      </ul>
-      <br/><br/>
-      </div>
-
-      <div class='col-sm-12'>
-        <h2 class='green'>Articles</h2><br/>
-        <div class='row' ng-repeat="row in rows">
-          <div class='col-sm-4' ng-repeat="articles in row">
-              <div class='article-photo'>
-                <a href="#!/articles/{{articles._id}}"><img src='{{articles.image}}' /></a><br/>
-              </div>
-              <h4><a href="#!/articles/{{articles._id}}">{{articles.headline}}</a></h4>
-          </div>
-          <hr/>
+        <div class="col-xs-4 current_valuation">
+          <div class='table-title-left'>Current Valuation</div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>NAV</th>
+                <th>EV</th>
+                <th>IRR</th>
+                <th>Multiple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="c in filtered | orderBy:'name':reverse">
+                <td>${{c.fund_ownership | number:0}}</td>
+                <td>${{c.ev | number:0}}</td>
+                <td style='text-align: right;'><span ng-if="c.irr == 0">N/A</span><span ng-if="c.irr !== 0">{{c.irr | number:1}}%</span></td>
+                <td>{{c.multiple | number:1}}&nbsp;x</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        
+
+        <div class='col-xs-4 projected_exit' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
+          <div class='table-title-right'>Projected Exit</div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Realized Cash</th>
+                <th>EV</th>
+                <th>Multiple</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-show="getProjection() === 'downside'" ng-repeat="c in filtered | orderBy:'name':reverse">
+                <td>${{c.d_cash | number:0}}</td>
+                <td>${{c.d_ev | number:0}}</td>
+                <td>{{c.d_multiple | number:1}}&nbsp;x</td>
+              </tr>
+
+              <tr ng-show="getProjection() === 'baseline'" ng-repeat="c in filtered | orderBy:'name':reverse">
+                <td>${{c.b_cash | number:0}}</td>
+                <td>${{c.b_ev | number:0}}</td>
+                <td>{{c.b_multiple | number:1}}&nbsp;x</td>
+              </tr>
+
+              <tr ng-show="getProjection() === 'upside'" ng-repeat="c in filtered | orderBy:'name':reverse">
+                <td>${{c.u_cash | number:0}}</td>
+                <td>${{c.u_ev | number:0}}</td>
+                <td>{{c.u_multiple | number:1}}&nbsp;x</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
     </div>
+</div>
+
+<div data-ng-show="data_or_news === 'news'">
+  <div class='row'>
+    <div class='col-sm-3'>
+      <select class="fund-control" data-ng-model="fund_is" data-ng-options="fund as ('&nbsp;'+ fund.name | uppercase) for fund in funds" ng-change="dropdowntest()"></select><b style='position: absolute; right: 40px; top: 30px;' class="caret"></b>
+      <br/>
+    </div>
+    <div class='col-sm-12'>
+      <h2 class='green'>Featured Companies</h3><br/>
+      <div class='row'>
+        <div ng-repeat="company in filtered_news | limitTo : 3" class='col-sm-4'>
+            <div class='company-photo'>
+              <a href="#!/companies/{{company._id}}"><img src='{{company.image}}' /></a>
+            </div>
+            <h3><a href="#!/companies/{{company._id}}">{{company.name}}</a></h3>
+            <br/><br/>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-md-12'>
+
+      <h2 class='green'>Updates</h2><br/>
+      <ul class='keyupdates'>
+      <li ng-repeat="a in filter_keyupdates">
+        <a href='#!/articles/{{a._id}}'>{{a.headline}}</a> 
+        <span class='pull-right'>{{a.date_added | date : short}}</span>
+      </li>
+    </ul>
+    <br/><br/>
+    </div>
+
+    <div class='col-sm-12'>
+      <h2 class='green'>Articles</h2><br/>
+      <div class='row' ng-repeat="row in rows">
+        <div class='col-sm-4' ng-repeat="articles in row">
+            <div class='article-photo'>
+              <a href="#!/articles/{{articles._id}}"><img src='{{articles.image}}' /></a><br/>
+            </div>
+            <h4><a href="#!/articles/{{articles._id}}">{{articles.headline}}</a></h4>
+        </div>
+        <hr/>
+      </div>
+      
+    </div>
+
   </div>
+</div>
 
 </section>
