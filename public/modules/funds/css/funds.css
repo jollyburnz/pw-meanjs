@@ -284,6 +284,15 @@ select:hover { background-color: #fff; }
   background: #E8E8E8;
   border-bottom: 2px solid #DDD !important;
 }
+
+th.fund2disable{
+  color: #D5D5DD;
+}
+
+td.fund2disable{
+  background: #BCC4BF;
+  color: #D5D5DD;
+}
 /* Featured companies
 
 /* company */

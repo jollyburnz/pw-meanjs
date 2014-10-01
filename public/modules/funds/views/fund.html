@@ -27,7 +27,8 @@
         <h5>Book Value</h5>
         <span class='currentvalue'>{{mark | currency}}</span>
         <h5>IRR</h5>
-        <span class='currentvalue'>{{IRR}}%</span>
+        <span data-ng-show="fund_is.name === 'Fund II'" class='currentvalue'>N/A</span>
+        <span data-ng-hide="fund_is.name === 'Fund II'" class='currentvalue'>{{IRR}}%</span>
         <h5>Multiple</h5>
         <span class='currentvalue'>{{multiple}}&nbsp;x</span>
         <br/><br/>
@@ -100,13 +101,13 @@
           <tr>
             <th>Your Invested Capital</th>
             <th>Your Book Value</th>
-            <th>Your Forcasted Return</th>
+            <th ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Your Forcasted Return</th>
           <tr>
         </thead>
         <tbody>
           <td>${{total | number: 0}}</td>
           <td>${{totalev | number: 0}}</td>
-          <td>
+          <td ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
             <span ng-if="p === 'upside'">${{forcasted_u| number: 0}}</span>
             <span ng-if="p === 'baseline'">${{forcasted_b| number: 0}}</span>
             <span ng-if="p === 'downside'">${{forcasted_d| number: 0}}</span>
