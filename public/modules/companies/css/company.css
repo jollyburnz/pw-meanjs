@@ -82,6 +82,14 @@ ul.keyupdates li, ul.investments li{
   background: #d3e0d9;
   padding: 10px;
   margin: 0 0 8px;
+  position: relative;
+}
+
+ul.keyupdates li span{
+  position: absolute;
+  right: 0;
+  background: #d3e0d9;
+  padding: 0 10px;
 }
 
 /* article */
