@@ -55,8 +55,8 @@
 
     <h3 class='green'>Company Description</h3>
       {{company.description}}
-    <h3 class='green'>Key Updates</h3>
-    <span class='pull-right' style='padding-right: 20px'><b>Post Date</b></span>
+    <h3 data-ng-show='articles_keyupdates' class='green'>Key Updates</h3>
+    <span data-ng-show='articles_keyupdates' class='pull-right' style='padding-right: 20px'><b>Post Date</b></span>
     <br/><br/>
     <ul class='keyupdates'>
       <!-- <li ng-repeat="k in keyupdates">
@@ -71,7 +71,7 @@
     </ul>
 
     <br/><br/>
-    <h3 class='green' imagefill>Articles</h3>
+    <h3 data-ng-show='rows' class='green' imagefill>Articles</h3>
     <div class='row' ng-repeat="row in rows">
         <div class='col-sm-4' ng-repeat="articles in row">
             <div class='article-photo'>
