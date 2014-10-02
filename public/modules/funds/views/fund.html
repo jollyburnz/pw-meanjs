@@ -24,18 +24,26 @@
       <table id='portfolio-overview' class='table'>
         <thead>
           <tr>
-            <th>Invested Capital</th>
-            <th ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Book Value Multiple</th>
-            <th ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Forecasted Return Multiple</th>
+            <th class='text-center'>Invested Capital</th>
+            <th class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Book Value</th>
+            <th class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Book Value Multiple</th>
+            <th class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Forecasted Return</th>
+            <th class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Forecasted Return Multiple</th>
           <tr>
         </thead>
         <tbody>
-          <td>${{total | number: 0}}</td>
-          <td ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">{{totalev | number: 1}}x</td>
-          <td ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
-            <span ng-if="p === 'upside'">{{forcasted_u| number: 1}}x</span>
-            <span ng-if="p === 'baseline'">{{forcasted_b| number: 1}}x</span>
-            <span ng-if="p === 'downside'">{{forcasted_d| number: 1}}x</span>
+          <td class='text-center'>${{total | number: 0}}</td>
+          <td class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">${{totalev1 | number: 0}}</td>
+          <td class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">{{totalev_m | number: 1}}x</td>
+          <td class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
+            <span ng-if="p === 'upside'">${{forcasted_u| number: 0}}</span>
+            <span ng-if="p === 'baseline'">${{forcasted_b| number: 0}}</span>
+            <span ng-if="p === 'downside'">${{forcasted_d| number: 0}}</span>
+          </td>
+          <td class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
+            <span ng-if="p === 'upside'">{{forcasted_u_m| number: 1}}x</span>
+            <span ng-if="p === 'baseline'">{{forcasted_b_m| number: 1}}x</span>
+            <span ng-if="p === 'downside'">{{forcasted_d_m| number: 1}}x</span>
           </td>
         </tbody>
       </table>
