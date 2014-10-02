@@ -86,7 +86,8 @@ select:hover { background-color: #fff; }
 }
 
 .fund2overlay h1{
-  padding: 70px 140px;
+  padding: 70px 190px;
+  text-align: justify;
 }
 
 
