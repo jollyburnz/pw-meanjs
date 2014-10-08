@@ -83,11 +83,14 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
 
 		$scope.dropbox = function() {
 
+      console.log("trying to download files")
+
 			// Hit PW API for User's files
 			$http.post('/files/', Authentication.user).success(function(response) {
 				// If successful download resulting file
 				console.log('Got response from Server sending files', response);
-				//document.execCommand('SaveAs',true,response.url);
+				console.log("response.files[0]", response.files[0]);
+        window.open('/download?path=' + response.files[0]);
 			}).error(function(response) {
 				console.log('Error requesting files from server');
 			});

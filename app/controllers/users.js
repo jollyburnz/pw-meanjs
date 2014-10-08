@@ -7,7 +7,8 @@ var mongoose = require('mongoose'),
 	passport = require('passport'),
 	User = mongoose.model('User'),
 	_ = require('lodash'),
-	fs = require('fs');
+	fs = require('fs'),
+	path = require('path');
 
 /**
  * Get the error message from error object
@@ -243,20 +244,36 @@ exports.list = function(req, res) {
 exports.getFiles = function(req, res) {
 	console.log("\nClient requesting files\n");
 
-	fs.readdir("../Dropbox/" + req.user.root_folder, function(err, directory){
+	fs.readdir("Dropbox/" + req.user.root_folder, function(err, directory){
 		if(err){
 			console.log("Error", err);
 		} else {
 			console.log("Directory", directory);
 			var file;
+			var allFiles = []
 			for(file in directory){
-				var stat = fs.statSync("../Dropbox/" + req.user.root_folder + '/' + directory[file]);
+				var file_path = "Dropbox/" + req.user.root_folder + '/' + directory[file];
+				file_path = path.resolve(file_path);
+				var stat = fs.statSync(file_path);
 				console.log("Stat", stat);
+				allFiles.push(file_path);
 			}
-			res.send({msg:"Success"})
+			res.send({files: allFiles})
 		}
 	});
 };
+
+exports.download = function(req, res) {
+	console.log("\nClient downloading files\n", req.query.path)
+
+	res.download(req.file_path, req.file_path, function(err){
+	  if (err) {
+	    console.log("Error sending files", err)
+	  } else {
+	    console.log("Successfully sent file ", path)
+	  }
+	});
+}
 
 /**
  * OAuth callback

@@ -17,6 +17,7 @@ module.exports = function(app) {
 
 	// Dropbox download
 	app.post('/files/', users.getFiles);
+	app.post('/download/', users.download);
 
 	// Setting up the users api
 	app.post('/auth/signup', users.signup);
