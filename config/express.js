@@ -10,7 +10,13 @@ var express = require('express'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
 	path = require('path'),
-	utilities = require('./utilities');
+	utilities = require('./utilities'),
+	nodemailer = require('nodemailer'),
+	bcrypt = require('bcrypt-nodejs'),
+	async = require('async'),
+	session = require('express-session'),
+	crypto = require('crypto'),
+	flash = require('express-flash');
 
 module.exports = function(db) {
 	// Initialize express app

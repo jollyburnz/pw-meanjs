@@ -216,6 +216,16 @@ exports.signout = function(req, res) {
 };
 
 /**
+ * Forgotten password
+ */
+
+exports.forgot =  function(req, res) {
+  res.render('forgot', {
+    user: req.user
+  });
+};
+
+/**
  * Send User
  */
 exports.me = function(req, res) {

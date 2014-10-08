@@ -143,7 +143,9 @@ var UserSchema = new Schema({
 	},
 	root_folder: {
 		type: String
-	}
+	},
+	resetPasswordToken: String,
+	resetPasswordExpires: Date
 });
 
 /**

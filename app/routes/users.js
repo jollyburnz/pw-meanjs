@@ -23,6 +23,9 @@ module.exports = function(app) {
 	app.post('/auth/signin', users.signin);
 	app.get('/auth/signout', users.signout);
 
+	//Forgotten password
+	app.get('/forgot', users.forgot);
+
 	// Setting the facebook oauth routes
 	app.get('/auth/facebook', passport.authenticate('facebook', {
 		scope: ['email']
