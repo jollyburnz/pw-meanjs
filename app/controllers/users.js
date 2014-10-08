@@ -244,7 +244,7 @@ exports.list = function(req, res) {
 exports.getFiles = function(req, res) {
 	console.log("\nClient requesting files\n");
 
-	fs.readdir("Dropbox/" + req.user.root_folder, function(err, directory){
+	fs.readdir("Dropbox/4\ -\ Investors/" + req.user.root_folder, function(err, directory){
 		if(err){
 			console.log("Error", err);
 		} else {
@@ -252,7 +252,7 @@ exports.getFiles = function(req, res) {
 			var file;
 			var allFiles = []
 			for(file in directory){
-				var file_path = "Dropbox/" + req.user.root_folder + '/' + directory[file];
+				var file_path = "Dropbox/4\ -\ Investors/" + req.user.root_folder + '/' + directory[file];
 				file_path = path.resolve(file_path);
 				var stat = fs.statSync(file_path);
 				console.log("Stat", stat);
