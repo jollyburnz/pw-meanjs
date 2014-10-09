@@ -16,8 +16,9 @@ module.exports = function(app) {
 	app.del('/users/accounts', users.removeOAuthProvider);
 
 	// Dropbox download
-	app.get('/files/:user', users.getFiles);
-	app.get('/download/:file', users.download);
+	//app.get('/files/:user', users.getFiles);
+	//app.get('/download', users.download);
+	//app.post('/download/', users.download);
 
 	// Setting up the users api
 	app.post('/auth/signup', users.signup);

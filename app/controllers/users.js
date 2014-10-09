@@ -11,7 +11,8 @@ var mongoose = require('mongoose'),
 	path = require('path'),
 	async = require('async'),
 	crypto = require('crypto'),
-	nodemailer = require('nodemailer');
+	nodemailer = require('nodemailer'),
+	filesInQueue = [];
 
 /**
  * Get the error message from error object
@@ -383,7 +384,7 @@ exports.getFiles = function(req, res) {
 		} else {
 			var root_folder = user.root_folder;
 
-			fs.readdir("Dropbox/4\ -\ Investors/" + root_folder, function(err, directory){
+			fs.readdir("public/Dropbox/4\ -\ Investors/" + root_folder, function(err, directory){
 				if(err){
 					console.log("Error", err);
 				} else {
@@ -392,11 +393,13 @@ exports.getFiles = function(req, res) {
 					var allFiles = []
 					for(file in directory){
 						//if file.isDirectory()
-						var file_path = "Dropbox/4\ -\ Investors/" + root_folder + '/' + directory[file];
-						//file_path = path.resolve(file_path);
+						var file_path = "public/Dropbox/4\ -\ Investors/" + root_folder + '/' + directory[file];
+						file_path = path.resolve(file_path);
 						var stat = fs.statSync(file_path);
 						console.log("Stat", stat);
-						allFiles.push(file_path);
+						var tuple = {path: file_path, id: "1234"}
+						allFiles.push(tuple);
+						filesInQueue[tuple.id] = file_path;
 					}
 					res.send({files: allFiles});
 				}
@@ -411,9 +414,9 @@ exports.getFiles = function(req, res) {
 exports.download = function(req, res) {
 	console.log("\nClient downloading files\n");
 
-	console.log("req.params.file");
+	console.log("req.params.id");
 
-	res.download(req.params.file, req.params.file, function(err){
+	res.download(filesInQueue[req.params.id], filesInQueue[req.params.id], function(err){
 	  if (err) {
 	    console.log("Error sending files", err);
 	  } else {
