@@ -244,33 +244,49 @@ exports.list = function(req, res) {
 exports.getFiles = function(req, res) {
 	console.log("\nClient requesting files\n");
 
-	fs.readdir("Dropbox/4\ -\ Investors/" + req.user.root_folder, function(err, directory){
-		if(err){
-			console.log("Error", err);
+	console.log("Request", req.params.user)
+
+	User.findById(req.params.user, function(error, user){
+		if(error){
+			console.log("Error finding user");
 		} else {
-			console.log("Directory", directory);
-			var file;
-			var allFiles = []
-			for(file in directory){
-				var file_path = "Dropbox/4\ -\ Investors/" + req.user.root_folder + '/' + directory[file];
-				file_path = path.resolve(file_path);
-				var stat = fs.statSync(file_path);
-				console.log("Stat", stat);
-				allFiles.push(file_path);
-			}
-			res.send({files: allFiles})
+			var root_folder = user.root_folder;
+
+			fs.readdir("Dropbox/4\ -\ Investors/" + root_folder, function(err, directory){
+				if(err){
+					console.log("Error", err);
+				} else {
+					console.log("Directory", directory);
+					var file;
+					var allFiles = []
+					for(file in directory){
+						//if file.isDirectory()
+						var file_path = "Dropbox/4\ -\ Investors/" + root_folder + '/' + directory[file];
+						//file_path = path.resolve(file_path);
+						var stat = fs.statSync(file_path);
+						console.log("Stat", stat);
+						allFiles.push(file_path);
+					}
+					res.send({files: allFiles});
+				}
+			});
+
 		}
-	});
+	})
+
+
 };
 
 exports.download = function(req, res) {
-	console.log("\nClient downloading files\n", req.query.path)
+	console.log("\nClient downloading files\n");
 
-	res.download(req.file_path, req.file_path, function(err){
+	console.log("req.params.file");
+
+	res.download(req.params.file, req.params.file, function(err){
 	  if (err) {
-	    console.log("Error sending files", err)
+	    console.log("Error sending files", err);
 	  } else {
-	    console.log("Successfully sent file ", path)
+	    console.log("Successfully sent file ", path);
 	  }
 	});
 }
