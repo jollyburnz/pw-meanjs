@@ -86,11 +86,14 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
       console.log("trying to download files")
 
 			// Hit PW API for User's files
-			$http.post('/files/', Authentication.user).success(function(response) {
+			$http.get('/files/' + Authentication.user._id).success(function(response) {
 				// If successful download resulting file
 				console.log('Got response from Server sending files', response);
 				console.log("response.files[0]", response.files[0]);
-        window.open('/download?path=' + response.files[0]);
+        
+        $scope.files = response.files;
+
+        //window.open(response.files[0]);
 			}).error(function(response) {
 				console.log('Error requesting files from server');
 			});
@@ -107,6 +110,10 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
       		});
 			*/
 		};
+
+    $scope.download = function(f){
+      $http.get('/download/' + f);
+    }
 
     $scope.accept = function(){
       console.log('accept');
