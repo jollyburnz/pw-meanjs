@@ -2,6 +2,7 @@
   <br/>
   <!-- {{article}}<br/><br/>
   {{article.for_company}} -->
+  <div class='row'>
   <div class='col-md-3'>
     <h1 class='green'>{{article.for_company.name}}</h1>
     <br/>
@@ -13,15 +14,8 @@
       </a>
     <!-- <img src='{{article.for_company.image}}' /> -->
     <br/>
-    <h4 class='green'>Other Articles About {{article.for_company.name}}</h4>
 
     <br/>
-    <div ng-repeat='r in related'>
-      <img class='img-responsive' src='{{r.image}}' />
-     <!--  {{r.link}} - {{r.headline}} -->
-     <h5><a href='#!/articles/{{r._id}}'>{{r.headline}}</a></h5>
-     <br/>
-    </div>
   </div>
 
   <div class='col-md-offset-1 col-md-8'>
@@ -50,5 +44,21 @@
     <a ng-show="article.link" href='{{article.link}}' target='_blank'>Read More</a>
 
   </div>
+</div>
+<div class='row'>
+  <div class='col-md-12'>
+    <h4 class='green'>Other Articles About {{article.for_company.name}}</h4>
+
+    <div class='row' ng-repeat="row in rows" imagefill>
+        <div class='col-sm-3' ng-repeat="articles in row">
+            <div class='article-photo'>
+              <a href="#!/articles/{{articles._id}}"><img src='{{articles.image}}' /></a><br/>
+            </div>
+            <h4><a href="#!/articles/{{articles._id}}">{{articles.headline}}</a></h4>
+        </div>
+        <hr/>
+    </div>
+  </div>
+</div>
 
 </section>

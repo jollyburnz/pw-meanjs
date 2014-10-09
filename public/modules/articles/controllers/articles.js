@@ -79,9 +79,29 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
                 $scope.article = article;
                 
                 Articles.query(function(articles){
+                    var chunk;
+
+                    chunk = function(a, s) {
+                      var i, _i, _ref, _results;
+                      if (a.length === 0) {
+                        return [];
+                      } else {
+                        _results = [];
+                        for (i = _i = 0, _ref = a.length - 1; s > 0 ? _i <= _ref : _i >= _ref; i = _i += s) {
+                          _results.push(a.slice(i, +(i + s - 1) + 1 || 9e9));
+                        }
+                        return _results;
+                      }
+                    };
+
                     $scope.articles = articles
                     var excludethis = ($stateParams.articleId).toString();
                     $scope.related = $filter('filter')($scope.articles, {for_company:{name: $scope.article.for_company.name}, _id: '!'+excludethis});
+
+                    $scope.$watch('related', function(){
+                        $scope.rows = chunk($scope.related, 4)
+                        console.log($scope.rows, 'rows')
+                    });
                 });
             });
         };
