@@ -24,10 +24,10 @@
     </div>
     <div class='col-xs-9'>
       <br/><br/>
-      <table id='portfolio-overview' class='table'>
+      <table id='lp-overview' class='table'>
         <thead>
           <tr>
-            <th class='text-center'>Invested Capital</th>
+            <th class='text-center'>Committed Capital</th>
             <th class='text-center'>Book Value</th>
             <th class='text-center'>Book Value Multiple</th>
             <th class='text-center' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Forecasted Return</th>
@@ -144,7 +144,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="c in filtered | orderBy:'name':reverse">
-            <td style='width: 15%'><a href="#!/companies/{{c._id}}"><img class='img-responsive' style='height: 17px;' src='{{c.image}}'/></a></td>
+            <td style='width: 15%'></td>
             <td style='width: 45%'><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
             <td class='text-center' style='width: 40%'>${{c.initial_investment | number:0}}</td>
           </tr>

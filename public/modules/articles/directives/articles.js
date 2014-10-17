@@ -54,4 +54,18 @@ angular.module('articles').directive('dropDown', function(){
                 }
             });
     };
-});
+})
+.directive('imagefill', ['$timeout', function(timer){
+  return {
+    restrict: 'A',
+    link: function($scope, $elem, attrs){
+
+      var hello = function(){
+        $('.article-photo').imagefill();
+        $('.article-photo').fadeIn();
+      }
+      timer(hello, 1000);
+
+    }
+  };
+}]);

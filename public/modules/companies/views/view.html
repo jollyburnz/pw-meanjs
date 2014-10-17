@@ -32,7 +32,7 @@
   <div class='col-md-offset-1 col-md-8'>
     <h3 class='green'>Current Valuation</h3>
     <div class='company-metrics company-metrics1'>
-        <h3>Initial Investment</h3>
+        <h3>Investment</h3>
         <h6>(to date)</h6>
         <h1>${{company.initial_investment | number:0}}</h1>
     </div>
@@ -64,7 +64,7 @@
         <span class='pull-right'>{{k.created | date : short}}</span>
       </li> -->
 
-      <li ng-repeat="a in articles_keyupdates">
+      <li ng-repeat="a in articles_keyupdates | orderBy:'date_posted':true">
         <a href='#!/articles/{{a._id}}'>{{a.headline}}</a> 
         <span>{{a.date_posted | date : short}}</span>
       </li>
@@ -95,7 +95,7 @@
         <th class='text-center'>Type</th>
         <th style='text-align: right;'>Investment Date</th>
       </tr>
-      <tr ng-repeat="i in invest" style="background: #d3e0d9; border-bottom: 10px solid #f5f5f5">
+      <tr ng-repeat="i in invest | orderBy:'date':true" style="background: #d3e0d9; border-bottom: 10px solid #f5f5f5">
         <td style='width: 50%; padding: 10px'>+&nbsp;{{i.amount | currency:"$"}}</td>
         <td class='text-center' style='width: 25%; padding: 10px'>{{i.type}}</td>
         <td style='width: 25%; padding: 10px; text-align: right;'>{{i.date | date : short}}</td>
