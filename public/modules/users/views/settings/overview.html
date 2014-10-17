@@ -8,17 +8,17 @@
       Nothing
     </div> -->
     <br/><br/>
-    <div class='col-md-12'>
+    <div class='col-xs-12'>
       <div class='disclosure' data-ng-hide="disclosureRead" style='text-align: justify;'>
         By clicking accept, you are verifying that you are a Limited Partner of one or more Scout Ventures Funds, including BHV Entrepreneurship Fund, L.P., BHV Entrepreneurship Fund IA, L.P. and BHV Entrepreneurship Fund II, L.P. (each a “Fund” and together, the “Funds”) and that you are party to a Limited Partnership Agreement (the "Partnership Agreement") between you and one or more Funds. By clicking below, you are agreeing that all Fund information displayed on this website (a) is permitted, pursuant to the Partnership Agreement, to be delivered electronically via this database, (b) constitutes “Confidential Information,” as defined in the Partnership Agreement, and (c) shall be held by you in confidence and not disclosed to any third party without the prior written consent of the General Partner (as defined in the Partnership Agreement), except as explicitly permitted by the Partnership Agreement.
         <br/><br/><br/>
         <a style='text-align: center;display:block;' ng-click='accept()'>ACCEPT</a>
       </div>
     </div>
-    <div id="LPinfo" class="col-md-3">
+    <div id="LPinfo" class="col-xs-3">
       <h1>{{user.displayName}}</h1>
       <br/>
-      <div class="hexagon" my-background-profile="{{user.profile}}">
+      <div class="hexagon visible-lg" my-background-profile="{{user.profile}}">
         <div class="hexTop"></div>
         <div class="hexBottom"></div>
       </div>
@@ -97,7 +97,7 @@
       </table>
       <br/><br/>
     </div>
-    <div class='col-md-offset-1 col-md-8'>
+    <div class='col-xs-offset-1 col-xs-8'>
       <h3 class='green'>Key Metrics</h3>
       <div class='metrics'>
         <h3>Total Contributed Capital</h3>
