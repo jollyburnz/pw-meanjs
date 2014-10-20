@@ -13,7 +13,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
 		//}
 
 		// If user is not signed in then redirect back home
-		if (!$scope.user) $location.path('/');
+		if (!$scope.user) $location.path('/signin');
 
     if($rootScope.disclosure){
       $scope.disclosureRead = true;
