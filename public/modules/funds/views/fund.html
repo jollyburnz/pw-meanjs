@@ -1,12 +1,5 @@
 <section data-ng-controller="FundController">
-    <!-- <div class='row'>
-      <br/>
-      <ul class="nav nav-tabs">
-        <li data-ng-repeat="fund in funds | orderBy: 'created'" ng-init="test(first)" ng-class="{active: isActive(fund)}" ><a ng-click="tab(fund)"><h4>{{fund.name}}</h4></a></li>
-      </ul>
-      <br/>
-    </div> -->
-  <div class='row'>
+  <!-- <div class='row'>
     <br/><br/>
     <div class='col-md-offset-4 col-md-8'>
       <div class='pull-right'>
@@ -15,14 +8,22 @@
       </div>
     </div>
     <br/><br/>
-  </div>
+  </div> -->
 
   <div class='row'>
     <div class='col-xs-3'>
         <br/><br/><br/>
         <select class="fund-control" data-ng-model="fund_is" data-ng-options="fund as ('&nbsp;'+ fund.name | uppercase) for fund in funds" ng-change="dropdowntest()"></select><b style='position: absolute; right: 40px; top: 88px;' class="caret"></b>
     </div>
+
     <div class='col-xs-9'>
+      <br/><br/><br/>
+      <div class='pull-right'>
+        <a data-ng-click="dataOrNews('data')" ng-class="{active:newsdata_active('data')}" class='newsdata'>DATA</a>
+        <a data-ng-click="dataOrNews('news')" ng-class="{active:newsdata_active('news')}"class='newsdata'>NEWS</a>
+      </div>
+    </div>
+    <!-- <div class='col-xs-9'>
       <br/><br/>
       <table id='lp-overview' class='table'>
         <thead>
@@ -50,30 +51,40 @@
           </td>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 
 
   <div data-ng-show="data_or_news === 'data'">
+    <br/><br/>
     <div class='row'>
-      <div class='col-xs-3 current' style='position: relative'>
-        <br/><br/><br/>
-        <h5>Invested Capital</h5>
-        <span class='currentvalue'>${{investedCapital | number: 0}}</span>
+
+      <div class='col-xs-2 current' style='position: relative'>
+        <br/>
+        <h3>Your Account</h3>
+        <br/>
+        <h5>Committed Capital</h5>
+        <span class='currentvalue'>${{total | number: 0}}</span>
         <h5>Book Value</h5>
-        <span class='currentvalue'>${{mark | number: 0}}</span>
-        <h5>IRR</h5>
-        <span data-ng-show="fund_is.name === 'Fund II'" class='currentvalue'>N/A</span>
-        <span data-ng-hide="fund_is.name === 'Fund II'" class='currentvalue'>{{IRR}}%</span>
-        <h5>Multiple</h5>
-        <span class='currentvalue'>{{multiple}}&nbsp;x</span>
-        <br/><br/>
-        <p>
-          Last updated<br/>
-          <span style="color: #219C50;">{{updated | date:'longDate'}}</span>
-        </p>
+        <span class='currentvalue'>${{totalev1 | number: 0}}</span>
+        <h5>Book Value Multiple</h5>
+        <span class='currentvalue'>{{bookvalue_m | number: 1}}</span>
+        <h5 ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Forecasted Return</h5>
+        <span class='currentvalue' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
+          <span ng-if="p === 'upside'">${{forcasted_u| number: 0}}</span>
+          <span ng-if="p === 'baseline'">${{forcasted_b| number: 0}}</span>
+          <span ng-if="p === 'downside'">${{forcasted_d| number: 0}}</span>
+        </span>
+        <h5 ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Forecasted Return Multiple</h5>
+        <span class='currentvalue' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
+          <span ng-if="p === 'upside'">{{forcasted_u_m| number: 1}}x</span>
+          <span ng-if="p === 'baseline'">{{forcasted_b_m| number: 1}}x</span>
+          <span ng-if="p === 'downside'">{{forcasted_d_m| number: 1}}x</span>
+        </span>
+
       </div>
-      <div class='col-xs-9'>
+
+      <div class='col-xs-8'>
         <div class='fund2overlay' data-ng-show="fund_is.name === 'Fund II'">
           <h1>These investments are not yet mature enough to accurately forecast the liquidity values and the fund is actively making new investments.</h1>
         </div>
@@ -85,8 +96,6 @@
                 <div class='capsule-info'>
                   <span class='title'>Projected Liquidity</span>
                   <span class='info'>{{d_mark | currency}}</span>
-                  <!-- <span class='title'>IRR</h6>
-                  <span class='info'>{{d_IRR}}%</span> -->
                   <span class='title'>Projected Multiple</span>
                   <span class='info'>{{d_multiple}}&nbsp;x</span>
                 </div>
@@ -100,8 +109,6 @@
                 <div class='capsule-info'>
                   <span class='title'>Projected Liquidity</span>
                   <span class='info'>{{b_mark | currency}}</span>
-                  <!-- <span class='title'>IRR</h6>
-                  <span class='info'>{{b_IRR}}%</span> -->
                   <span class='title'>Projected Multiple</span>
                   <span class='info'>{{b_multiple}}&nbsp;x</span>
                 </div>
@@ -115,8 +122,6 @@
                 <div class='capsule-info'>
                   <span class='title'>Projected Liquidity</span>
                   <span class='info'>{{u_mark | currency}}</span>
-                  <!-- <span class='title'>IRR</h6>
-                  <span class='info'>{{u_IRR}}%</span> -->
                   <span class='title'>Projected Multiple</span>
                   <span class='info'>{{u_multiple}}&nbsp;x</span>
                 </div>
@@ -127,6 +132,26 @@
         <div>
       </div>
     </div>
+  </div>
+
+  <div class='col-xs-2 current pull-right' style='text-align: right'>
+    <br/>
+    <h3>Fund Total</h3>
+    <br/>
+    <h5>Invested Capital</h5>
+    <span class='currentvalue'>${{investedCapital | number: 0}}</span>
+    <h5>Book Value</h5>
+    <span class='currentvalue'>${{mark | number: 0}}</span>
+    <h5>IRR</h5>
+    <span data-ng-show="fund_is.name === 'Fund II'" class='currentvalue'>N/A</span>
+    <span data-ng-hide="fund_is.name === 'Fund II'" class='currentvalue'>{{IRR}}%</span>
+    <h5>Multiple</h5>
+    <span class='currentvalue'>{{multiple}}&nbsp;x</span>
+    <br/><br/>
+    <p>
+      Last updated<br/>
+      <span style="color: #219C50;">{{updated | date:'longDate'}}</span>
+    </p>
   </div>
 
   <div class='row'></div>

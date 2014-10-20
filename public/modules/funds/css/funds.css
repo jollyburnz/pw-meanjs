@@ -23,7 +23,7 @@ a.newsdata{
   height: 60px;
   line-height: 60px;
   font-size: 2em;
-  padding: 12px 30px;
+  padding: 12px 0 12px 30px;
   text-decoration: none;
   color: #CDCDCD;
 }
@@ -276,6 +276,10 @@ select:hover { background-color: #fff; }
 }
 
 /* projected exits disabled for fund2 */
+
+.fund2disable{
+  color: #D5D5D5 !important;
+}
 
 .fund2disable.projected_exit h2, .fund2disable.projected_exit th, .fund2disable.projected_exit td{
   color: #D5D5D5 !important;
