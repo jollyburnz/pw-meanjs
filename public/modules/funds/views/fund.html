@@ -63,12 +63,12 @@
         <br/>
         <h3>Your Account</h3>
         <br/>
-        <h5>Committed Capital</h5>
+        <h5>Contributed Capital</h5>
         <span class='currentvalue'>${{total | number: 0}}</span>
         <h5>Book Value</h5>
         <span class='currentvalue'>${{totalev1 | number: 0}}</span>
         <h5>Book Value Multiple</h5>
-        <span class='currentvalue'>{{bookvalue_m | number: 1}}</span>
+        <span class='currentvalue'>{{bookvalue_m | number: 1}} x</span>
         <h5 ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">Forecasted Return</h5>
         <span class='currentvalue' ng-class="{ 'fund2disable' : fund_is.name === 'Fund II' }">
           <span ng-if="p === 'upside'">${{forcasted_u| number: 0}}</span>
@@ -97,7 +97,7 @@
                   <span class='title'>Projected Liquidity</span>
                   <span class='info'>{{d_mark | currency}}</span>
                   <span class='title'>Projected Multiple</span>
-                  <span class='info'>{{d_multiple}}&nbsp;x</span>
+                  <span class='info'>{{d_multiple | number: 1}}&nbsp;x</span>
                 </div>
               </span>
                <h2 class="text-center">Downside</h2>
@@ -110,7 +110,7 @@
                   <span class='title'>Projected Liquidity</span>
                   <span class='info'>{{b_mark | currency}}</span>
                   <span class='title'>Projected Multiple</span>
-                  <span class='info'>{{b_multiple}}&nbsp;x</span>
+                  <span class='info'>{{b_multiple | number: 1}}&nbsp;x</span>
                 </div>
               </span>
               <h2 class="text-center">Baseline</h2>
@@ -123,7 +123,7 @@
                   <span class='title'>Projected Liquidity</span>
                   <span class='info'>{{u_mark | currency}}</span>
                   <span class='title'>Projected Multiple</span>
-                  <span class='info'>{{u_multiple}}&nbsp;x</span>
+                  <span class='info'>{{u_multiple | number: 1}}&nbsp;x</span>
                 </div>
               </span>
               <h2 class="text-center">Upside</h2>
@@ -162,15 +162,13 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th></th>
             <th>Company Name</th>
             <th class='text-center' >Investment</th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="c in filtered | orderBy:'name':reverse">
-            <td style='width: 15%'></td>
-            <td style='width: 45%'><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
+            <td><a href="#!/companies/{{c._id}}">{{c.name}}</a></td>
             <td class='text-center' style='width: 40%'>${{c.initial_investment | number:0}}</td>
           </tr>
         </tbody>

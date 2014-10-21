@@ -42,6 +42,11 @@
   color: #ffffff;
 }
 
+.last{
+  width: 34% !important;
+  margin-right: 0% !important;
+}
+
 .metrics h3{
   font-size: 21px;
 }
