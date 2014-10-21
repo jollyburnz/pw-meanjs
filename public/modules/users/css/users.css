@@ -73,6 +73,18 @@ tr.sub td{
   padding: 10px;
 }
 
+#portfolio-overview .col-1{
+  width: 20%;
+}
+
+#portfolio-overview .col-2, #portfolio-overview .col-3{
+  width: 25%;
+}
+
+#portfolio-overview .col-4, #portfolio-overview .col-5{
+  width: 15%;
+}
+
 a.changepassword{
   background: #156333;
   display: block;
