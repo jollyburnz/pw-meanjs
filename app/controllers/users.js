@@ -117,7 +117,7 @@ exports.update = function(req, res) {
 						message: getErrorMessage(err)
 					});
 				} else {
-					console.log('err2');
+
 					req.login(user, function(err) {
 						if (err) {
 							res.send(400, err);
@@ -125,6 +125,29 @@ exports.update = function(req, res) {
 							res.jsonp(user);
 						}
 					});
+
+          //LP INFO UPDATED -- SEND EMAIL!
+          var smtpTransport = nodemailer.createTransport('SMTP', {
+            service: 'SendGrid',
+            auth: {
+              user: '!!!',
+              pass: '!!!'
+            }
+          });
+
+          var mailOptions = {
+            to: user.email,
+            bcc: 'updates@scoutventures.com',
+            from: 'updates@scoutventures.com',
+            subject: 'Profile Updated',
+            text: 'Your profile has been updated.\n\n' +
+              'If you did not make any changes to your account, please contact us immediately.\n\n'
+          };
+
+          smtpTransport.sendMail(mailOptions, function(err) {
+            console.log('EMAIL SENT');
+          });
+
 				}
 			});
 
