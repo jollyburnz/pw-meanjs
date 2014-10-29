@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/pw-dev',
 	app: {
-		title: 'pw - Development Environment'
+		title: 'PortfolioWatch'
 	},
 	facebook: {
 		clientID: 'APP_ID',
