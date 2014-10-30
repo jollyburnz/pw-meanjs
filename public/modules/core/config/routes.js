@@ -15,6 +15,10 @@ angular.module('core', ['dropbox']).config(['$stateProvider', '$urlRouterProvide
 			url: '/',
 			templateUrl: 'modules/users/views/settings/overview.html'
 			//templateUrl: 'modules/core/views/home.html'
+		}).
+		state('about', {
+			url: '/about',
+			templateUrl: 'modules/core/views/about.html'
 		});
 	}
 ]);
