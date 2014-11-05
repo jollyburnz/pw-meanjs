@@ -208,6 +208,30 @@ exports.changePassword = function(req, res, next) {
 										res.send({
 											message: 'Password changed successfully'
 										});
+
+                    //PASSWORD CHANGE -- SEND EMAIL!
+                    var smtpTransport = nodemailer.createTransport('SMTP', {
+                      service: 'SendGrid',
+                      auth: {
+                        user: '!!!',
+                        pass: '!!!'
+                      }
+                    });
+
+                    var mailOptions = {
+                      to: user.email,
+                      bcc: 'updates@scoutventures.com',
+                      from: 'updates@scoutventures.com',
+                      subject: 'Profile updated -- Password has been updated.',
+                      text: 'Your profile has been updated.\n\n' +
+                        'If you did not make any changes to your account, please contact us immediately.\n\n'
+                    };
+
+                    smtpTransport.sendMail(mailOptions, function(err) {
+                      console.log('EMAIL SENT');
+                    });
+
+
 									}
 								});
 							}
