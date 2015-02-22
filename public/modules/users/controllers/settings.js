@@ -288,8 +288,16 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
     };
 
     $rootScope.accruedInterest = function(){
-      console.log($scope.wiresFromFund1)
-      return 80085;
+      var all_wires = $scope.wiresFromFund1.concat($scope.wiresFromFund1a).concat($scope.wiresFromFund2);
+
+      var result = 0
+
+      all_wires.forEach(function(wire){
+        var diff_in_years = (new Date() - new Date(wire.date)) / (1000 * 60 * 60 * 24 * 365);
+        result = result + wire.amount * 0.08 * diff_in_years;
+      })
+
+      return result;
     }
 
     $scope.offsetDate = function(date){
