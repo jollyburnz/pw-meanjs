@@ -287,6 +287,11 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
       };
     };
 
+    $rootScope.accruedInterest = function(){
+      console.log($scope.wiresFromFund1)
+      return 80085;
+    }
+
     $scope.offsetDate = function(date){
       var localDate = new Date(date);
       var localTime = localDate.getTime();
