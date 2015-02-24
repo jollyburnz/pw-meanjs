@@ -288,8 +288,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$rootScope'
     };
 
     $rootScope.accruedInterest = function(){
-      var all_wires = $scope.wiresFromFund1.concat($scope.wiresFromFund1a).concat($scope.wiresFromFund2);
-
+      var all_wires = $scope.wiresFromFund1.concat($scope.wiresFromFund2)
       var result = 0
 
       all_wires.forEach(function(wire){
